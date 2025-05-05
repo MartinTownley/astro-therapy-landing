@@ -6,7 +6,7 @@ interface Props {
 	description?: string;
 	image?: string; 
 }
-const {title, description = "Music producers communnity", image = "/images/band.jpg" } = Astro.props;
+const {title, description = "Psychotherapy website" } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,7 +21,10 @@ const {title, description = "Music producers communnity", image = "/images/band.
 	</head>
 	<body class="min-h-screen">
 		<Header />
-		<slot />
+		
+	<slot>
+		Default Text
+	</slot>
 	</body>
 </html>
 

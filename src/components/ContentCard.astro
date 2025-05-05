@@ -1,0 +1,12 @@
+---
+const {heading, paras} = Astro.props;
+---
+
+<div class="bg-[var(--color-text-bg)] py-10 px-6 text-center max-w-full sm:max-w-md mx-auto">
+    <h1 class="text-3xl font-bold">{heading}</h1>
+    {paras.map((para: string) => (
+
+      <p class="text-base mt-2 py-2 text-left">{para}</p>
+    ))}
+    
+  </div>

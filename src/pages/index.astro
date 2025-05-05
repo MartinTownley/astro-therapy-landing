@@ -1,16 +1,41 @@
 ---
+import ContentCard from '../components/ContentCard.astro';
+import ContentSection from '../components/ContentSection.astro';
 import H1 from '../components/H1.astro';
 import HeroSection from '../components/HeroSection.astro';
+import HeroCard from '../components/HeroCard.astro';
+import { heroText, introText, aboutText, therapyText, sessionsText, contactText } from "../content/textContent"
+import IntroSection from '../components/IntroSection.astro';
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import abstractImg from "../assets/abstract-img.png";
+import chairPlantsImg from "../assets/chair-plants-img.png";
+import couchImg from "../assets/couch-img.png";
+import flowersImg from "../assets/flowers-img.png";
+import marbleImg from "../assets/marble-img.png";
+import mosaicImg from "../assets/mosaic-img.png";
+import treesImg from "../assets/trees-img.png";
+import woodpathImg from "../woodpath-img.png";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="">
 	<!-- <Welcome /> -->
-	 <HeroSection>
-		<!-- anything here would be passed into slot? -->
+	 <HeroSection id="Hero" imageSrc={couchImg}>
+		<HeroCard {...heroText} />
 	 </HeroSection>
+
+	 <!-- <IntroSection /> -->
+		
+	 <ContentSection id="About Me" background="bg-[var(--color-bg-1)]" imageSrc={mosaicImg} imageAlt="hi">
+		<ContentCard {...aboutText} />
+	 </ContentSection>
+
+	 <ContentSection id="Therapy" background="bg-[var(--color-bg-2)]" imageSrc={abstractImg} imageAlt="">
+		<ContentCard {...therapyText} />
+	 </ContentSection>
+
+	 <ContentSection id="Sessions" background="bg-[var(--color-bg-1)]" imageSrc={marbleImg} imageAlt="">
+		<ContentCard {...sessionsText} />
+	 </ContentSection>
 </Layout>
