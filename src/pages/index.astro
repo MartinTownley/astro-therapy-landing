@@ -15,19 +15,37 @@ import flowersImg from "../assets/flowers-img.png";
 import marbleImg from "../assets/marble-img.png";
 import mosaicImg from "../assets/mosaic-img.png";
 import treesImg from "../assets/trees-img.png";
-import woodpathImg from "../woodpath-img.png";
+import woodpathImg from "../assets/woodpath-img.png";
+import ukcpLogo from '../assets/ukcp_master_logo.png';
+import FPContentSection from '../components/FPContentSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import ContactCard from '../components/ContactCard.astro';
+import Footer from '../components/Footer.astro';
 
 ---
 
 <Layout title="">
 	<!-- <Welcome /> -->
-	 <HeroSection id="Hero" imageSrc={couchImg}>
+	 <HeroSection id="hero" imageSrc={abstractImg}>
 		<HeroCard {...heroText} />
 	 </HeroSection>
 
+	 <FPContentSection id="about-me" background="bg-[var(--color-text-bg-1)]" {...aboutText} />
+	 
+	 <FPContentSection id="therapy" background="bg-[var(--color-text-bg-2)]" {...therapyText} />
+	 
+	 <FPContentSection id="sessions" background="bg-[var(--color-text-bg-1)]" {...sessionsText} />
+
+	 <ContactSection id="contact" imageSrc={marbleImg}>
+		<ContactCard {...contactText}/>
+	 </ContactSection>
+
+	 <Footer logoSrc={ukcpLogo} logoAlt="UKCP Logo" />
+	 
+
 	 <!-- <IntroSection /> -->
 		
-	 <ContentSection id="About Me" background="bg-[var(--color-bg-1)]" imageSrc={mosaicImg} imageAlt="hi">
+	 <!-- <ContentSection id="About Me" background="bg-[var(--color-bg-1)]" imageSrc={mosaicImg} imageAlt="hi">
 		<ContentCard {...aboutText} />
 	 </ContentSection>
 
@@ -37,5 +55,5 @@ import woodpathImg from "../woodpath-img.png";
 
 	 <ContentSection id="Sessions" background="bg-[var(--color-bg-1)]" imageSrc={marbleImg} imageAlt="">
 		<ContentCard {...sessionsText} />
-	 </ContentSection>
+	 </ContentSection> -->
 </Layout>

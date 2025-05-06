@@ -1,0 +1,20 @@
+---
+const {
+    id,
+    background,
+    heading,
+    paras
+} = Astro.props;
+---
+
+<section id={id} class={ `flex flex-col justify-center min-h-screen ${background} `}>
+    <div class="py-10 px-6 max-w-prose mx-auto">
+
+        <h1 class="text-3xl text-center font-bold mb-12">{heading}</h1>
+        
+        {paras.map((para: string) => (
+            <p class="text-base mt-2 py-2 text-left">{para}</p>
+        ))}
+    </div>
+</section>
+
