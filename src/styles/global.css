@@ -6,10 +6,11 @@
 
   --color-header: #d47f7f;
   --color-outline: #d47f7f;
-  --color-hero-card-bg: #e8d8c0;
   --color-hero-text: #601818;
   --color-intro-bg: #dfd5cb;
   --color-bg-1: #707a57;
+  --color-bg-1-dark: #5c6445;
   --color-bg-2: #f4a9b2;
-  --color-text-bg: #f2e8d5;
+  --color-text-bg-1: #f2e8d5;
+  --color-text-bg-2: #fdf6f0;
 }

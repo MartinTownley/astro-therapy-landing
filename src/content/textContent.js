@@ -55,7 +55,13 @@ export const sessionsText = {
 };
 
 export const contactText = {
-  heading: "Contact Details",
-  email: "Email: contact@therapyjz.com",
-  phone: "Phone: 123456789",
+  heading: "Contact",
+  email: {
+    label: "Email:",
+    value: "contact@therapyjz.com",
+  },
+  phone: {
+    label: "Phone:",
+    value: "07123456789",
+  },
 };
