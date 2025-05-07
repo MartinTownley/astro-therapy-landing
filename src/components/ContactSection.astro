@@ -1,20 +1,30 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets'
 
-const {
-    id,
-    imageSrc,
-    imageAlt = '',
-} = Astro.props;
+const { id, imageSrc, imageAlt = '' } = Astro.props
 ---
 
-<section id={id} class="relative min-h-screen flex items-center justify-center px-4 py-16 sm:px-6">
-    
-    <div class="absolute inset-0 z-0">
-        <Image src={imageSrc} alt="" loading="eager" quality="max" class="w-full h-full object-cover opacity-80"/>
-    </div>
+<section
+  id={id}
+  class="relative min-h-screen flex items-center justify-center px-20 py-16 sm:px-6"
+>
+  <div class="absolute inset-0 z-0">
+    <Image
+      src={imageSrc}
+      alt=""
+      loading="eager"
+      quality="max"
+      class="w-full h-full object-cover"
+    />
+  </div>
 
-    <div class="relative z-10 w-full">
-        <slot />
-    </div>
+  <div class="absolute inset-0 z-0 bg-white/30"></div>
+  <div
+    class="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-white via-transparent to-transparent filter blur-lg"
+  >
+  </div>
+
+  <div class="relative z-10 w-full">
+    <slot />
+  </div>
 </section>
