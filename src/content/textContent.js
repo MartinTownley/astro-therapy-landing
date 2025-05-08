@@ -11,6 +11,7 @@ export const heroText = {
   button: 'Get in touch',
 }
 
+// intro text not in use
 export const introText = {
   heading: 'A warm and supportive space to explore your thoughts and feelings',
   para1:
@@ -22,7 +23,7 @@ export const introText = {
 export const aboutText = {
   heading: 'About Me',
   paras: [
-    'I am a psychotherapist in advanced clinical training, living and working in London. I have worked with clients both online and in person, developing my skills and practice working with a diverse range of clients, including those dealing with grief, anxiety, stress, trauma, parenthood and more.',
+    'I am in my final year of advanced clinical training in counselling and psychotherapy, living and working in London. I have worked with clients both online and in person, developing my skills and practice working with a diverse range of clients, including those dealing with grief, anxiety, stress, trauma, parenthood and more.',
 
     'For over ten years, I have also worked in the charity sector and have broad experience in the mental health and international development sectors.',
 
@@ -33,9 +34,9 @@ export const aboutText = {
 export const therapyText = {
   heading: 'Therapy',
   paras: [
-    'Starting therapy can feel overwhelming, but you don’t have to do it alone. Whether you’re facing a specific challenge or just feeling stuck, therapy offers a space to reflect, gain clarity, and move forward at your own pace.',
+    'Starting therapy can feel overwhelming—but you don’t have to do it alone. Whether you’re facing a specific challenge or just feeling stuck, therapy offers a space to reflect, gain clarity, and move forward at your own pace.',
 
-    'I offer a warm and supportive space where you can feel heard, understood and empowered.',
+    'I provide a confidential, inclusive, and non-judgmental space where you can feel heard, understood, and empowered.',
 
     'My approach to therapy is grounded in Relational Transactional Analysis, with the openness to adapt to individual client’s needs.',
   ],
@@ -48,7 +49,7 @@ export const sessionsText = {
 
     'Current fees are affordable at £50 per session.',
 
-    'We can meet online or in person in the Waltham Forest area of London.',
+    'We can meet online or in person in North East London.',
 
     'Our initial session together will be an opportunity to share what has led you to therapy, decide on whether we are a good match and discuss any questions you may have.',
   ],
