@@ -38,7 +38,7 @@ export const therapyText = {
 
     'I provide a confidential, inclusive, and non-judgmental space where you can feel heard, understood, and empowered.',
 
-    'My approach to therapy is grounded in Relational Transactional Analysis, with the openness to adapt to individual client’s needs.',
+    'My approach to therapy is grounded in Relational Transactional Analysis, with openness to adapting to each client’s individual needs.',
   ],
 }
 

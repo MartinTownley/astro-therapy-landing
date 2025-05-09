@@ -1,14 +1,17 @@
 ---
-const {heading, subheading, button} = Astro.props;
+const { heading, subheading, button } = Astro.props
 ---
 
-<div class="flex flex-col items-center bg-[var(--color-text-bg-2)] py-16 px-6 text-center max-w-full sm:max-w-md mx-auto text-[var(--color-hero-text)] space-y-8 border border-[var(--color-outline)]">
-    <h1 class="text-3xl text-[var(--color-hero-text)] font-bold">{heading}</h1>
-    <p class="text-base">{subheading}</p>
-    <a href="#contact">
-      <button class="mt-2 px-4 py-2 bg-[var(--color-bg-1)] text-white rounded hover:bg-[var(--color-bg-1-dark)] transition">
-        {button}
-      </button>
-    </a>
-  </div>
-  
+<div
+  class="flex flex-col items-center bg-[var(--color-text-bg-2)] py-16 px-6 text-center max-w-full sm:max-w-md mx-auto text-[var(--color-hero-text)] space-y-8 border border-[var(--color-outline)]"
+>
+  <h1 class="text-3xl text-[var(--color-hero-text)] font-bold">{heading}</h1>
+  <p class="text-base">{subheading}</p>
+  <a href="#contact">
+    <button
+      class="mt-2 px-4 py-2 bg-[var(--color-bg-1)] text-white font-medium rounded hover:bg-[var(--color-bg-1-dark)] transition"
+    >
+      {button}
+    </button>
+  </a>
+</div>
