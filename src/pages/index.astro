@@ -1,52 +1,74 @@
 ---
-import ContentCard from '../components/ContentCard.astro';
-import ContentSection from '../components/ContentSection.astro';
-import H1 from '../components/H1.astro';
-import HeroSection from '../components/HeroSection.astro';
-import HeroCard from '../components/HeroCard.astro';
-import { heroText, introText, aboutText, therapyText, sessionsText, contactText } from "../content/textContent"
-import IntroSection from '../components/IntroSection.astro';
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import abstractImg from "../assets/abstract-img.png";
-import chairPlantsImg from "../assets/chair-plants-img.png";
-import couchImg from "../assets/couch-img.png";
-import flowersImg from "../assets/flowers-img.png";
-import marbleImg from "../assets/marble-img.png";
-import mosaicImg from "../assets/mosaic-img.png";
-import treesImg from "../assets/trees-img.png";
-import woodpathImg from "../assets/woodpath-img.png";
-import ukcpLogoWhiteBG from '../assets/ukcp_master_logo.png';
-import ukcpLogoTransBG from '../assets/ukcp-black-trans.png'
-import FPContentSection from '../components/FPContentSection.astro';
-import ContactSection from '../components/ContactSection.astro';
-import ContactCard from '../components/ContactCard.astro';
-import Footer from '../components/Footer.astro';
-
+import ContentCard from '../components/ContentCard.astro'
+import ContentSection from '../components/ContentSection.astro'
+import H1 from '../components/H1.astro'
+import HeroSection from '../components/HeroSection.astro'
+import HeroCard from '../components/HeroCard.astro'
+import {
+  heroText,
+  introText,
+  aboutText,
+  therapyText,
+  sessionsText,
+  contactText,
+} from '../content/textContent'
+import IntroSection from '../components/IntroSection.astro'
+import Welcome from '../components/Welcome.astro'
+import Layout from '../layouts/Layout.astro'
+import abstractImgPort from '../assets/abstract-img-portrait.png'
+import abstractImgLand from '../assets/abstract-img-landscape.png'
+import chairPlantsImg from '../assets/chair-plants-img.png'
+import couchImg from '../assets/couch-img.png'
+import flowersImg from '../assets/flowers-img.png'
+import marbleImg from '../assets/marble-img.png'
+import mosaicImg from '../assets/mosaic-img.png'
+import treesImg from '../assets/trees-img.png'
+import woodpathImg from '../assets/woodpath-img.png'
+// import ukcpLogoWhiteBG from '../assets/ukcp_master_logo.png';
+// import ukcpLogoTransBG from '../assets/ukcp-black-trans.png'
+import FPContentSection from '../components/FPContentSection.astro'
+import ContactSection from '../components/ContactSection.astro'
+import ContactCard from '../components/ContactCard.astro'
+import Footer from '../components/Footer.astro'
 ---
 
 <Layout title="">
-	<!-- <Welcome /> -->
-	 <HeroSection id="hero" imageSrc={abstractImg}>
-		<HeroCard {...heroText} />
-	 </HeroSection>
+  <!-- <Welcome /> -->
+  <HeroSection
+    id="hero"
+    imgSrcPortrait={abstractImgPort}
+    imgSrcLandscape={abstractImgLand}
+  >
+    <HeroCard {...heroText} />
+  </HeroSection>
 
-	 <FPContentSection id="about-me" background="bg-[var(--color-text-bg-1)]" {...aboutText} />
-	 
-	 <FPContentSection id="therapy" background="bg-[var(--color-text-bg-2)]" {...therapyText} />
-	 
-	 <FPContentSection id="sessions" background="bg-[var(--color-text-bg-1)]" {...sessionsText} />
+  <FPContentSection
+    id="about-me"
+    background="bg-[var(--color-text-bg-1)]"
+    {...aboutText}
+  />
 
-	 <ContactSection id="contact" imageSrc={marbleImg}>
-		<ContactCard {...contactText}/>
-	 </ContactSection>
+  <FPContentSection
+    id="therapy"
+    background="bg-[var(--color-text-bg-2)]"
+    {...therapyText}
+  />
 
-	 <!-- <Footer logoSrc={ukcpLogoWhiteBG} logoAlt="UKCP Logo" /> -->
-	 
+  <FPContentSection
+    id="sessions"
+    background="bg-[var(--color-text-bg-1)]"
+    {...sessionsText}
+  />
 
-	 <!-- <IntroSection /> -->
-		
-	 <!-- <ContentSection id="About Me" background="bg-[var(--color-bg-1)]" imageSrc={mosaicImg} imageAlt="hi">
+  <ContactSection id="contact" imageSrc={marbleImg}>
+    <ContactCard {...contactText} />
+  </ContactSection>
+
+  <!-- <Footer logoSrc={ukcpLogoWhiteBG} logoAlt="UKCP Logo" /> -->
+
+  <!-- <IntroSection /> -->
+
+  <!-- <ContentSection id="About Me" background="bg-[var(--color-bg-1)]" imageSrc={mosaicImg} imageAlt="hi">
 		<ContentCard {...aboutText} />
 	 </ContentSection>
 

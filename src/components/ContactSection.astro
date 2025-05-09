@@ -1,16 +1,27 @@
 ---
+import Picture from 'astro/components/Picture.astro'
 import { Image } from 'astro:assets'
 
 const { id, imageSrc, imageAlt = '' } = Astro.props
 ---
 
 <section id={id} class="relative min-h-screen flex items-center justify-center">
-  <div class="absolute inset-0 z-0">
+  <!-- <div class="absolute inset-0 z-0">
     <Image
       src={imageSrc}
       alt=""
-      loading="eager"
+      loading="lazy"
       quality="max"
+      class="w-full h-full object-cover"
+    />
+  </div> -->
+
+  <div class="absolute inset-0 z-0">
+    <Picture
+      src={imageSrc}
+      formats={['avif', 'webp']}
+      alt="A marbled image."
+      loading="lazy"
       class="w-full h-full object-cover"
     />
   </div>

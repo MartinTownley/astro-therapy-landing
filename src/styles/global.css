@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --color-primary: #1a73e8;
@@ -13,8 +13,4 @@
   --color-bg-2: #f4a9b2;
   --color-text-bg-1: #f2e8d5;
   --color-text-bg-2: #fdf6f0;
-
-  .hidden {
-    display: none;
-  }
 }

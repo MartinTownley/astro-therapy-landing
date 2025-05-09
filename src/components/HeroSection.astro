@@ -1,26 +1,47 @@
 ---
-import { Image } from "astro:assets";
+import Picture from 'astro/components/Picture.astro'
+import { Image } from 'astro:assets'
 
 const {
-   id,
-   background = 'bg-black',
-   imageSrc,
-   imageAlt = '',
-} = Astro.props;
+  id,
+  background = 'bg-black',
+  imgSrcPortrait,
+  imgSrcLandscape,
+} = Astro.props
 ---
 
-<main id={id} class="min-h-screen flex items-center justify-center px-4 py-16 sm:px-6 -mt-14 bg-[var(--color-text-bg-1)]">
-    <!-- <slot/> -->
-    <!-- <img src={bgImg.src} /> -->
-     <!-- Background Image -->
-    <div class="absolute inset-0 z-0">
+<main
+  id={id}
+  class="min-h-screen flex items-center justify-center px-4 py-16 sm:px-6 -mt-14 bg-[var(--color-text-bg-1)]"
+>
+  <!-- Background Image -->
+  <!-- <div class="absolute inset-0 z-0">
       <Image src={imageSrc} alt="" loading="eager" quality="max" class="w-full h-full object-cover opacity-60"/>
-    </div>
-    
+    </div> -->
 
-    <!-- Foreground content -->
-     <div class="relative z-10 w-full translate-y-16">
-        <slot />
-     </div>
+  <div class="absolute inset-0 z-0">
+    <!-- Mobile (portrait) -->
 
+    <Picture
+      src={imgSrcPortrait}
+      formats={['avif', 'webp']}
+      alt="An abstract image."
+      loading="eager"
+      class="w-full h-full object-cover opacity-80 block lg:hidden"
+    />
+
+    <!-- Desktop (landscape) -->
+    <Picture
+      src={imgSrcLandscape}
+      formats={['avif', 'webp']}
+      alt="An abstract image."
+      loading="eager"
+      class="w-full h-full object-cover opacity-80 hidden lg:block"
+    />
+  </div>
+
+  <!-- Foreground content -->
+  <div class="relative z-10 w-full translate-y-16">
+    <slot />
+  </div>
 </main>
