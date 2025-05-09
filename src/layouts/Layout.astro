@@ -4,6 +4,8 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import ukcpLogoWhiteBG from '../assets/ukcp_master_logo.png'
 import ukcpLogoTransBG from '../assets/UKCP-black-trans.png'
+import '@fontsource/poppins'
+
 interface Props {
   title: string
   description?: string
@@ -24,9 +26,12 @@ const { title, description = 'Psychotherapy website' } = Astro.props
   </head>
   <body class="min-h-screen">
     <Header />
-    <main class="">
-      <slot />
-    </main>
-    <Footer logoSrc={ukcpLogoTransBG} logoAlt="UKCP Logo" />
+    <div class="max-w-screen-xl mx-auto">
+      <main>
+        <slot />
+      </main>
+
+      <Footer logoSrc={ukcpLogoTransBG} logoAlt="UKCP Logo" />
+    </div>
   </body>
 </html>
