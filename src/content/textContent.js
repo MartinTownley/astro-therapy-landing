@@ -46,11 +46,8 @@ export const sessionsText = {
   heading: 'Sessions',
   paras: [
     'I offer weekly individual 50 minute sessions, at the same time and day each week. We can work together for as long as you would like.',
-
     'Current fees are affordable at £50 per session.',
-
     'We can meet online or in person in North East London.',
-
     'Our initial session together will be an opportunity to share what has led you to therapy, decide on whether we are a good match and discuss any questions you may have.',
   ],
 }
