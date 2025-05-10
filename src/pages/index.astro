@@ -42,7 +42,7 @@ const imgSrcMarble = isDev ? marbleImgHi : marbleImgLo
 ---
 
 <Layout title="">
-  <!-- <Welcome /> -->
+  <!-- snap scroll -->
   <HeroSection
     id="hero"
     imgSrcPortrait={imgSrcAbstractPortrait}
@@ -50,8 +50,7 @@ const imgSrcMarble = isDev ? marbleImgHi : marbleImgLo
   >
     <HeroCard {...heroText} />
   </HeroSection>
-
-  <div class="flex flex-col snap-y snap-mandatory">
+  <div class="h-screen overflow-y-scroll snap-y snap-mandatory">
     <FPContentSection
       id="about-me"
       background="bg-[var(--color-text-bg-1)]"
@@ -69,11 +68,11 @@ const imgSrcMarble = isDev ? marbleImgHi : marbleImgLo
       background="bg-[var(--color-text-bg-1)]"
       {...sessionsText}
     />
-  </div>
 
-  <ContactSection id="contact" imageSrc={imgSrcMarble}>
-    <ContactCard {...contactText} />
-  </ContactSection>
+    <ContactSection id="contact" imageSrc={imgSrcMarble}>
+      <ContactCard {...contactText} />
+    </ContactSection>
+  </div>
 
   <!-- <Footer logoSrc={ukcpLogoWhiteBG} logoAlt="UKCP Logo" /> -->
 

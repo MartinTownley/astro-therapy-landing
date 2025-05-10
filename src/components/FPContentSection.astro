@@ -5,9 +5,9 @@ const { id, background, heading, paras } = Astro.props
 <!-- FPContentSection.astro -->
 <section
   id={id}
-  class={`flex flex-col justify-center min-h-screen ${background} `}
+  class={`h-screen snap-start flex flex-col justify-center ${background} `}
 >
-  <div class="py-12 px-6 max-w-prose mx-auto">
+  <div class="overflow-y-auto py-12 px-6 max-w-prose mx-auto">
     <h1 class="text-3xl text-center font-semibold mb-8">{heading}</h1>
 
     <div class="space-y-0">

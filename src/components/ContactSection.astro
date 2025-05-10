@@ -5,7 +5,10 @@ import { Image } from 'astro:assets'
 const { id, imageSrc, imageAlt = '' } = Astro.props
 ---
 
-<section id={id} class="relative min-h-screen flex items-center justify-center">
+<section
+  id={id}
+  class="relative h-screen snap-start flex items-center justify-center"
+>
   <!-- <div class="absolute inset-0 z-0">
     <Image
       src={imageSrc}
