@@ -41,8 +41,8 @@ const imgSrcAbstractLandscape = isDev ? abstractImgLandLo : abstractImgLandHi
 const imgSrcMarble = isDev ? marbleImgHi : marbleImgLo
 ---
 
+<!-- index.astro -->
 <Layout title="">
-  <!-- snap scroll -->
   <HeroSection
     id="hero"
     imgSrcPortrait={imgSrcAbstractPortrait}
@@ -50,29 +50,28 @@ const imgSrcMarble = isDev ? marbleImgHi : marbleImgLo
   >
     <HeroCard {...heroText} />
   </HeroSection>
-  <div class="h-screen overflow-y-scroll snap-y snap-mandatory">
-    <FPContentSection
-      id="about-me"
-      background="bg-[var(--color-text-bg-1)]"
-      {...aboutText}
-    />
 
-    <FPContentSection
-      id="therapy"
-      background="bg-[var(--color-text-bg-2)]"
-      {...therapyText}
-    />
+  <FPContentSection
+    id="about-me"
+    background="bg-[var(--color-text-bg-1)]"
+    {...aboutText}
+  />
 
-    <FPContentSection
-      id="sessions"
-      background="bg-[var(--color-text-bg-1)]"
-      {...sessionsText}
-    />
+  <FPContentSection
+    id="therapy"
+    background="bg-[var(--color-text-bg-2)]"
+    {...therapyText}
+  />
 
-    <ContactSection id="contact" imageSrc={imgSrcMarble}>
-      <ContactCard {...contactText} />
-    </ContactSection>
-  </div>
+  <FPContentSection
+    id="sessions"
+    background="bg-[var(--color-text-bg-1)]"
+    {...sessionsText}
+  />
+
+  <ContactSection id="contact" imageSrc={imgSrcMarble}>
+    <ContactCard {...contactText} />
+  </ContactSection>
 
   <!-- <Footer logoSrc={ukcpLogoWhiteBG} logoAlt="UKCP Logo" /> -->
 

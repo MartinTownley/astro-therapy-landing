@@ -22,7 +22,7 @@ interface Props {
 const { title, description = 'Psychotherapy website' } = Astro.props
 ---
 
-<!doctype html>
+<!-- Layout.astro --><!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -32,14 +32,14 @@ const { title, description = 'Psychotherapy website' } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen">
+  <body class="snap-y snap-proximity overflow-y-scrol h-screen">
     <Header />
-    <div class="max-w-screen-xl mx-auto">
-      <main>
-        <slot />
-      </main>
+    <!-- <div class="max-w-screen-xl mx-auto"> -->
+    <main class="flex flex-col">
+      <slot />
+    </main>
 
-      <Footer logoSrc={ukcpLogoTransBG} logoAlt="UKCP Logo" />
-    </div>
+    <Footer logoSrc={ukcpLogoTransBG} logoAlt="UKCP Logo" />
+    <!-- </div> -->
   </body>
 </html>

@@ -12,7 +12,7 @@ const {
 
 <main
   id={id}
-  class="min-h-screen flex items-center justify-center px-4 py-16 sm:px-6 -mt-14 bg-[var(--color-text-bg-1)]"
+  class="min-h-[calc(100vh-60px)] relative py-10 flex items-center justify-center px-4 sm:px-6 bg-[var(--color-text-bg-1)]"
 >
   <!-- Background Image -->
   <!-- <div class="absolute inset-0 z-0">
@@ -41,7 +41,7 @@ const {
   </div>
 
   <!-- Foreground content -->
-  <div class="relative z-10 w-full translate-y-16">
+  <div class="relative z-10 w-full">
     <slot />
   </div>
 </main>
