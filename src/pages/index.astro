@@ -15,12 +15,15 @@ import {
 import IntroSection from '../components/IntroSection.astro'
 import Welcome from '../components/Welcome.astro'
 import Layout from '../layouts/Layout.astro'
-import abstractImgPort from '../assets/abstract-img-portrait.png'
-import abstractImgLand from '../assets/abstract-img-landscape.png'
+import abstractImgPortHi from '../assets/abstract-img-portrait.png'
+import abstractImgPortLo from '../assets/abstract-img-portrait-lo.png'
+import abstractImgLandHi from '../assets/abstract-img-landscape.png'
+import abstractImgLandLo from '../assets/abstract-img-landscape-lo.png'
 import chairPlantsImg from '../assets/chair-plants-img.png'
 import couchImg from '../assets/couch-img.png'
 import flowersImg from '../assets/flowers-img.png'
-import marbleImg from '../assets/marble-img.png'
+import marbleImgHi from '../assets/marble-img-hi.png'
+import marbleImgLo from '../assets/marble-img-lo.png'
 import mosaicImg from '../assets/mosaic-img.png'
 import treesImg from '../assets/trees-img.png'
 import woodpathImg from '../assets/woodpath-img.png'
@@ -30,37 +33,45 @@ import FPContentSection from '../components/FPContentSection.astro'
 import ContactSection from '../components/ContactSection.astro'
 import ContactCard from '../components/ContactCard.astro'
 import Footer from '../components/Footer.astro'
+
+const isDev = import.meta.env.DEV
+const imgSrcAbstractPortrait = isDev ? abstractImgPortLo : abstractImgPortHi
+const imgSrcAbstractLandscape = isDev ? abstractImgLandLo : abstractImgLandHi
+
+const imgSrcMarble = isDev ? marbleImgHi : marbleImgLo
 ---
 
 <Layout title="">
   <!-- <Welcome /> -->
   <HeroSection
     id="hero"
-    imgSrcPortrait={abstractImgPort}
-    imgSrcLandscape={abstractImgLand}
+    imgSrcPortrait={imgSrcAbstractPortrait}
+    imgSrcLandscape={imgSrcAbstractLandscape}
   >
     <HeroCard {...heroText} />
   </HeroSection>
 
-  <FPContentSection
-    id="about-me"
-    background="bg-[var(--color-text-bg-1)]"
-    {...aboutText}
-  />
+  <div class="flex flex-col snap-y snap-mandatory">
+    <FPContentSection
+      id="about-me"
+      background="bg-[var(--color-text-bg-1)]"
+      {...aboutText}
+    />
 
-  <FPContentSection
-    id="therapy"
-    background="bg-[var(--color-text-bg-2)]"
-    {...therapyText}
-  />
+    <FPContentSection
+      id="therapy"
+      background="bg-[var(--color-text-bg-2)]"
+      {...therapyText}
+    />
 
-  <FPContentSection
-    id="sessions"
-    background="bg-[var(--color-text-bg-1)]"
-    {...sessionsText}
-  />
+    <FPContentSection
+      id="sessions"
+      background="bg-[var(--color-text-bg-1)]"
+      {...sessionsText}
+    />
+  </div>
 
-  <ContactSection id="contact" imageSrc={marbleImg}>
+  <ContactSection id="contact" imageSrc={imgSrcMarble}>
     <ContactCard {...contactText} />
   </ContactSection>
 
