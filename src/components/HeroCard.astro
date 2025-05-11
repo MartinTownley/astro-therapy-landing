@@ -9,7 +9,7 @@ const { heading, subheading, button } = Astro.props
   <p class="text-base">{subheading}</p>
   <a href="#contact">
     <button
-      class="px-4 py-2 bg-[var(--color-bg-1)] text-white font-medium rounded hover:bg-[var(--color-bg-1-dark)] transition"
+      class="px-4 py-2 bg-[var(--color-bg-1)] text-white font-medium rounded border-b-4 border-[var(--color-bg-1-dark)] hover:bg-[var(--color-bg-1-dark)] hover:border-[var(--color-bg-1-darker)] active:translate-y-[2px] active:border-b-[var(--color-bg-1)] transition duration-75"
     >
       {button}
     </button>
