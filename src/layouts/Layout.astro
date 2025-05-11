@@ -33,7 +33,9 @@ const { title, description = 'Psychotherapy website' } = Astro.props
     <title>{title}</title>
   </head>
   <body class="">
-    <Header />
+    <div class="bg-white/90 px-4 py-3">
+      <Header />
+    </div>
     <!-- <div class="max-w-screen-xl mx-auto"> -->
     <main class="flex flex-col">
       <slot />
