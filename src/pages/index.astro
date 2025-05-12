@@ -33,6 +33,7 @@ import FPContentSection from '../components/FPContentSection.astro'
 import ContactSection from '../components/ContactSection.astro'
 import ContactCard from '../components/ContactCard.astro'
 import Footer from '../components/Footer.astro'
+import SectionFade from '../components/SectionFade.astro'
 
 const isDev = import.meta.env.DEV
 const imgSrcAbstractPortrait = isDev ? abstractImgPortLo : abstractImgPortHi
@@ -47,27 +48,30 @@ const imgSrcMarble = isDev ? marbleImgLo : marbleImgHi
     id="hero"
     imgSrcPortrait={imgSrcAbstractPortrait}
     imgSrcLandscape={imgSrcAbstractLandscape}
+    bottomFadeColour="text-bg-1"
   >
     <HeroCard {...heroText} />
   </HeroSection>
 
   <FPContentSection
     id="about-me"
-    background="bg-[var(--color-text-bg-1)]"
+    background="bg-text-bg-1"
+    bottomFade="2"
     {...aboutText}
   />
 
-  <FPContentSection
-    id="therapy"
-    background="bg-[var(--color-text-bg-2)]"
-    {...therapyText}
-  />
+  <!-- fade -->
+  <!-- <div
+    class="relative z-10 -mt-10 h-10 w-full bg-gradient-to-b from-transparent to-text-bg-2"
+  >
+  </div> -->
+  <SectionFade fadeTo="text-bg-2" />
 
-  <FPContentSection
-    id="sessions"
-    background="bg-[var(--color-text-bg-1)]"
-    {...sessionsText}
-  />
+  <FPContentSection id="therapy" background="bg-text-bg-2" {...therapyText} />
+
+  <SectionFade fadeTo="text-bg-1" />
+
+  <FPContentSection id="sessions" background="bg-text-bg-1" {...sessionsText} />
 
   <ContactSection id="contact" imageSrc={imgSrcMarble}>
     <ContactCard {...contactText} />

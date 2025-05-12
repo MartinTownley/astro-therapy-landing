@@ -7,12 +7,13 @@ const {
   background = 'bg-black',
   imgSrcPortrait,
   imgSrcLandscape,
+  bottomFadeColour,
 } = Astro.props
 ---
 
 <main
   id={id}
-  class="min-h-[calc(100vh-60px)] py-10 flex items-center justify-center px-4 sm:px-6 bg-[var(--color-text-bg-1)]"
+  class="min-h-[calc(100vh-60px)] py-10 flex items-center justify-center px-4 sm:px-6 bg-text-bg-1"
 >
   <!-- Background Image -->
 
@@ -43,6 +44,12 @@ const {
   <!-- top fade -->
   <div
     class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/60 z-10 filter blur-lg"
+  >
+  </div>
+
+  <!-- bottom fade -->
+  <div
+    class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from transparent to-text-bg-1 z-10"
   >
   </div>
 

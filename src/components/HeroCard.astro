@@ -3,13 +3,13 @@ const { heading, subheading, button } = Astro.props
 ---
 
 <div
-  class="flex flex-col items-center bg-[var(--color-text-bg-2)] py-16 px-6 text-center max-w-full sm:max-w-md mx-auto text-[var(--color-hero-text)] space-y-8 border border-[var(--color-outline)]"
+  class="flex flex-col items-center bg-text-bg-2 py-16 px-6 text-center max-w-full sm:max-w-md mx-auto text-hero-text space-y-8 border border-outline-colour"
 >
-  <h1 class="text-3xl text-[var(--color-hero-text)] font-bold">{heading}</h1>
+  <h1 class="text-3xl text-hero-text font-bold">{heading}</h1>
   <p class="text-base">{subheading}</p>
   <a href="#contact">
     <button
-      class="px-4 py-2 bg-[var(--color-bg-1)] text-white font-medium rounded border-b-4 border-[var(--color-bg-1-dark)] hover:bg-[var(--color-bg-1-dark)] hover:border-[var(--color-bg-1-darker)] active:translate-y-[2px] active:border-b-[var(--color-bg-1)] transition duration-75"
+      class="px-4 py-2 bg-bg-1 text-white font-medium rounded border-b-4 border-bg-1-dark hover:bg-bg-1-dar hover:border-bg-1-darker active:translate-y-[2px] active:border-b-bg-1 transition duration-75"
     >
       {button}
     </button>
