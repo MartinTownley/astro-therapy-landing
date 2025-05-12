@@ -38,7 +38,6 @@ import SectionFade from '../components/SectionFade.astro'
 const isDev = import.meta.env.DEV
 const imgSrcAbstractPortrait = isDev ? abstractImgPortLo : abstractImgPortHi
 const imgSrcAbstractLandscape = isDev ? abstractImgLandLo : abstractImgLandHi
-
 const imgSrcMarble = isDev ? marbleImgLo : marbleImgHi
 ---
 
@@ -53,25 +52,26 @@ const imgSrcMarble = isDev ? marbleImgLo : marbleImgHi
     <HeroCard {...heroText} />
   </HeroSection>
 
-  <FPContentSection
-    id="about-me"
-    background="bg-text-bg-1"
-    bottomFade="2"
-    {...aboutText}
-  />
+  <div class="grid grid-cols-1">
+    <FPContentSection
+      id="about-me"
+      background="bg-text-bg-1"
+      bottomFade="2"
+      {...aboutText}
+    />
 
-  <!-- fade -->
-  <!-- <div
-    class="relative z-10 -mt-10 h-10 w-full bg-gradient-to-b from-transparent to-text-bg-2"
-  >
-  </div> -->
-  <SectionFade fadeTo="text-bg-2" />
+    <SectionFade fadeTo="text-bg-2" />
 
-  <FPContentSection id="therapy" background="bg-text-bg-2" {...therapyText} />
+    <FPContentSection id="therapy" background="bg-text-bg-2" {...therapyText} />
 
-  <SectionFade fadeTo="text-bg-1" />
+    <SectionFade fadeTo="text-bg-1" />
 
-  <FPContentSection id="sessions" background="bg-text-bg-1" {...sessionsText} />
+    <FPContentSection
+      id="sessions"
+      background="bg-text-bg-1"
+      {...sessionsText}
+    />
+  </div>
 
   <ContactSection id="contact" imageSrc={imgSrcMarble}>
     <ContactCard {...contactText} />
