@@ -14,6 +14,21 @@
   --color-bg-2: #f4a9b2;
   --color-text-bg-1: #f2e8d5;
   --color-text-bg-2: #fdf6f0;
+  --color-hunter-green: #3a573dff;
+  --color-cal-poly-green: #274d17ff;
+  --color-dark-purple: #2d172eff;
+  --color-thistle: #e2cdf3ff;
+  --color-eggplant: #5e4551ff;
+  --color-red-ncs: #b50735ff;
+  --color-olivine: #9fb38dff;
+  --color-palatinate: #4f1c4dff;
+  --color-xanthous: #f1b33fff;
+  --color-lapis-lazuli: #0b5ca0ff;
+  --color-magenta: #e63490ff;
+  --color-french-mauve: #dc84ceff;
+  --color-hunyadi-yellow: #f0b23fff;
+  --color-walnut-brown: #5e534cff;
+  --color-ash-gray: #c4cab9ff;
 }
 
 :root {
