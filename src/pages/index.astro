@@ -52,26 +52,19 @@ const imgSrcMarble = isDev ? marbleImgLo : marbleImgHi
     <HeroCard {...heroText} />
   </HeroSection>
 
-  <div class="grid grid-cols-1">
-    <FPContentSection
-      id="about-me"
-      background="bg-text-bg-1"
-      bottomFade="2"
-      {...aboutText}
-    />
+  <FPContentSection id="about-me" background="bg-text-bg-1" {...aboutText} />
 
-    <SectionFade fadeTo="text-bg-2" />
+  <SectionFade fadeTo="text-bg-2" />
 
-    <FPContentSection id="therapy" background="bg-text-bg-2" {...therapyText} />
+  <FPContentSection id="therapy" background="bg-text-bg-2" {...therapyText} />
 
-    <SectionFade fadeTo="text-bg-1" />
+  <SectionFade fadeTo="text-bg-1" />
 
-    <FPContentSection
-      id="sessions"
-      background="bg-text-bg-1"
-      {...sessionsText}
-    />
-  </div>
+  <FPContentSection id="sessions" background="bg-text-bg-1" {...sessionsText} />
+
+  <!-- <div class="absolute top-0 z-10 w-full h-32">
+    <div class="w-full h-full bg-gradient-to-t to-text-bg-1"></div>
+  </div> -->
 
   <ContactSection id="contact" imageSrc={imgSrcMarble}>
     <ContactCard {...contactText} />

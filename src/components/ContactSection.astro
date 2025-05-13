@@ -19,7 +19,14 @@ const { id, imageSrc, imageAlt = '' } = Astro.props
     />
   </div>
 
+  <!-- top fade -->
+  <div
+    class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-bg-1 via-transparent to-transparent filter blur-lg"
+  >
+  </div>
   <div class="absolute inset-0 z-0 bg-white/30"></div>
+
+  <!-- bottom fade -->
   <div
     class="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-white via-transparent to-transparent filter blur-lg"
   >

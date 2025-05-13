@@ -2,7 +2,9 @@
 const { fadeTo, height = '5rem' } = Astro.props
 ---
 
+<!-- sectionfade -->
 <div class="relative z-10 w-full -mt-10 h-10">
   <div class={`w-full h-full bg-gradient-to-b from-transparent to-${fadeTo}`}>
   </div>
+  <!-- <div class={`w-full h-full bg-gradient-to-b from-transparent to-white`}></div> -->
 </div>
