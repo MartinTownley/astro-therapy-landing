@@ -1,0 +1,31 @@
+---
+import Picture from 'astro/components/Picture.astro'
+
+const { background, textCol, heading, bgSrc } = Astro.props
+---
+
+<section
+  class={`relative min-h-screen md:min-h-0 snap-start flex flex-col justify-center ${background}`}
+>
+  <div class="absolute inset-0 z-0">
+    <Picture
+      src={bgSrc}
+      formats={['avif', 'webp']}
+      alt="A mosaic image."
+      loading="eager"
+      class="w-full h-full object-cover"
+    />
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/30"></div>
+  </div>
+  <!-- foreground header -->
+  <div
+    class={`relative z-10 px-2 py-2 max-w-prose mx-auto ${textCol} backdrop-brightness-50 rounded-md`}
+  >
+    <h1
+      class="text-3xl text-center pb-4 text-white font-semibold mb inline-block border-b-8 border-white"
+    >
+      {heading}
+    </h1>
+  </div>
+</section>

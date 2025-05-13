@@ -8,7 +8,7 @@ const { id, background, textCol, heading, paras } = Astro.props
   class={`relative min-h-screen md:min-h-0 snap-start flex flex-col justify-center ${background} `}
 >
   <div class={`px-6 py-12 max-w-prose mx-auto ${textCol}`}>
-    <h1 class="text-3xl text-center font-semibold mb-8">{heading}</h1>
+    <h1 class="lg:hidden text-3xl text-center font-semibold mb-8">{heading}</h1>
     <div class="space-y-0">
       {
         paras.map((para: string) => (

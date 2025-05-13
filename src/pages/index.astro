@@ -21,11 +21,14 @@ import abstractImgLandHi from '../assets/abstract-img-landscape.png'
 import abstractImgLandLo from '../assets/abstract-img-landscape-lo.png'
 import chairPlantsImg from '../assets/chair-plants-img.png'
 import couchImg from '../assets/couch-img.png'
-import flowersImg from '../assets/flowers-img.png'
+import flowersImgHi from '../assets/flowers-img-hi.png'
+import flowersImgLo from '../assets/flowers-img-lo.png'
 import marbleImgHi from '../assets/marble-img-hi.png'
 import marbleImgLo from '../assets/marble-img-lo.png'
-import mosaicImg from '../assets/mosaic-img.png'
-import treesImg from '../assets/trees-img.png'
+import mosaicImgHi from '../assets/mosaic-img-hi.png'
+import mosaicImgLo from '../assets/mosaic-img-lo.png'
+import treesImgHi from '../assets/trees-img-hi.png'
+import treesImgLo from '../assets/trees-img-lo.png'
 import woodpathImg from '../assets/woodpath-img.png'
 // import ukcpLogoWhiteBG from '../assets/ukcp_master_logo.png';
 // import ukcpLogoTransBG from '../assets/ukcp-black-trans.png'
@@ -34,11 +37,15 @@ import ContactSection from '../components/ContactSection.astro'
 import ContactCard from '../components/ContactCard.astro'
 import Footer from '../components/Footer.astro'
 import SectionFade from '../components/SectionFade.astro'
-
+import HeadingWImage from '../components/HeadingWImage.astro'
+//-------
 const isDev = import.meta.env.DEV
 const imgSrcAbstractPortrait = isDev ? abstractImgPortLo : abstractImgPortHi
 const imgSrcAbstractLandscape = isDev ? abstractImgLandLo : abstractImgLandHi
 const imgSrcMarble = isDev ? marbleImgLo : marbleImgHi
+const mosaicImg = isDev ? mosaicImgLo : mosaicImgHi
+const flowersImg = isDev ? flowersImgLo : flowersImgHi
+const treesImg = isDev ? treesImgLo : treesImgHi
 ---
 
 <!-- index.astro -->
@@ -53,20 +60,27 @@ const imgSrcMarble = isDev ? marbleImgLo : marbleImgHi
   </HeroSection>
 
   <div class="grid grid-cols-1 lg:grid-cols-2">
-    <FPContentSection id="about-me" background="bg-bg-2/70" {...aboutText} />
+    <!-- <FPContentSection id="about-me" background="bg-bg-2/70" {...aboutText} /> -->
+
+    <HeadingWImage bgSrc={mosaicImg} heading={aboutText.heading} />
 
     <div class="lg:hidden">
       <SectionFade fadeTo="text-bg-2" />
     </div>
 
-    <div class="hidden lg:block bg-bg-1/70"></div>
-    <div class="hidden lg:block bg-header/70"></div>
+    <FPContentSection
+      {...aboutText}
+      class="hidden lg:block"
+      background="bg-text-bg-2 lg:bg-text-bg-2"
+    />
 
     <FPContentSection
       id="therapy"
-      background="bg-text-bg-2 lg:bg-text-bg-1"
+      background="bg-text-bg-2 "
       {...therapyText}
     />
+    <HeadingWImage bgSrc={flowersImg} heading={therapyText.heading} />
+    <HeadingWImage bgSrc={treesImg} heading={sessionsText.heading} />
 
     <div class="lg:hidden">
       <SectionFade fadeTo="text-bg-1" />
@@ -74,16 +88,11 @@ const imgSrcMarble = isDev ? marbleImgLo : marbleImgHi
 
     <FPContentSection
       id="sessions"
-      background="bg-bg-1/70"
-      textCol="text-white"
+      background="bg-text-bg-2"
       {...sessionsText}
     />
     <div class="hidden lg:block bg-text-bg-2"></div>
   </div>
-
-  <!-- <div class="absolute top-0 z-10 w-full h-32">
-    <div class="w-full h-full bg-gradient-to-t to-text-bg-1"></div>
-  </div> -->
 
   <ContactSection id="contact" imageSrc={imgSrcMarble}>
     <ContactCard {...contactText} />
