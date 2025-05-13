@@ -5,13 +5,15 @@ const { heading, email, phone } = Astro.props
 <section
   class="flex flex-col items-center bg-text-bg-2 py-10 px-6 text-center max-w-full sm:max-w-md mx-auto text-hero-text space-y-4 border border-outline-colour"
 >
-  <h1 class="text-3xl font-bold">{heading}</h1>
-  <p>
-    <span class="font-semibold">{email.label}</span>
-    {email.value}
-  </p>
-  <p>
-    <span class="font-semibold">{phone.label}</span>
-    {phone.value}
-  </p>
+  <h1 class="text-3xl lg:text-4xl font-bold">{heading}</h1>
+  <div class="lg:text-2xl lg:space-y-4">
+    <p>
+      <span class="font-semibold">{email.label}</span>
+      {email.value}
+    </p>
+    <p>
+      <span class="font-semibold">{phone.label}</span>
+      {phone.value}
+    </p>
+  </div>
 </section>

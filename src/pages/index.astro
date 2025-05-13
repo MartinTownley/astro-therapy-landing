@@ -53,14 +53,14 @@ const imgSrcMarble = isDev ? marbleImgLo : marbleImgHi
   </HeroSection>
 
   <div class="grid grid-cols-1 lg:grid-cols-2">
-    <FPContentSection id="about-me" background="bg-text-bg-1" {...aboutText} />
+    <FPContentSection id="about-me" background="bg-bg-2/70" {...aboutText} />
 
     <div class="lg:hidden">
       <SectionFade fadeTo="text-bg-2" />
     </div>
 
     <div class="hidden lg:block bg-bg-1/70"></div>
-    <div class="hidden lg:block bg-bg-2/70"></div>
+    <div class="hidden lg:block bg-header/70"></div>
 
     <FPContentSection
       id="therapy"
@@ -74,10 +74,11 @@ const imgSrcMarble = isDev ? marbleImgLo : marbleImgHi
 
     <FPContentSection
       id="sessions"
-      background="bg-text-bg-1"
+      background="bg-bg-1/70"
+      textCol="text-white"
       {...sessionsText}
     />
-    <div class="hidden lg:block bg-bg-1/70"></div>
+    <div class="hidden lg:block bg-text-bg-2"></div>
   </div>
 
   <!-- <div class="absolute top-0 z-10 w-full h-32">

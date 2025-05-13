@@ -1,5 +1,5 @@
 ---
-const { id, background, heading, paras } = Astro.props
+const { id, background, textCol, heading, paras } = Astro.props
 ---
 
 <!-- FPContentSection.astro -->
@@ -7,12 +7,14 @@ const { id, background, heading, paras } = Astro.props
   id={id}
   class={`relative min-h-screen md:min-h-0 snap-start flex flex-col justify-center ${background} `}
 >
-  <div class="px-6 py-12 max-w-prose mx-auto">
+  <div class={`px-6 py-12 max-w-prose mx-auto ${textCol}`}>
     <h1 class="text-3xl text-center font-semibold mb-8">{heading}</h1>
     <div class="space-y-0">
       {
         paras.map((para: string) => (
-          <p class="text-lg mt-0 py-3 leading-relaxed text-left">{para}</p>
+          <p class="text-lg lg:text-xl mt-0 py-3 leading-relaxed text-left">
+            {para}
+          </p>
         ))
       }
     </div>
