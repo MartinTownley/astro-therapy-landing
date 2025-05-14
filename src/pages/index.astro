@@ -60,27 +60,45 @@ const treesImg = isDev ? treesImgLo : treesImgHi
   </HeroSection>
 
   <div class="grid grid-cols-1 lg:grid-cols-2">
-    <!-- <FPContentSection id="about-me" background="bg-bg-2/70" {...aboutText} /> -->
+    <div class="hidden lg:block">
+      <HeadingWImage id="about" bgSrc={mosaicImg} heading={aboutText.heading} />
+    </div>
 
-    <HeadingWImage bgSrc={mosaicImg} heading={aboutText.heading} />
+    <div class="lg:hidden">
+      <SectionFade fadeTo="text-bg-1" />
+    </div>
+
+    <FPContentSection
+      {...aboutText}
+      id="about"
+      class="hidden lg:block"
+      background="bg-text-bg-1"
+    />
 
     <div class="lg:hidden">
       <SectionFade fadeTo="text-bg-2" />
     </div>
 
     <FPContentSection
-      {...aboutText}
-      class="hidden lg:block"
-      background="bg-text-bg-2 lg:bg-text-bg-2"
-    />
-
-    <FPContentSection
       id="therapy"
-      background="bg-text-bg-2 "
+      background="bg-text-bg-2 lg:bg-text-bg-1"
       {...therapyText}
     />
-    <HeadingWImage bgSrc={flowersImg} heading={therapyText.heading} />
-    <HeadingWImage bgSrc={treesImg} heading={sessionsText.heading} />
+    <div class="hidden lg:block">
+      <HeadingWImage
+        id="therapy"
+        bgSrc={flowersImg}
+        heading={therapyText.heading}
+      />
+    </div>
+
+    <div class="hidden lg:block">
+      <HeadingWImage
+        id="sessions"
+        bgSrc={treesImg}
+        heading={sessionsText.heading}
+      />
+    </div>
 
     <div class="lg:hidden">
       <SectionFade fadeTo="text-bg-1" />
@@ -88,7 +106,7 @@ const treesImg = isDev ? treesImgLo : treesImgHi
 
     <FPContentSection
       id="sessions"
-      background="bg-text-bg-2"
+      background="bg-text-bg-1"
       {...sessionsText}
     />
     <div class="hidden lg:block bg-text-bg-2"></div>
@@ -97,20 +115,4 @@ const treesImg = isDev ? treesImgLo : treesImgHi
   <ContactSection id="contact" imageSrc={imgSrcMarble}>
     <ContactCard {...contactText} />
   </ContactSection>
-
-  <!-- <Footer logoSrc={ukcpLogoWhiteBG} logoAlt="UKCP Logo" /> -->
-
-  <!-- <IntroSection /> -->
-
-  <!-- <ContentSection id="About Me" background="bg-[var(--color-bg-1)]" imageSrc={mosaicImg} imageAlt="hi">
-		<ContentCard {...aboutText} />
-	 </ContentSection>
-
-	 <ContentSection id="Therapy" background="bg-[var(--color-bg-2)]" imageSrc={abstractImg} imageAlt="">
-		<ContentCard {...therapyText} />
-	 </ContentSection>
-
-	 <ContentSection id="Sessions" background="bg-[var(--color-bg-1)]" imageSrc={marbleImg} imageAlt="">
-		<ContentCard {...sessionsText} />
-	 </ContentSection> -->
 </Layout>
