@@ -4,13 +4,13 @@
   --font-sans: 'Poppins', 'sans-serif';
   --color-my-red: #b40735;
   --color-header: #d47f7f;
-  --color-header: #d47f7f;
   --color-outline-colour: #d47f7f;
-  --color-hero-text: #601818;
+  --color-hero-text-red: #601818;
   --color-intro-bg: #dfd5cb;
-  --color-bg-1: #707a57;
-  --color-bg-1-dark: #5c6445;
-  --color-bg-1-darker: #474d36;
+  --color-theme-green: #707a57;
+  --color-theme-green-dark: #5c6445;
+  --color-theme-green-darker: #474d36;
+  --color-theme-green-light: #86936d;
   --color-bg-2: #f4a9b2;
   --color-text-bg-1: #fdf6f0;
   --color-text-bg-2: #f2e8d5;
