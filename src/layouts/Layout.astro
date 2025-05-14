@@ -32,12 +32,10 @@ const { title, description = 'Psychotherapy website' } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="">
-    <div class="px-0 py-0">
-      <Header bgColour="bg-theme-green" />
-    </div>
-    <!-- <div class="max-w-screen-xl mx-auto"> -->
-    <main class="flex flex-col">
+  <body class="h-screen flex flex-col">
+    <Header bgColour="bg-theme-green" />
+
+    <main class="flex-grow flex flex-col">
       <slot />
     </main>
 

@@ -6,15 +6,17 @@ const {
   paras,
   bgSrc,
   background = '',
-  imageLeft = false,
+  imageLeft = true,
 } = Astro.props
 ---
 
 <section
   id={id}
-  class={`relative min-h-screen lg:min-h-0  md:min-h-0 flex flex-col justify-center w-full ${background} py-0`}
+  class={`relative min-h-screen lg:min-h-0  md:min-h-0 flex flex-col justify-center w-full ${background} py-0 `}
 >
-  <div class={`flex flex-col lg:flex-row  items-stretch gap-8 px-0`}>
+  <div
+    class={`flex flex-col lg:flex-row  items-stretch gap-8 px-0 ${imageLeft ? '' : 'lg:flex-row-reverse'}`}
+  >
     <div class="w-full lg:w-1/2 hidden lg:block relative">
       <Picture
         src={bgSrc}

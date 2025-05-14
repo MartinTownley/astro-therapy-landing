@@ -64,18 +64,21 @@ const treesImg = isDev ? treesImgLo : treesImgHi
     id="about"
     bgSrc={mosaicImg}
     background="bg-text-bg-1"
+    imageLeft={true}
     {...aboutText}
   />
   <TextAndImage
     id="therapy"
     bgSrc={flowersImg}
-    background="bg-text-bg-2"
+    background="bg-text-bg-1"
+    imageLeft={false}
     {...therapyText}
   />
   <TextAndImage
     id="sessions"
     bgSrc={treesImg}
     background="bg-text-bg-1"
+    imageLeft={true}
     {...sessionsText}
   />
 
