@@ -13,6 +13,7 @@ import {
   contactText,
 } from '../content/textContent'
 import IntroSection from '../components/IntroSection.astro'
+import TextAndImage from '../components/TextAndImage.astro'
 import Welcome from '../components/Welcome.astro'
 import Layout from '../layouts/Layout.astro'
 import abstractImgPortHi from '../assets/abstract-img-portrait.png'
@@ -59,52 +60,24 @@ const treesImg = isDev ? treesImgLo : treesImgHi
     <HeroCard {...heroText} />
   </HeroSection>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2">
-    <div class="hidden lg:block">
-      <HeadingWImage id="about" bgSrc={mosaicImg} heading={aboutText.heading} />
-    </div>
-
-    <SectionFade fadeTo="text-bg-1" />
-
-    <FPContentSection
-      {...aboutText}
-      id="about"
-      class="hidden lg:block"
-      background="bg-text-bg-1"
-    />
-
-    <SectionFade fadeTo="text-bg-2" />
-
-    <FPContentSection
-      id="therapy"
-      background="bg-text-bg-2 lg:bg-text-bg-1"
-      {...therapyText}
-    />
-    <div class="hidden lg:block">
-      <HeadingWImage
-        id="therapy"
-        bgSrc={flowersImg}
-        heading={therapyText.heading}
-      />
-    </div>
-
-    <div class="hidden lg:block">
-      <HeadingWImage
-        id="sessions"
-        bgSrc={treesImg}
-        heading={sessionsText.heading}
-      />
-    </div>
-
-    <SectionFade fadeTo="text-bg-1" />
-
-    <FPContentSection
-      id="sessions"
-      background="bg-text-bg-1"
-      {...sessionsText}
-    />
-    <div class="hidden lg:block bg-text-bg-2"></div>
-  </div>
+  <TextAndImage
+    id="about"
+    bgSrc={mosaicImg}
+    background="bg-text-bg-1"
+    {...aboutText}
+  />
+  <TextAndImage
+    id="therapy"
+    bgSrc={flowersImg}
+    background="bg-text-bg-2"
+    {...therapyText}
+  />
+  <TextAndImage
+    id="sessions"
+    bgSrc={treesImg}
+    background="bg-text-bg-1"
+    {...sessionsText}
+  />
 
   <ContactSection id="contact" imageSrc={imgSrcMarble}>
     <ContactCard {...contactText} />
