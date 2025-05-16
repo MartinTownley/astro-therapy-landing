@@ -44,7 +44,10 @@ const { id, imageSrcPortrait, imageSrcLandscape, imageAlt = '' } = Astro.props
   >
   </div>
 
-  <div class="relative z-10 w-full max-w-md sm:max-w-2xl mx-auto px-4 sm:px-6">
+  <!-- Foreground content -->
+  <div
+    class="relative z-10 w-full max-w-md sm:max-w-2xl mx-auto drop-shadow-xl/50 px-4 sm:px-6"
+  >
     <slot />
   </div>
 </section>
