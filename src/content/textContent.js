@@ -23,11 +23,11 @@ export const introText = {
 export const aboutText = {
   heading: 'About Me',
   paras: [
-    'I am in my final year of advanced clinical training in counselling and psychotherapy, living and working in North East London. I have worked with clients both online and in person, developing my skills and practice working with a diverse range of clients, including those dealing with grief, anxiety, stress, trauma, parenthood and more.',
+    'I’m in the final year of advanced clinical training in counselling and psychotherapy, living and working in North East London. I’ve worked with clients both online and in person, developing my practice with a diverse range of people navigating experiences such as grief, anxiety, stress, trauma, parenthood, and more.',
 
-    'For over ten years, I have also worked in the charity sector and have broad experience in the mental health and international development sectors.',
+    'Alongside my clinical work, I have over ten years’ experience in the charity sector, with a broad background in mental health and international development.',
 
-    'I am a registered member of both the United Kingdom Council for Psychotherapy and the UK Association for Transactional Analysis, and follow their code of ethics. I attend regular supervision and engage in continual professional development.',
+    'I am a registered member of both the United Kingdom Council for Psychotherapy and the United Kingdom Association for Transactional Analysis, and follow their code of ethics. I attend regular supervision and engage in continual professional development.',
   ],
 }
 
@@ -38,20 +38,20 @@ export const therapyText = {
 
     'I provide a confidential, inclusive, and non-judgmental space where you can feel heard, understood, and empowered.',
 
-    'My approach to therapy is rooted in Relational Transactional Analysis, which emphasises the importance of the client-therapist relationship as central to effective work. I also remain flexible and responsive to each client’s unique needs.',
+    'My approach is grounded in Relational Transactional Analysis, which places the client-therapist relationship at the heart of the therapeutic process. At the same time, I remain flexible and responsive to each person’s unique needs and experiences.',
   ],
 }
 
 export const sessionsText = {
   heading: 'Sessions',
   paras: [
-    `I offer weekly 50-minute sessions, held at the same time and day each week. We can work together short or long term — it's something we can decide together based on your needs.`,
+    `I offer weekly 50-minute sessions, held at the same time and day each week. We can work together short or long term, depending on what feels right — this is something we can explore together.`,
 
-    'Current fees are £50 per session. ',
+    'Sessions are £50 each.',
 
-    'My practice is about a 10-minute walk from Walthamstow Central Station. If it is not possible to attend in person, we can arrange to meet online.',
+    'My practice is located about a 10-minute walk from Walthamstow Central Station. If attending in person isn’t possible, we can arrange to meet online.',
 
-    `In our first session, you'll have space to talk about what’s bringing you to therapy, ask any questions you might have, and see how it feels for us to work together.`,
+    `Our first session is a chance for you to share what’s bringing you to therapy, ask any questions you may have, and get a feel for how it might be for us to work together.`,
   ],
 }
 
