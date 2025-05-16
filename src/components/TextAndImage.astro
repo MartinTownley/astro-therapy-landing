@@ -1,5 +1,6 @@
 ---
 import Picture from 'astro/components/Picture.astro'
+import { Image } from 'astro:assets'
 const {
   id,
   heading,
@@ -18,13 +19,20 @@ const {
     class={`flex flex-col lg:flex-row  items-stretch gap-8 px-0 ${imageLeft ? '' : 'lg:flex-row-reverse'}`}
   >
     <div class="w-full lg:w-1/2 hidden lg:block relative">
-      <Picture
+      <!-- <Picture
         src={bgSrc}
         formats={['avif', 'webp']}
         alt=""
         loading="eager"
         class="absolute w-full h-full object-cover object-center"
+      /> -->
+      <Image
+        src={bgSrc}
+        alt="An abstract image."
+        loading="lazy"
+        class="absolute w-full h-full object-cover"
       />
+
       <!-- Dark Overlay -->
       <div class="absolute inset-0 bg-black/30"></div>
 

@@ -2,21 +2,18 @@
 import Image from 'astro/components/Image.astro'
 
 const { logoSrc, logoAlt = 'UKCP Registered' } = Astro.props
+const logoHeight = 24
 ---
 
-<footer class="-mt-28 w-full z-10 py-0 px-4 sm:px-8">
-  <div class="max-w-screen-xl mx-auto flex gap-4 justify-end">
+<!-- Footer component -->
+<footer class=`-mt-${logoHeight} w-full z-10 py-0 px-4 sm:px-8`>
+  <div class="max-w-screen-xl mx-auto flex gap-4 justify-center">
     <Image
       src={logoSrc}
       alt={logoAlt}
       loading="lazy"
-      quality="max"
-      width={200}
-      class="w-auto drop-shadow-xl"
+      quality=""
+      class=`h-${logoHeight} w-auto drop-shadow-xl`
     />
-
-    <!-- <div class="text-sm text-gray-500 text-center sm:text-right">
-      <slot />
-    </div> -->
   </div>
 </footer>

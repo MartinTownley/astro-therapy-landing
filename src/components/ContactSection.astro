@@ -2,7 +2,7 @@
 import Picture from 'astro/components/Picture.astro'
 import { Image } from 'astro:assets'
 
-const { id, imageSrc, imageAlt = '' } = Astro.props
+const { id, imageSrcPortrait, imageSrcLandscape, imageAlt = '' } = Astro.props
 ---
 
 <section
@@ -11,12 +11,24 @@ const { id, imageSrc, imageAlt = '' } = Astro.props
 >
   <div class="absolute inset-0 z-0">
     <Picture
-      src={imageSrc}
+      src={imageSrcPortrait}
       formats={['avif', 'webp']}
       alt="A marbled image."
       loading="lazy"
       class="w-full h-full object-cover"
     />
+    <!-- <Image
+      src={imageSrcPortrait}
+      alt="A marbled image."
+      loading="lazy"
+      class="w-full h-full object-cover block lg:hidden"
+    />
+    <Image
+      src={imageSrcLandscape}
+      alt="A marbled image."
+      loading="lazy"
+      class="w-full h-full object-cover hidden lg:block"
+    /> -->
   </div>
 
   <!-- top fade -->

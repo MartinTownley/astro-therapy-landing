@@ -24,8 +24,10 @@ import chairPlantsImg from '../assets/chair-plants-img.png'
 import couchImg from '../assets/couch-img.png'
 import flowersImgHi from '../assets/flowers-img-hi.png'
 import flowersImgLo from '../assets/flowers-img-lo.png'
-import marbleImgHi from '../assets/marble-img-hi.png'
-import marbleImgLo from '../assets/marble-img-lo.png'
+import marbleImgPortHi from '../assets/marble-img-portrait-hi.png'
+import marbleImgPortLo from '../assets/marble-img-portrait-lo.png'
+import marbleImgLandHi from '../assets/marble-img-landscape-hi.png'
+import marbleImgLandLo from '../assets/marble-img-landscape-lo.png'
 import mosaicImgHi from '../assets/mosaic-img-hi.png'
 import mosaicImgLo from '../assets/mosaic-img-lo.png'
 import treesImgHi from '../assets/trees-img-hi.png'
@@ -43,7 +45,8 @@ import HeadingWImage from '../components/HeadingWImage.astro'
 const isDev = import.meta.env.DEV
 const imgSrcAbstractPortrait = isDev ? abstractImgPortLo : abstractImgPortHi
 const imgSrcAbstractLandscape = isDev ? abstractImgLandLo : abstractImgLandHi
-const imgSrcMarble = isDev ? marbleImgLo : marbleImgHi
+const imgSrcMarblePortrait = isDev ? marbleImgPortLo : marbleImgPortHi
+const imgSrcMarbleLandscape = isDev ? marbleImgLandLo : marbleImgLandHi
 const mosaicImg = isDev ? mosaicImgLo : mosaicImgHi
 const flowersImg = isDev ? flowersImgLo : flowersImgHi
 const treesImg = isDev ? treesImgLo : treesImgHi
@@ -82,7 +85,11 @@ const treesImg = isDev ? treesImgLo : treesImgHi
     {...sessionsText}
   />
 
-  <ContactSection id="contact" imageSrc={imgSrcMarble}>
+  <ContactSection
+    id="contact"
+    imageSrcPortrait={imgSrcMarblePortrait}
+    imageSrcLandscape={imgSrcMarbleLandscape}
+  >
     <ContactCard {...contactText} />
   </ContactSection>
 </Layout>

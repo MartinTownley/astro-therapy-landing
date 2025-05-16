@@ -18,24 +18,36 @@ const {
   <!-- Background Image -->
 
   <div class="absolute inset-0 z-0">
+    <!-- <Picture
+    src={imgSrcPortrait}
+    formats={['avif', 'webp']}
+    alt="An abstract image."
+    loading="eager"
+    class="w-full h-full object-cover block lg:hidden"
+    /> -->
     <!-- Mobile (portrait) -->
 
-    <Picture
+    <Image
       src={imgSrcPortrait}
-      formats={['avif', 'webp']}
       alt="An abstract image."
       loading="eager"
       class="w-full h-full object-cover block lg:hidden"
     />
 
     <!-- Desktop (landscape) -->
-    <Picture
+    <Image
+      src={imgSrcLandscape}
+      alt="An abstract image."
+      loading="eager"
+      class="w-full h-full object-cover hidden lg:block"
+    />
+    <!-- <Picture
       src={imgSrcLandscape}
       formats={['avif', 'webp']}
       alt="An abstract image."
       loading="eager"
       class="w-full h-full object-cover hidden lg:block"
-    />
+    /> -->
   </div>
 
   <!-- dark overlay -->

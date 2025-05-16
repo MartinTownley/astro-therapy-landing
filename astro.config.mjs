@@ -1,8 +1,7 @@
 // @ts-check
-import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
-
-import vercel from "@astrojs/vercel";
+import { defineConfig } from 'astro/config'
+import tailwindcss from '@tailwindcss/vite'
+import vercel from '@astrojs/vercel/static'
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,5 +9,8 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  adapter: vercel(),
-});
+  output: 'server',
+  adapter: vercel({
+    imageService: true,
+  }),
+})
