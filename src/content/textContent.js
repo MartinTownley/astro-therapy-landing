@@ -5,9 +5,8 @@ export const heroText0 = {
 }
 
 export const heroText = {
-  heading: 'Therapy in North East London',
-  subheading:
-    'Explore your thoughts and feelings in a warm and supportive space',
+  heading: 'Psychotherapy and counselling in Walthamstow',
+  subheading: 'Explore your thoughts and feelings in a warm, supportive space.',
   button: 'Get in touch',
 }
 
