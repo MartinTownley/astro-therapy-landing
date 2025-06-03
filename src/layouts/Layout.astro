@@ -13,6 +13,7 @@ import '@fontsource/poppins/500'
 import '@fontsource/poppins/600'
 import '@fontsource/poppins/700'
 import '@fontsource/poppins/800'
+import Navbar from '../components/Navbar.astro'
 
 interface Props {
   title: string
@@ -33,7 +34,8 @@ const { title, description = 'Psychotherapy website' } = Astro.props
     <title>{title}</title>
   </head>
   <body class="h-screen flex flex-col">
-    <Header bgColour="bg-theme-green" />
+    <!-- <Header bgColour="bg-theme-green" /> -->
+    <Navbar bgColour="bg-theme-green" />
 
     <main class="flex-grow flex flex-col">
       <slot />
