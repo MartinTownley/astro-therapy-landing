@@ -13,22 +13,17 @@ const {
 } = Astro.props
 ---
 
-<main
-  id={id}
-  class="min-h-screen flex items-center justify-center px-4 sm:px-6 bg-text-bg-1"
->
+<main id={id} class="relative min-h-screen">
   <!-- Background Image -->
 
   <div class="absolute inset-0 z-0">
     <!-- Mobile (portrait) -->
-
     <Image
       src={imgSrcPortrait}
       alt="An abstract image."
       loading="eager"
       class="w-full h-full object-cover block lg:hidden"
     />
-
     <!-- Desktop (landscape) -->
     <Image
       src={imgSrcLandscape}
@@ -41,23 +36,23 @@ const {
   <!-- Overlay -->
   <div class="absolute inset-0 bg-black/50"></div>
 
-  <!-- Content -->
-  <div class="flex flex-col relative z-10 text-white space-y-8 max-w-2xl">
-    <h1 class="text-4xl lg:text-6xl font-bold leading-tight">{heading}</h1>
-    <p class="text-lg lg:text-2xl font-medium leading-relaxed">{subheading}</p>
-    <a href="#contact">
-      <button
-        class="px-4 py-2 bg-theme-green text-white font-medium rounded border-b-4 border-theme-green-dark hover:bg-theme-green-light hover:border-theme-green active:translate-y-[2px] active:border-none transition duration-75 lg:text-2xl"
-      >
-        {button}
-      </button>
-    </a>
-  </div>
-
-  <!-- Foreground content -->
+  <!-- grid container for content -->
   <div
-    class="relative z-10 w-full max-w-md sm:max-w-2xl mx-auto drop-shadow-xl/50"
+    class="relative z-10 container mx-auto px-4 h-full grid grid-cols-12 items-center"
   >
-    <slot />
+    <!-- Content -->
+    <div class="col-span-12 md:col-span-8 lg:col-span-6 text-white space-y-8">
+      <h1 class="text-4xl lg:text-6xl font-bold leading-tight">{heading}</h1>
+      <p class="text-lg lg:text-2xl font-medium leading-relaxed">
+        {subheading}
+      </p>
+      <a href="#contact">
+        <button
+          class="px-4 py-2 bg-theme-green text-white font-medium rounded border-b-4 border-theme-green-dark hover:bg-theme-green-light hover:border-theme-green active:translate-y-[2px] active:border-none transition duration-75 lg:text-2xl"
+        >
+          {button}
+        </button>
+      </a>
+    </div>
   </div>
 </main>
