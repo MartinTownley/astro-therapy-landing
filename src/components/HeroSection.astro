@@ -1,5 +1,4 @@
 ---
-import Picture from 'astro/components/Picture.astro'
 import { Image } from 'astro:assets'
 
 const {
@@ -8,6 +7,9 @@ const {
   imgSrcPortrait,
   imgSrcLandscape,
   bottomFadeColour,
+  heading,
+  subheading,
+  button,
 } = Astro.props
 ---
 
@@ -18,13 +20,6 @@ const {
   <!-- Background Image -->
 
   <div class="absolute inset-0 z-0">
-    <!-- <Picture
-    src={imgSrcPortrait}
-    formats={['avif', 'webp']}
-    alt="An abstract image."
-    loading="eager"
-    class="w-full h-full object-cover block lg:hidden"
-    /> -->
     <!-- Mobile (portrait) -->
 
     <Image
@@ -41,25 +36,23 @@ const {
       loading="eager"
       class="w-full h-full object-cover hidden lg:block"
     />
-    <!-- <Picture
-      src={imgSrcLandscape}
-      formats={['avif', 'webp']}
-      alt="An abstract image."
-      loading="eager"
-      class="w-full h-full object-cover hidden lg:block"
-    /> -->
   </div>
 
-  <!-- dark overlay -->
-  <!-- <div class="absolute inset-0 z-0 bg-black/30"></div> -->
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
 
-  <!-- bottom fade -->
-  <!-- <div class="lg:hidden">
-    <div
-      class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from transparent to-text-bg-1 z-10"
-    >
-    </div>
-  </div> -->
+  <!-- Content -->
+  <div class="flex flex-col relative z-10 text-white space-y-8 max-w-2xl">
+    <h1 class="text-4xl lg:text-6xl font-bold leading-tight">{heading}</h1>
+    <p class="text-lg lg:text-2xl font-medium leading-relaxed">{subheading}</p>
+    <a href="#contact">
+      <button
+        class="px-4 py-2 bg-theme-green text-white font-medium rounded border-b-4 border-theme-green-dark hover:bg-theme-green-light hover:border-theme-green active:translate-y-[2px] active:border-none transition duration-75 lg:text-2xl"
+      >
+        {button}
+      </button>
+    </a>
+  </div>
 
   <!-- Foreground content -->
   <div

@@ -4,6 +4,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import ukcpLogoWhiteBG from '../assets/ukcp_master_logo.png'
 import ukcpLogoTransBG from '../assets/UKCP-black-trans.png'
+import DebugGrid from '../components/DebugGrid.astro'
 import '@fontsource/poppins'
 import '@fontsource/poppins/100'
 import '@fontsource/poppins/200'
@@ -20,6 +21,7 @@ interface Props {
   image?: string
 }
 const { title, description = 'Psychotherapy website' } = Astro.props
+const dev = import.meta.env.DEV
 ---
 
 <!-- Layout.astro --><!doctype html>
@@ -43,5 +45,7 @@ const { title, description = 'Psychotherapy website' } = Astro.props
       <p class="text-white text-center py-4">Hello</p>
     </div> -->
     <Footer logoSrc={ukcpLogoTransBG} logoAlt="UKCP Logo" />
+
+    {dev && <DebugGrid cols={12} gap={6} />}
   </body>
 </html>
