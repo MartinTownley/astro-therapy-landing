@@ -14,6 +14,7 @@ import '@fontsource/poppins/500'
 import '@fontsource/poppins/600'
 import '@fontsource/poppins/700'
 import '@fontsource/poppins/800'
+import SideNav from '../components/SideNav.tsx'
 
 interface Props {
   title: string
@@ -35,7 +36,8 @@ const dev = import.meta.env.DEV
     <title>{title}</title>
   </head>
   <body class="h-screen flex flex-col">
-    <Header bgColour="bg-theme-green" />
+    <!-- <Header bgColour="bg-theme-green" /> -->
+    <SideNav />
 
     <main class="flex-grow flex flex-col">
       <slot />
