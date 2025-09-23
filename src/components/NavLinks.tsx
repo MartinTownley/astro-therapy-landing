@@ -10,7 +10,7 @@ export default function NavLinks({
   const baseClasses = 'text-gray-800 hover:text-gray-900 font-medium'
 
   const links = [
-    { href: '#home', label: 'Home' },
+    { href: '#home', label: 'Homes' },
     { href: '#about', label: 'About Me' },
     { href: '#therapy', label: 'Therapy' },
     { href: '#sessions', label: 'Sessions' },
