@@ -44,6 +44,13 @@ export default function SideNav() {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  // === Handle dropdown link click (for closing menu) ===
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false)
+    console.log('clicked')
+  }
+
   return (
     <aside className="bg-text-bg-2 sticky top-0 z-20 mx-auto flex w-full  items-center justify-end border-b border-gray-500 p-8">
       {/*Desktop Layout */}
@@ -61,7 +68,7 @@ export default function SideNav() {
       {/* Dropdown (conditionally render if menu open) */}
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-md overflow-hidden transition-all duration-300 ease-in-out md:hidden">
-          <NavLinks layout="vertical" />
+          <NavLinks layout="vertical" handleLinkClick={handleLinkClick} />
         </div>
       )}
 
