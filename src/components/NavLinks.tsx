@@ -1,24 +1,26 @@
-export default function NavLinks({ isMobile = false }) {
+export default function NavLinks({ layout = 'horizontal' }) {
+  const baseClasses = 'hover:text-gray-500'
+
   return (
     // Hidden on small screens, visible from md & up
     <div
       className={
-        isMobile ? 'flex flex-col space-y-4' : 'hidden md:flex space-x-6'
+        layout === 'horizontal' ? 'flex space-x-6' : 'flex flex-col space-y-4'
       }
     >
-      <a href="#" className="hover:text-gray-300">
+      <a href="#" className={baseClasses}>
         Home
       </a>
-      <a href="#about" className="hover:text-gray-300">
+      <a href="#about" className={baseClasses}>
         About
       </a>
-      <a href="#therapy" className="hover:text-gray-300">
+      <a href="#therapy" className={baseClasses}>
         Therapy
       </a>
-      <a href="#sessions" className="hover:text-gray-300">
+      <a href="#sessions" className={baseClasses}>
         Sessions
       </a>
-      <a href="#contact" className="hover:text-gray-300">
+      <a href="#contact" className={baseClasses}>
         Contact
       </a>
     </div>

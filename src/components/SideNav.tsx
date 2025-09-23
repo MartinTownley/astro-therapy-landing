@@ -13,29 +13,26 @@ export default function SideNav() {
   }
 
   return (
-    <aside className="bg-white sticky top-0 z-20 mx-auto flex w-full  items-center justify-end border-b border-gray-500 p-8">
-      {/*Desktop Links */}
-      <NavLinks />
-
-      {/*Hamburger (Mobile Only) */}
-      <button
-        className="md:hidden"
-        onClick={toggleMenu}
-        aria-label="Toggle Menu"
-      >
-        {/* later add hamburger icon here */}☰
-      </button>
-
-      {/* Mobile (conditionally render) */}
-      <div
-        className={`absolute top-full left-0 w-full bg-white shadow-md overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="p-4">
-          <NavLinks isMobile />
-        </div>
+    <aside className="bg-text-bg-2 sticky top-0 z-20 mx-auto flex w-full  items-center justify-end border-b border-gray-500 p-8">
+      {/*Desktop Layout */}
+      <div className="hidden md:flex">
+        <NavLinks layout="horizontal" />
       </div>
+
+      {/* Mobile Layout */}
+      <div className="flex md:hidden">
+        <button onClick={toggleMenu} aria-label="Toggle Menu">
+          ☰
+        </button>
+      </div>
+
+      {/* Dropdown (conditionally render if menu open) */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 w-full bg-white shadow-md overflow-hidden transition-all duration-300 ease-in-out md:hidden">
+          <NavLinks layout="vertical" />
+        </div>
+      )}
+
       {/* Debug state display */}
       {/* <span className="ml-4 text-sm text-gray-600">
         {isMenuOpen ? 'OPEN' : 'CLOSED'}
