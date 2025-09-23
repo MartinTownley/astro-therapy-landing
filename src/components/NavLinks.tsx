@@ -7,7 +7,7 @@ export default function NavLinks({
   layout = 'horizontal',
   handleLinkClick,
 }: NavLinksProps) {
-  const baseClasses = 'hover:text-gray-500'
+  const baseClasses = 'text-gray-800 hover:text-gray-900 font-medium'
 
   const links = [
     { href: '#home', label: 'Home' },
@@ -17,19 +17,22 @@ export default function NavLinks({
     { href: '#contact', label: 'Contact' },
   ]
 
+  const linkClasses =
+    layout === 'horizontal'
+      ? `px-4 py-2 ${baseClasses}`
+      : `px-4 py-6 border-b border-gray-200 ${baseClasses}`
+
   return (
     // Hidden on small screens, visible from md & up
     <div
-      className={
-        layout === 'horizontal' ? 'flex space-x-6' : 'flex flex-col space-y-4'
-      }
+      className={layout === 'horizontal' ? 'flex space-x-6' : 'flex flex-col'}
     >
       {links.map((link) => (
         <a
           key={link.href}
           href={link.href}
           onClick={handleLinkClick}
-          className={baseClasses}
+          className={linkClasses}
         >
           {link.label}
         </a>

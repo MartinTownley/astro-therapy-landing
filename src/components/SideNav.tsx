@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import NavLinks from './NavLinks'
+import { Bars3Icon, Bars4Icon, XMarkIcon } from '@heroicons/react/16/solid'
 
 export default function SideNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -52,7 +53,7 @@ export default function SideNav() {
   }
 
   return (
-    <aside className="bg-text-bg-2 sticky top-0 z-20 mx-auto flex w-full  items-center justify-end border-b border-gray-500 p-8">
+    <aside className="fixed top-0 z-20 w-full bg-text-bg-1 border-b border-gray-500 p-4 justify-end flex">
       {/*Desktop Layout */}
       <div className="hidden md:flex">
         <NavLinks layout="horizontal" />
@@ -61,16 +62,22 @@ export default function SideNav() {
       {/* Mobile Layout */}
       <div className="flex md:hidden">
         <button onClick={toggleMenu} aria-label="Toggle Menu">
-          ☰
+          {isMenuOpen ? (
+            <XMarkIcon className="h-6 w-6" />
+          ) : (
+            <Bars3Icon className="h-6 w-6" />
+          )}
         </button>
       </div>
 
       {/* Dropdown (conditionally render if menu open) */}
-      {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-md overflow-hidden transition-all duration-300 ease-in-out md:hidden">
-          <NavLinks layout="vertical" handleLinkClick={handleLinkClick} />
-        </div>
-      )}
+      <div
+        className={`absolute top-full right-0 w-full bg-text-bg-1 shadow-md overflow-hidden transition-all duration-300 ease-in-out md:hidden rounded-b-lg flex justify-center text-center ${
+          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <NavLinks layout="vertical" handleLinkClick={handleLinkClick} />
+      </div>
 
       {/* Debug state display */}
       {/* <span className="ml-4 text-sm text-gray-600">
