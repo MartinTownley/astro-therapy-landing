@@ -46,7 +46,7 @@ export const sessionsText = {
   paras: [
     `I offer weekly 50-minute sessions, held at the same time and day each week. We can work together short or long term, depending on what feels right – this is something we can explore together.`,
 
-    'Each session is £45. I also offer a small number of reduced-fee spaces if affordability is a concern.',
+    'Each session is £50. I also offer a small number of reduced-fee spaces if affordability is a concern.',
 
     'My practice is located at The Twelfth House, 1 Chingford Road, London E17 4PW. This is about a 10-minute walk from Walthamstow Central Station. If attending in person isn’t possible, we can arrange to meet online.',
 

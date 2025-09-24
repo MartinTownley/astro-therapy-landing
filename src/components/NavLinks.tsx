@@ -7,14 +7,14 @@ export default function NavLinks({
   layout = 'horizontal',
   handleLinkClick,
 }: NavLinksProps) {
-  const baseClasses = 'text-gray-800 hover:text-gray-900 font-medium'
+  const baseClasses = 'text-grey-800 hover:text-theme-green font-medium'
 
   const links = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About Me' },
-    { href: '#therapy', label: 'Therapy' },
-    { href: '#sessions', label: 'Sessions' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#home', label: 'home' },
+    { href: '#about', label: 'about' },
+    { href: '#therapy', label: 'therapy' },
+    { href: '#sessions', label: 'sessions' },
+    { href: '#contact', label: 'contact' },
   ]
 
   const linkClasses =

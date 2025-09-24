@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: 'Poppins', 'sans-serif';
+  --font-signature: 'Merriweather', 'serif';
   --color-my-red: #b40735;
   --color-header: #d47f7f;
   --color-outline-colour: #d47f7f;

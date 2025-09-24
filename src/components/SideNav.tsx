@@ -53,21 +53,34 @@ export default function SideNav() {
   }
 
   return (
-    <aside className="fixed top-0 z-20 w-full bg-text-bg-1 border-b border-gray-500 p-4 justify-end flex">
-      {/*Desktop Layout */}
-      <div className="hidden md:flex">
-        <NavLinks layout="horizontal" />
-      </div>
+    <aside className="fixed top-0 z-20 w-full bg-text-bg-1 border-b border-gray-500 py-4">
+      <div className="container mx-auto grid grid-cols-12 items-center px-4">
+        {/* Signature */}
+        <div className="col-span-6 md:col-span-6 lg:col-start-2 md:col-start-1">
+          <a href="#">
+            <span className="font-signature text-theme-green-dark text-2xl [font-variant:small-caps] font-bold">
+              jade zelkowicz
+            </span>
+          </a>
+        </div>
 
-      {/* Mobile Layout */}
-      <div className="flex md:hidden">
-        <button onClick={toggleMenu} aria-label="Toggle Menu">
-          {isMenuOpen ? (
-            <XMarkIcon className="h-6 w-6" />
-          ) : (
-            <Bars3Icon className="h-6 w-6" />
-          )}
-        </button>
+        <div className="col-span-6 md:col-span-6 lg:col-span-4 lg:col-start-9 flex justify-end items-center">
+          {/*Desktop Layout */}
+          <div className="hidden md:flex">
+            <NavLinks layout="horizontal" />
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="flex md:hidden">
+            <button onClick={toggleMenu} aria-label="Toggle Menu">
+              {isMenuOpen ? (
+                <XMarkIcon className="h-6 w-6" />
+              ) : (
+                <Bars3Icon className="h-6 w-6" />
+              )}
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Dropdown (conditionally render if menu open) */}
