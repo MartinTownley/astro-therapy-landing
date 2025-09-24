@@ -1,5 +1,5 @@
 ---
-const { heading, email, phone } = Astro.props
+const { heading, email, phone, location } = Astro.props
 ---
 
 <section
@@ -14,6 +14,10 @@ const { heading, email, phone } = Astro.props
     <p>
       <span class="font-semibold">{phone.label}</span>
       {phone.value}
+    </p>
+    <p>
+      <span class="font-semibold">{location.label}</span>
+      {location.value}
     </p>
   </div>
 </section>

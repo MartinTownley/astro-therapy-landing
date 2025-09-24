@@ -66,7 +66,7 @@ export const contactText = {
     value: '07352 459 080',
   },
   location: {
-    label: 'Located at:',
+    label: 'Location:',
     value: 'The Twelfth House, 1 Chingford Road, London E17 4PW',
   },
 }
