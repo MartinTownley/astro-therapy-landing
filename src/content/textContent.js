@@ -22,18 +22,18 @@ export const introText = {
 export const aboutText = {
   heading: 'About Me',
   paras: [
-    'I’m in the final year of advanced clinical training in counselling and psychotherapy, living and working in North East London. I’ve worked with clients both online and in person, developing my practice with a diverse range of people navigating experiences such as grief, anxiety, stress, trauma, parenthood, and more.',
+    'I have completed four years of advanced clinical training in counselling and psychotherapy, living and working in north east London. I’ve worked with clients both online and in person, developing my practice with a diverse range of people navigating experiences such as grief, anxiety, stress, trauma, parenthood, and more.',
 
     'Alongside my clinical work, I have over ten years’ experience in the charity sector, with a broad background in mental health and international development.',
 
-    'I am a registered member of both the United Kingdom Council for Psychotherapy and the United Kingdom Association for Transactional Analysis, and follow their code of ethics. I attend regular supervision and engage in continual professional development.',
+    'I am a registered member of both the United Kingdom Council for Psychotherapy (UKCP) and the United Kingdom Association for Transactional Analysis (UKATA), and follow their code of ethics. I attend regular supervision and engage in continual professional development.',
   ],
 }
 
 export const therapyText = {
   heading: 'Therapy',
   paras: [
-    'Starting therapy can feel overwhelming—but you don’t have to do it alone. Whether you’re facing a specific challenge or just feeling stuck, therapy offers a space to reflect, gain clarity, and move forward at your own pace.',
+    'Starting therapy can feel like a big step, but you don’t have to do it alone. Whether you’re facing a specific challenge or just feeling stuck, therapy offers a space to reflect, gain clarity, and move forward at your own pace.',
 
     'I provide a confidential, inclusive, and non-judgmental space where you can feel heard, understood, and empowered.',
 
@@ -44,13 +44,14 @@ export const therapyText = {
 export const sessionsText = {
   heading: 'Sessions',
   paras: [
-    `I offer weekly 50-minute sessions, held at the same time and day each week. We can work together short or long term, depending on what feels right — this is something we can explore together.`,
+    `I offer weekly 50-minute sessions, held at the same time and day each week. We can work together short or long term, depending on what feels right – this is something we can explore together.`,
 
-    'Sessions are £50 each.',
+    'Each session is £45. I also offer a small number of reduced-fee spaces if affordability is a concern.',
 
-    'My practice is located about a 10-minute walk from Walthamstow Central Station. If attending in person isn’t possible, we can arrange to meet online.',
+    'My practice is located at The Twelfth House, 1 Chingford Road, London E17 4PW. This is about a 10-minute walk from Walthamstow Central Station. If attending in person isn’t possible, we can arrange to meet online.',
 
-    `Our first session is a chance for you to share what’s bringing you to therapy, ask any questions you may have, and get a feel for how it might be for us to work together.`,
+    `Our first session is a chance for you to share what’s bringing you to therapy, ask any questions you may have, and get a feel for how it might be for us to work together.
+`,
   ],
 }
 
@@ -63,5 +64,9 @@ export const contactText = {
   phone: {
     label: 'Phone:',
     value: '07352 459 080',
+  },
+  location: {
+    label: 'Located at:',
+    value: 'The Twelfth House, 1 Chingford Road, London E17 4PW',
   },
 }
