@@ -1,5 +1,4 @@
 ---
-import Picture from 'astro/components/Picture.astro'
 import { Image } from 'astro:assets'
 const {
   id,
@@ -19,13 +18,6 @@ const {
     class={`flex flex-col lg:flex-row  items-stretch gap-8 px-0 ${imageLeft ? '' : 'lg:flex-row-reverse'}`}
   >
     <div class="w-full lg:w-1/2 hidden lg:block relative">
-      <!-- <Picture
-        src={bgSrc}
-        formats={['avif', 'webp']}
-        alt=""
-        loading="eager"
-        class="absolute w-full h-full object-cover object-center"
-      /> -->
       <Image
         src={bgSrc}
         alt="An abstract image."
@@ -36,7 +28,7 @@ const {
       <!-- Dark Overlay -->
       <div class="absolute inset-0 bg-black/30"></div>
 
-      <!-- Heading positioned in front of the image -->
+      <!-- Heading (desktop) positioned in front of the image -->
       <h2
         class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl font-semibold text-white text-center z-10 border-b-8 border-white pb-6 backdrop-blur-md px-2 py-2 rounded-md"
       >
@@ -44,14 +36,16 @@ const {
       </h2>
     </div>
 
+    {/* Small screen */}
     <div
       class="w-full lg:w-1/2 px-6 py-12 max-w-prose mx-auto flex flex-col items-start"
     >
       <h2
-        class="lg:hidden text-2xl text-left font-semibold mb-4 text-theme-green-dark"
+        class="lg:hidden text-2xl text-left font-signature font-semibold mb-4 text-theme-green-dark"
       >
         {heading}
       </h2>
+
       <div class="space-y-0">
         {
           paras.map((para: string) => (

@@ -71,7 +71,7 @@ export default function SideNav() {
           </div>
 
           {/* Mobile Layout */}
-          <div className="flex md:hidden">
+          <div className="flex md:hidden border border-black-500 rounded-sm">
             <button onClick={toggleMenu} aria-label="Toggle Menu">
               {isMenuOpen ? (
                 <XMarkIcon className="h-6 w-6" />

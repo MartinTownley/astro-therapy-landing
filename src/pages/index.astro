@@ -35,12 +35,15 @@ import treesImgLo from '../assets/trees-img-lo.png'
 import woodpathImg from '../assets/woodpath-img.png'
 // import ukcpLogoWhiteBG from '../assets/ukcp_master_logo.png';
 // import ukcpLogoTransBG from '../assets/ukcp-black-trans.png'
+import profileImg from '../assets/profile-img.jpg'
+import profileImgCrop from '../assets/profile-img-crop.jpg'
 import FPContentSection from '../components/FPContentSection.astro'
 import ContactSection from '../components/ContactSection.astro'
 import ContactCard from '../components/ContactCard.astro'
 import Footer from '../components/Footer.astro'
 import SectionFade from '../components/SectionFade.astro'
 import HeadingWImage from '../components/HeadingWImage.astro'
+import AboutSection from '../components/AboutSection.astro'
 //-------
 const isDev = import.meta.env.DEV
 const imgSrcAbstractPortrait = isDev ? abstractImgPortLo : abstractImgPortHi
@@ -55,22 +58,29 @@ const treesImg = isDev ? treesImgLo : treesImgHi
 <!-- index.astro -->
 <Layout title="">
   <HeroSection
-    id="hero"
+    id="home"
     imgSrcPortrait={imgSrcAbstractPortrait}
     imgSrcLandscape={imgSrcAbstractLandscape}
     bottomFadeColour="text-bg-1"
     {...heroText}
-  >
-    <!-- <HeroCard {...heroText} /> -->
-  </HeroSection>
-
-  <TextAndImage
-    id="about"
-    bgSrc={mosaicImg}
-    background="bg-text-bg-1"
-    imageLeft={true}
-    {...aboutText}
   />
+
+  <!-- About (small screen) -->
+  <div class="lg:hidden">
+    <AboutSection id="about-sm" imgSrc={profileImgCrop} {...aboutText} />
+  </div>
+
+  <!-- About (lg screen) -->
+  <div class="hidden lg:block">
+    <TextAndImage
+      id="about-lg"
+      bgSrc={mosaicImg}
+      background="bg-text-bg-1"
+      imageLeft={true}
+      {...aboutText}
+    />
+  </div>
+
   <TextAndImage
     id="therapy"
     bgSrc={flowersImg}
