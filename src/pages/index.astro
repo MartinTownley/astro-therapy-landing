@@ -20,8 +20,6 @@ import abstractImgPortHi from '../assets/abstract-img-portrait.png'
 import abstractImgPortLo from '../assets/abstract-img-portrait-lo.png'
 import abstractImgLandHi from '../assets/abstract-img-landscape.png'
 import abstractImgLandLo from '../assets/abstract-img-landscape-lo.png'
-import chairPlantsImg from '../assets/chair-plants-img.png'
-import couchImg from '../assets/couch-img.png'
 import flowersImgHi from '../assets/flowers-img-hi.png'
 import flowersImgLo from '../assets/flowers-img-lo.png'
 import marbleImgPortHi from '../assets/marble-img-portrait-hi.png'
@@ -37,11 +35,11 @@ import woodpathImg from '../assets/woodpath-img.png'
 // import ukcpLogoTransBG from '../assets/ukcp-black-trans.png'
 import profileImg from '../assets/profile-img.jpg'
 import profileImgCrop from '../assets/profile-img-crop.jpg'
-import FPContentSection from '../components/FPContentSection.astro'
+
 import ContactSection from '../components/ContactSection.astro'
 import ContactCard from '../components/ContactCard.astro'
 import Footer from '../components/Footer.astro'
-import SectionFade from '../components/SectionFade.astro'
+
 import HeadingWImage from '../components/HeadingWImage.astro'
 import AboutSection from '../components/AboutSection.astro'
 //-------
@@ -81,20 +79,50 @@ const treesImg = isDev ? treesImgLo : treesImgHi
     />
   </div>
 
-  <TextAndImage
+  <ContentSection
+    id="therapy"
+    heading={therapyText.heading}
+    paras={therapyText.paras}
+    bgColour="bg-text-bg-2"
+    triangleColour="bg-theme-green"
+    triangleLeft={false}
+    textColour="text-black"
+    imgSrc={flowersImg}
+    imgAlt="An image of dried flowers."
+    imageLeft={false}
+  />
+
+  <ContentSection
+    id="sessions"
+    heading={sessionsText.heading}
+    paras={sessionsText.paras}
+    imgSrc={treesImg}
+    imgAlt="An image of trees."
+    bgColour="bg-theme-pink"
+    triangleColour="bg-text-bg-3"
+    triangleLeft={true}
+    textColour="text-white"
+  />
+  <!-- <TextAndImage
     id="therapy"
     bgSrc={flowersImg}
     background="bg-text-bg-2 lg:bg-text-bg-1"
     imageLeft={false}
+    triangleDirection="right"
+    triangleColor="#707a57"
     {...therapyText}
   />
+
   <TextAndImage
     id="sessions"
     bgSrc={treesImg}
-    background="bg-text-bg-1"
+    background="bg-theme-pink"
     imageLeft={true}
+    headingAlign="right"
+    triangleColor="#e0d4b8"
+    textColour="text-white"
     {...sessionsText}
-  />
+  /> -->
 
   <ContactSection
     id="contact"
