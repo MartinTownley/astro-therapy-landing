@@ -53,3 +53,9 @@ const dev = import.meta.env.DEV
     <!-- {dev && <DebugGrid cols={12} gap={6} />} -->
   </body>
 </html>
+
+<script>
+  window.addEventListener('load', () => {
+    window.scrollTo(0, document.body.scrollHeight)
+  })
+</script>

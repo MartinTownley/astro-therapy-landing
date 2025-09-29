@@ -42,6 +42,7 @@ import Footer from '../components/Footer.astro'
 
 import HeadingWImage from '../components/HeadingWImage.astro'
 import AboutSection from '../components/AboutSection.astro'
+import ContactForm from '../components/ContactForm'
 //-------
 const isDev = import.meta.env.DEV
 const imgSrcAbstractPortrait = isDev ? abstractImgPortLo : abstractImgPortHi
@@ -129,6 +130,7 @@ const treesImg = isDev ? treesImgLo : treesImgHi
     imageSrcPortrait={imgSrcMarblePortrait}
     imageSrcLandscape={imgSrcMarbleLandscape}
   >
-    <ContactCard {...contactText} />
+    <!-- <ContactCard {...contactText} /> -->
+    <ContactForm client:load />
   </ContactSection>
 </Layout>
