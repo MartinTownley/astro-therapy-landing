@@ -51,7 +51,9 @@ const imgSrcMarblePortrait = isDev ? marbleImgPortLo : marbleImgPortHi
 const imgSrcMarbleLandscape = isDev ? marbleImgLandLo : marbleImgLandHi
 const mosaicImg = isDev ? mosaicImgLo : mosaicImgHi
 const flowersImg = isDev ? flowersImgLo : flowersImgHi
+
 const treesImg = isDev ? treesImgLo : treesImgHi
+// import { PUBLIC_TEST } from 'astro:env/client'
 ---
 
 <!-- index.astro -->
@@ -104,26 +106,6 @@ const treesImg = isDev ? treesImgLo : treesImgHi
     triangleLeft={true}
     textColour="text-white"
   />
-  <!-- <TextAndImage
-    id="therapy"
-    bgSrc={flowersImg}
-    background="bg-text-bg-2 lg:bg-text-bg-1"
-    imageLeft={false}
-    triangleDirection="right"
-    triangleColor="#707a57"
-    {...therapyText}
-  />
-
-  <TextAndImage
-    id="sessions"
-    bgSrc={treesImg}
-    background="bg-theme-pink"
-    imageLeft={true}
-    headingAlign="right"
-    triangleColor="#e0d4b8"
-    textColour="text-white"
-    {...sessionsText}
-  /> -->
 
   <ContactSection
     id="contact"

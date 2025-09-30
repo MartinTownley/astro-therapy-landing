@@ -16,6 +16,7 @@ import '@fontsource/poppins/700'
 import '@fontsource/poppins/800'
 import '@fontsource/merriweather/400'
 import SideNav from '../components/SideNav.tsx'
+import { PUBLIC_TEST } from 'astro:env/client'
 
 interface Props {
   title: string
@@ -48,10 +49,18 @@ const dev = import.meta.env.DEV
     <!-- <div class="-mt-24 bg-red-500 min-h-24 w-full z-50">
       <p class="text-white text-center py-4">Hello</p>
     </div> -->
+    <h1>{PUBLIC_TEST}</h1>
     <Footer logoSrc={ukcpLogoTransBG} logoAlt="UKCP Logo" />
 
     <!-- {dev && <DebugGrid cols={12} gap={6} />} -->
   </body>
+
+  <!-- <script>
+    const publicAnybody = import.meta.env.PUBLIC_ANYBODY
+    const secretPassword = import.meta.env.SECRET_PASSWORD
+    console.log(' ~ pub:', publicAnybody)
+    console.log(' ~ sec:', secretPassword)
+  </script> -->
 </html>
 
 <script>

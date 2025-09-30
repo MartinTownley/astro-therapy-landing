@@ -1,10 +1,10 @@
+// src/components/ContactForm.tsx
 import { useForm } from 'react-hook-form'
 import type { FieldValues } from 'react-hook-form'
 import { actions } from 'astro:actions'
-import { messageSchema } from '../actions'
 import type { z } from 'astro:schema'
 
-type MessageForm = z.infer<typeof messageSchema>
+// type MessageForm = z.infer<typeof messageSchema>
 
 export default function ContactForm() {
   const {
@@ -13,12 +13,16 @@ export default function ContactForm() {
     watch,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<MessageForm>()
+  } = useForm<
+    Parameters<typeof actions.sendEmail>[0] // infer input type from action
+  >()
 
-  const onSubmit = async (data: MessageForm) => {
+  const onSubmit = async (
+    formData: Parameters<typeof actions.sendEmail>[0],
+  ) => {
     try {
       // call astro action
-      const result = await actions.send(data)
+      const result = await actions.sendEmail(formData)
 
       if (result.error) {
         console.error(result.error)
@@ -34,28 +38,92 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-white p-12">
+    <div className="bg-gray-200 mx-auto w-full rounded-lg shadow-md p-12">
+      <h2 className="text-3xl text-center text-pink-500 font-bold mb-6">
+        Contact Me
+      </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-y-2 "
       >
-        <input
-          {...register('name', { required: 'Name is required' })}
-          type="text"
-          placeholder="Your Name"
-          className="px-4 py-2 rounded-xl"
-        />
-        <input
-          {...register('email', { required: 'Email is required' })}
-          type="email"
-          placeholder="Your Email Address"
-          className="px-4 py-2 rounded-xl"
-        />
-        <textarea
-          {...register('message', { required: 'Message is required' })}
-          placeholder="Your Message"
-          className="px-4 py-2 rounded-xl"
-        />
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="first-name"
+            >
+              First Name (required)
+            </label>
+            <input
+              {...register('firstName', { required: 'First name is required' })}
+              type="text"
+              placeholder=""
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="first-name"
+              // defaultValue="test-first-name"
+            />
+            {errors.firstName && (
+              <p className="text-red-500">{`${errors.firstName.message}`}</p>
+            )}
+          </div>
+          <div className="w-full md:w-1/2 px-3">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="last-name"
+            >
+              Last Name
+            </label>
+            <input
+              {...register('lastName')}
+              type="text"
+              placeholder=""
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="last-name"
+              defaultValue="test-last-name"
+            />
+          </div>
+        </div>
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full px-3">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="email"
+            >
+              Email Address (required)
+            </label>
+            <input
+              {...register('email', { required: 'Email is required' })}
+              type="email"
+              placeholder="Your Email Address"
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="email"
+              defaultValue="testEmail@email.com"
+            />
+            {errors.email && (
+              <p className="text-red-500">{`${errors.email.message}`}</p>
+            )}
+          </div>
+        </div>
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full px-3">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="message"
+            >
+              Your Message (required)
+            </label>
+            <textarea
+              {...register('message', { required: 'Message is required' })}
+              placeholder="Your Message"
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="message"
+              defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+            />
+            {errors.message && (
+              <p className="text-red-500">{`${errors.message.message}`}</p>
+            )}
+          </div>
+        </div>
 
         <button
           disabled={isSubmitting}
