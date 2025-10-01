@@ -1,10 +1,8 @@
 // src/components/ContactForm.tsx
 import { useForm } from 'react-hook-form'
-import type { FieldValues } from 'react-hook-form'
 import { actions } from 'astro:actions'
-import type { z } from 'astro:schema'
-
-// type MessageForm = z.infer<typeof messageSchema>
+import { zodResolver } from '@hookform/resolvers/zod'
+import { messageSchema, type TMessageForm } from '../lib/schemas/contact'
 
 export default function ContactForm() {
   const {
@@ -13,13 +11,9 @@ export default function ContactForm() {
     watch,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<
-    Parameters<typeof actions.sendEmail>[0] // infer input type from action
-  >()
+  } = useForm<TMessageForm>({ resolver: zodResolver(messageSchema) })
 
-  const onSubmit = async (
-    formData: Parameters<typeof actions.sendEmail>[0],
-  ) => {
+  const onSubmit = async (formData: TMessageForm) => {
     try {
       // call astro action
       const result = await actions.sendEmail(formData)
@@ -60,7 +54,7 @@ export default function ContactForm() {
               placeholder=""
               className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="first-name"
-              // defaultValue="test-first-name"
+              defaultValue="test-first-name"
             />
             {errors.firstName && (
               <p className="text-red-500">{`${errors.firstName.message}`}</p>
