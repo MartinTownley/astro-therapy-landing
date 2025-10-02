@@ -54,7 +54,7 @@ export default function ContactForm() {
               placeholder=""
               className="form-input"
               id="first-name"
-              defaultValue="test-first-name"
+              // defaultValue="test-first-name"
             />
             {errors.firstName && (
               <p className="text-sm italic mt-1 text-red-500">{`${errors.firstName.message}`}</p>
@@ -73,7 +73,7 @@ export default function ContactForm() {
               placeholder=""
               className="form-input"
               id="last-name"
-              defaultValue="test-last-name"
+              // defaultValue="test-last-name"
             />
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function ContactForm() {
               placeholder="Your Email Address"
               className="form-input"
               id="email"
-              defaultValue="testEmail@email.com"
+              // defaultValue="testEmail@email.com"
             />
             {errors.email && (
               <p className="text-red-500">{`${errors.email.message}`}</p>
@@ -111,7 +111,7 @@ export default function ContactForm() {
               placeholder="Your Message"
               className="form-input h-32"
               id="message"
-              defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+              // defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
             />
             {errors.message && (
               <p className="text-red-500">{`${errors.message.message}`}</p>
