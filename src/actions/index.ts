@@ -47,7 +47,7 @@ export const server = {
         })
 
         result = await resend.emails.send({
-          from: '[TESTING] <noreply@therapyjz.com>',
+          from: '<noreply@therapyjz.com>',
           to: ['contact@therapyjz.com'],
           subject: ownerContent.subject,
           text: ownerContent.text,
