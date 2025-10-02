@@ -32,9 +32,9 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-[#f8f9f6] mx-auto w-full max-w-2xl rounded-lg shadow-md py-12 px-6 md:px-12">
+    <div className="bg-[#f8f9f6] mx-auto w-full max-w-2xl rounded-lg shadow-md py-12 px-4 md:px-12">
       <h2 className="text-3xl text-center text-theme-green font-bold mb-6">
-        Contact Me
+        Get in Touch
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -117,7 +117,7 @@ export default function ContactForm() {
               {...register('sendCopy')}
               className=" h-4 w-4 text-theme-green"
             />
-            Send a copy of this query to my email address
+            Email me a copy of this message
           </label>
         </div>
 
