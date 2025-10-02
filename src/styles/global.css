@@ -1,4 +1,11 @@
+/* global.css */
 @import 'tailwindcss';
+
+@layer components {
+  .form-input {
+    @apply appearance-none bg-white block w-full border-gray-300 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-theme-green;
+  }
+}
 
 @theme {
   --font-sans: 'Poppins', 'sans-serif';

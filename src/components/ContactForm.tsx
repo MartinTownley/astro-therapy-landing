@@ -32,8 +32,8 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-gray-200 mx-auto w-full rounded-lg shadow-md p-12">
-      <h2 className="text-3xl text-center text-pink-500 font-bold mb-6">
+    <div className="bg-[#f8f9f6] mx-auto w-full rounded-lg shadow-md p-12">
+      <h2 className="text-3xl text-center text-theme-green font-bold mb-6">
         Contact Me
       </h2>
       <form
@@ -46,18 +46,18 @@ export default function ContactForm() {
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               htmlFor="first-name"
             >
-              First Name (required)
+              First Name <span className="text-red-500">*</span>
             </label>
             <input
               {...register('firstName', { required: 'First name is required' })}
               type="text"
               placeholder=""
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="form-input"
               id="first-name"
               defaultValue="test-first-name"
             />
             {errors.firstName && (
-              <p className="text-red-500">{`${errors.firstName.message}`}</p>
+              <p className="text-sm italic mt-1 text-red-500">{`${errors.firstName.message}`}</p>
             )}
           </div>
           <div className="w-full md:w-1/2 px-3">
@@ -71,7 +71,7 @@ export default function ContactForm() {
               {...register('lastName')}
               type="text"
               placeholder=""
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="form-input"
               id="last-name"
               defaultValue="test-last-name"
             />
@@ -83,13 +83,13 @@ export default function ContactForm() {
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               htmlFor="email"
             >
-              Email Address (required)
+              Email Address <span className="text-red-500">*</span>
             </label>
             <input
               {...register('email', { required: 'Email is required' })}
               type="email"
               placeholder="Your Email Address"
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="form-input"
               id="email"
               defaultValue="testEmail@email.com"
             />
@@ -104,12 +104,12 @@ export default function ContactForm() {
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               htmlFor="message"
             >
-              Your Message (required)
+              Your Message <span className="text-red-500">*</span>
             </label>
             <textarea
               {...register('message', { required: 'Message is required' })}
               placeholder="Your Message"
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="form-input h-32"
               id="message"
               defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
             />
@@ -119,10 +119,27 @@ export default function ContactForm() {
           </div>
         </div>
 
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full px-3">
+            <label
+              htmlFor="send-copy"
+              className="flex items-center gap-2 text-gray-700 text-sm"
+            >
+              <input
+                id="send-copy"
+                type="checkbox"
+                {...register('sendCopy')}
+                className=" h-4 w-4 text-theme-green"
+              />
+              Send a copy of this message to my email address
+            </label>
+          </div>
+        </div>
+
         <button
           disabled={isSubmitting}
           type="submit"
-          className="bg-blue-500 disabled:bg-gray-500 py-2 rounded"
+          className="bg-theme-green-light text-white font-semibold disabled:bg-gray-500 py-2 rounded"
         >
           {isSubmitting ? 'Sending...' : 'Submit'}
         </button>

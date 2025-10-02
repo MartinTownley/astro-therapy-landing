@@ -17,6 +17,8 @@ export const messageSchema = z.object({
     .string()
     .min(10, { message: 'Message must be at least 10 characters' })
     .max(1000, { message: 'Message must be under 1000 characters' }),
+
+  sendCopy: z.boolean().optional(),
 })
 
 export type TMessageForm = z.infer<typeof messageSchema>
