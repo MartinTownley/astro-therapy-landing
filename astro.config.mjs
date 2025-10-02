@@ -21,9 +21,7 @@ export default defineConfig({
 
   env: {
     schema: {
-      SECRET_TEST: envField.string({ context: 'server', access: 'secret' }),
       RESEND_API_KEY: envField.string({ context: 'server', access: 'secret' }),
-      PUBLIC_TEST: envField.string({ context: 'client', access: 'public' }),
     },
   },
 })
