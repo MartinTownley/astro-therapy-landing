@@ -7,7 +7,7 @@ const { id, imageSrcPortrait, imageSrcLandscape, imageAlt = '' } = Astro.props
 
 <section
   id={id}
-  class="relative h-screen snap-start flex items-center justify-center"
+  class="relative min-h-screen snap-start flex items-center justify-center"
 >
   <div class="absolute inset-0 z-0">
     <Picture
@@ -17,18 +17,6 @@ const { id, imageSrcPortrait, imageSrcLandscape, imageAlt = '' } = Astro.props
       loading="lazy"
       class="w-full h-full object-cover"
     />
-    <!-- <Image
-      src={imageSrcPortrait}
-      alt="A marbled image."
-      loading="lazy"
-      class="w-full h-full object-cover block lg:hidden"
-    />
-    <Image
-      src={imageSrcLandscape}
-      alt="A marbled image."
-      loading="lazy"
-      class="w-full h-full object-cover hidden lg:block"
-    /> -->
   </div>
 
   <!-- top fade -->
