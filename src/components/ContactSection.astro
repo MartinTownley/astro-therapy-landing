@@ -9,7 +9,8 @@ const { id, imageSrcPortrait, imageSrcLandscape, imageAlt = '' } = Astro.props
   id={id}
   class="relative min-h-screen snap-start flex items-center justify-center"
 >
-  <div class="absolute inset-0 z-0">
+  <!-- Background image, hidden on small screens -->
+  <div class="absolute inset-0 z-0 hidden md:block">
     <Picture
       src={imageSrcPortrait}
       formats={['avif', 'webp']}
@@ -17,27 +18,17 @@ const { id, imageSrcPortrait, imageSrcLandscape, imageAlt = '' } = Astro.props
       loading="lazy"
       class="w-full h-full object-cover"
     />
+    <!-- white overlay -->
+    <div class="absolute inset-0 bg-white/30"></div>
   </div>
 
-  <!-- top fade -->
-  <!-- <div
-    class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-bg-1 via-transparent to-transparent filter blur-lg"
-  >
-  </div> -->
-
-  <!-- white overlay -->
-  <div class="absolute inset-0 z-0 bg-white/30"></div>
-
-  <!-- bottom fade -->
-  <!-- <div
-    class="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-white via-transparent to-transparent filter blur-lg"
-  >
-  </div> -->
+  <!-- Mobile fallback background -->
+  <div class="absolute inset-0 z-0 bg-theme-pink/50 md:hidden"></div>
 
   <!-- Foreground content -->
   <div
-    class="relative z-10 w-full sm:max-w-lg lg:max-w-2xl mx-auto drop-shadow-xl/50 px-2 md:py-6"
+    class="relative z-10 w-full mx-auto px-0 md:max-w-lg lg:max-w-2xl md:drop-shadow-2xl/50 md:py-6"
   >
-    <!-- <slot /> -->
+    <slot />
   </div>
 </section>

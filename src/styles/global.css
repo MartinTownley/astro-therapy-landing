@@ -3,7 +3,30 @@
 
 @layer components {
   .form-input {
-    @apply appearance-none bg-white block w-full border-gray-300 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-theme-green;
+    @apply appearance-none bg-white block w-full border-gray-300 text-gray-700 border rounded-lg py-3 px-4 leading-tight focus:outline-theme-green;
+  }
+
+  .form-input-2 {
+    @apply appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight focus:outline-none border-b py-2;
+  }
+
+  .form-input-and-label {
+  }
+
+  .form-textarea {
+    @apply appearance-none bg-white block w-full border-gray-500 text-gray-700 border py-3 px-4 leading-tight focus:outline-theme-green;
+  }
+
+  .form-label {
+    @apply block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2;
+  }
+
+  .form-error-div {
+    @apply min-h-[1.5rem] mb-2;
+  }
+
+  .form-error-content {
+    @apply text-sm italic mt-1 text-red-500;
   }
 }
 

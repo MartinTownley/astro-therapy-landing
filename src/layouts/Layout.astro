@@ -1,4 +1,5 @@
 ---
+//layout.astro
 import '../styles/global.css'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
@@ -50,6 +51,18 @@ const dev = import.meta.env.DEV
     <!-- {dev && <DebugGrid cols={12} gap={6} />} -->
   </body>
 </html>
+
+<!-- {
+  dev && (
+    <script
+      set:html={`
+    window.addEventListener('load', () => {
+      window.scrollTo(0, document.body.scrollHeight)
+    });
+  `}
+    />
+  )
+} -->
 
 <!-- <script>
   window.addEventListener('load', () => {

@@ -32,81 +32,77 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-[#f8f9f6] mx-auto w-full max-w-2xl rounded-lg shadow-md py-12 px-4 md:px-12">
-      <h2 className="text-3xl text-center text-theme-green font-bold mb-6">
+    <div className="bg-[#f8f9f6] mx-auto w-full max-w-2xl rounded-4xl shadow-md py-12 px-4 md:px-12">
+      <h2 className="text-3xl text-center text-theme-green-light font-bold mb-6">
         Get in Touch
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="space-y-6 md:space-y-10"
+        // className="space-y-6 md:space-y-10"
       >
         {/* Outer Div */}
 
         {/* Name */}
-        <div>
-          <label
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="first-name"
-          >
+        <div className="form-input-and-label">
+          <label className="form-label" htmlFor="first-name">
             Name <span className="text-red-500">*</span>
           </label>
           <input
             {...register('firstName', { required: 'First name is required' })}
             type="text"
             placeholder="Enter your name here"
-            className="form-input w-full"
+            className="form-input-2 w-full"
             id="first-name"
             // defaultValue="test-first-name"
           />
-          {errors.firstName && (
-            <p className="text-sm italic mt-1 text-red-500">{`${errors.firstName.message}`}</p>
-          )}
+          <div className="form-error-div">
+            {errors.firstName && (
+              <p className="form-error-content">{`${errors.firstName.message}`}</p>
+            )}
+          </div>
         </div>
 
         {/* Email */}
-        <div>
-          <label
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="email"
-          >
+        <div className="form-input-and-label">
+          <label className="form-label" htmlFor="email">
             Email Address <span className="text-red-500">*</span>
           </label>
           <input
             {...register('email', { required: 'Email is required' })}
             type="email"
             placeholder="Enter your email address here"
-            className="form-input w-full"
+            className="form-input-2 w-full"
             id="email"
             // defaultValue="testEmail@email.com"
           />
-          {errors.email && (
-            <p className="text-sm italic mt-1 text-red-500">{`${errors.email.message}`}</p>
-          )}
+          <div className="form-error-div">
+            {errors.email && (
+              <p className="form-error-content">{`${errors.email.message}`}</p>
+            )}
+          </div>
         </div>
-        {/* </div> */}
 
         {/* Message */}
-        <div>
-          <label
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="message"
-          >
-            Your Message <span className="text-red-500">*</span>
+        <div className="form-input-and-label">
+          <label className="form-label" htmlFor="message">
+            Message <span className="text-red-500">*</span>
           </label>
           <textarea
             {...register('message', { required: 'Message is required' })}
             placeholder="Enter your message here"
-            className="form-input w-full h-32"
+            className="form-textarea w-full h-32"
             id="message"
             // defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
           />
-          {errors.message && (
-            <p className="text-sm italic mt-1 text-red-500">{`${errors.message.message}`}</p>
-          )}
+          <div className="form-error-div">
+            {errors.message && (
+              <p className="form-error-content">{`${errors.message.message}`}</p>
+            )}
+          </div>
         </div>
 
         {/* Send Copy */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mb-6">
           <label
             htmlFor="send-copy"
             className="flex items-center gap-2 text-gray-700 text-sm"
@@ -122,7 +118,7 @@ export default function ContactForm() {
         </div>
 
         {/* Submit */}
-        <div className="flex justify-center">
+        <div className="flex">
           <button
             disabled={isSubmitting}
             type="submit"
