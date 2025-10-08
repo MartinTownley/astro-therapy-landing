@@ -3,17 +3,17 @@ import ContentDesktop from './ContentDesktop.astro'
 import ContentMobile from './ContentMobile.astro'
 
 // forward all props (switchboard)
-const props = Astro.props
+const { id, ...rest } = Astro.props
 ---
 
-<div>
+<section id={id}>
   <!-- Mobile -->
   <div class="lg:hidden">
-    <ContentMobile {...props} />
+    <ContentMobile {...rest} />
   </div>
 
   <!-- Desktop -->
   <div class="hidden lg:block">
-    <ContentDesktop {...props} />
+    <ContentDesktop {...rest} />
   </div>
-</div>
+</section>

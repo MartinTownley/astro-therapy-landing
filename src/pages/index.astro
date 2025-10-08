@@ -43,6 +43,7 @@ import Footer from '../components/Footer.astro'
 import HeadingWImage from '../components/HeadingWImage.astro'
 import AboutSection from '../components/AboutSection.astro'
 import ContactForm from '../components/ContactForm'
+
 //-------
 const isDev = import.meta.env.DEV
 const imgSrcAbstractPortrait = isDev ? abstractImgPortLo : abstractImgPortHi
@@ -66,21 +67,30 @@ const treesImg = isDev ? treesImgLo : treesImgHi
   />
 
   <!-- About (small screen) -->
-  <div class="lg:hidden">
+  <!-- <div class="lg:hidden">
     <AboutSection id="about" imgSrc={profileImgCrop} {...aboutText} />
-  </div>
+  </div> -->
 
   <!-- About (lg screen) -->
-  <div class="hidden lg:block">
+  <!-- <div class="hidden lg:block">
     <TextAndImage
-      id="about-lg"
+      id="about"
       bgSrc={mosaicImg}
       background="bg-text-bg-1"
       imageLeft={true}
       {...aboutText}
     />
-  </div>
+  </div> -->
 
+  <AboutSection
+    id="about"
+    imgSrc={profileImgCrop}
+    bgSrc={mosaicImg}
+    {...aboutText}
+    background="bg-text-bg-1"
+  />
+
+  <!-- Therapy Section -->
   <ContentSection
     id="therapy"
     heading={therapyText.heading}
@@ -94,16 +104,17 @@ const treesImg = isDev ? treesImgLo : treesImgHi
     imageLeft={false}
   />
 
+  <!-- Sessions Section -->
   <ContentSection
     id="sessions"
     heading={sessionsText.heading}
     paras={sessionsText.paras}
     imgSrc={treesImg}
     imgAlt="An image of trees."
-    bgColour="bg-theme-pink"
+    bgColour="bg-text-bg-1"
     triangleColour="bg-text-bg-3"
     triangleLeft={true}
-    textColour="text-white"
+    textColour="text-black"
   />
 
   <ContactSection

@@ -32,117 +32,101 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-[#f8f9f6] mx-auto w-full rounded-lg shadow-md p-12">
-      <h2 className="text-3xl text-center text-theme-green font-bold mb-6">
-        Contact Me
+    <div className="bg-[#f8f9f6] mx-auto w-full max-w-2xl rounded-4xl shadow-md py-12 px-4 md:px-12">
+      <h2 className="text-3xl text-center text-theme-green-light font-bold mb-6">
+        Get in Touch
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-y-2 "
+        // className="space-y-6 md:space-y-10"
       >
-        <div className="flex flex-wrap -mx-3 mb-6">
-          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="first-name"
-            >
-              First Name <span className="text-red-500">*</span>
-            </label>
-            <input
-              {...register('firstName', { required: 'First name is required' })}
-              type="text"
-              placeholder=""
-              className="form-input"
-              id="first-name"
-              // defaultValue="test-first-name"
-            />
+        {/* Outer Div */}
+
+        {/* Name */}
+        <div className="form-input-and-label">
+          <label className="form-label" htmlFor="first-name">
+            Name <span className="text-red-500">*</span>
+          </label>
+          <input
+            {...register('firstName', { required: 'First name is required' })}
+            type="text"
+            placeholder="Enter your name here"
+            className="form-input-2 w-full"
+            id="first-name"
+            // defaultValue="test-first-name"
+          />
+          <div className="form-error-div">
             {errors.firstName && (
-              <p className="text-sm italic mt-1 text-red-500">{`${errors.firstName.message}`}</p>
+              <p className="form-error-content">{`${errors.firstName.message}`}</p>
             )}
           </div>
-          <div className="w-full md:w-1/2 px-3">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="last-name"
-            >
-              Last Name
-            </label>
-            <input
-              {...register('lastName')}
-              type="text"
-              placeholder=""
-              className="form-input"
-              id="last-name"
-              // defaultValue="test-last-name"
-            />
-          </div>
         </div>
-        <div className="flex flex-wrap -mx-3 mb-6">
-          <div className="w-full px-3">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="email"
-            >
-              Email Address <span className="text-red-500">*</span>
-            </label>
-            <input
-              {...register('email', { required: 'Email is required' })}
-              type="email"
-              placeholder="Your Email Address"
-              className="form-input"
-              id="email"
-              // defaultValue="testEmail@email.com"
-            />
+
+        {/* Email */}
+        <div className="form-input-and-label">
+          <label className="form-label" htmlFor="email">
+            Email Address <span className="text-red-500">*</span>
+          </label>
+          <input
+            {...register('email', { required: 'Email is required' })}
+            type="email"
+            placeholder="Enter your email address here"
+            className="form-input-2 w-full"
+            id="email"
+            // defaultValue="testEmail@email.com"
+          />
+          <div className="form-error-div">
             {errors.email && (
-              <p className="text-red-500">{`${errors.email.message}`}</p>
+              <p className="form-error-content">{`${errors.email.message}`}</p>
             )}
           </div>
         </div>
-        <div className="flex flex-wrap -mx-3 mb-6">
-          <div className="w-full px-3">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="message"
-            >
-              Your Message <span className="text-red-500">*</span>
-            </label>
-            <textarea
-              {...register('message', { required: 'Message is required' })}
-              placeholder="Your Message"
-              className="form-input h-32"
-              id="message"
-              // defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-            />
+
+        {/* Message */}
+        <div className="form-input-and-label">
+          <label className="form-label" htmlFor="message">
+            Message <span className="text-red-500">*</span>
+          </label>
+          <textarea
+            {...register('message', { required: 'Message is required' })}
+            placeholder="Enter your message here"
+            className="form-textarea w-full h-32"
+            id="message"
+            // defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+          />
+          <div className="form-error-div">
             {errors.message && (
-              <p className="text-red-500">{`${errors.message.message}`}</p>
+              <p className="form-error-content">{`${errors.message.message}`}</p>
             )}
           </div>
         </div>
 
-        <div className="flex flex-wrap -mx-3 mb-6">
-          <div className="w-full px-3">
-            <label
-              htmlFor="send-copy"
-              className="flex items-center gap-2 text-gray-700 text-sm"
-            >
-              <input
-                id="send-copy"
-                type="checkbox"
-                {...register('sendCopy')}
-                className=" h-4 w-4 text-theme-green"
-              />
-              Send a copy of this message to my email address
-            </label>
-          </div>
+        {/* Send Copy */}
+        <div className="flex items-center gap-2 mb-6">
+          <label
+            htmlFor="send-copy"
+            className="flex items-center gap-2 text-gray-700 text-sm"
+          >
+            <input
+              id="send-copy"
+              type="checkbox"
+              {...register('sendCopy')}
+              className=" h-4 w-4 text-theme-green"
+            />
+            Email me a copy of this message
+          </label>
         </div>
 
-        <button
-          disabled={isSubmitting}
-          type="submit"
-          className="bg-theme-green-light text-white font-semibold disabled:bg-gray-500 py-2 rounded"
-        >
-          {isSubmitting ? 'Sending...' : 'Submit'}
-        </button>
+        {/* Submit */}
+        <div className="flex">
+          <button
+            disabled={isSubmitting}
+            type="submit"
+            className="mx-auto bg-theme-green-light text-white font-semibold disabled:bg-gray-500 py-2 px-4 rounded"
+          >
+            {isSubmitting ? 'Sending...' : 'Submit'}
+          </button>
+        </div>
       </form>
     </div>
   )
