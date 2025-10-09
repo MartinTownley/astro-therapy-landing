@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { actions } from 'astro:actions'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { messageSchema, type TMessageForm } from '../lib/schemas/contact'
+import { toast } from 'sonner'
 
 export default function ContactForm() {
   const {
@@ -21,8 +22,10 @@ export default function ContactForm() {
       if (result.error) {
         console.error(result.error)
         alert('Something went wrong: ' + result.error.message)
+        toast.error('Something went wrong – message not sent.')
       } else {
         alert('Message sent! ✅')
+        toast.success('Message sent!')
         reset()
       }
     } catch (err) {
@@ -40,8 +43,6 @@ export default function ContactForm() {
         onSubmit={handleSubmit(onSubmit)}
         // className="space-y-6 md:space-y-10"
       >
-        {/* Outer Div */}
-
         {/* Name */}
         <div className="form-input-and-label">
           <label className="form-label" htmlFor="first-name">
@@ -53,7 +54,7 @@ export default function ContactForm() {
             placeholder="Enter your name here"
             className="form-input-2 w-full"
             id="first-name"
-            // defaultValue="test-first-name"
+            defaultValue="test-name"
           />
           <div className="form-error-div">
             {errors.firstName && (
@@ -73,7 +74,7 @@ export default function ContactForm() {
             placeholder="Enter your email address here"
             className="form-input-2 w-full"
             id="email"
-            // defaultValue="testEmail@email.com"
+            defaultValue="martloaf.townley@gmail.com"
           />
           <div className="form-error-div">
             {errors.email && (
@@ -92,7 +93,7 @@ export default function ContactForm() {
             placeholder="Enter your message here"
             className="form-textarea w-full h-32"
             id="message"
-            // defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+            defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
           />
           <div className="form-error-div">
             {errors.message && (

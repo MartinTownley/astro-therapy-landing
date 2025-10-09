@@ -2,7 +2,7 @@
 
 import { ActionError, defineAction } from 'astro:actions'
 import { Resend } from 'resend'
-import { RESEND_API_KEY } from 'astro:env/server'
+import { RESEND_API_KEY, OWNER_EMAIL, DEV_EMAIL } from 'astro:env/server'
 import { messageSchema } from '../lib/schemas/contact'
 import { ownerEmail } from '../content/emails/ownerEmail'
 import { userCopyEmail } from '../content/emails/userCopyEmail'
@@ -47,13 +47,16 @@ export const server = {
         })
 
         result = await resend.emails.send({
-          from: '<noreply@therapyjz.com>',
+          from: 'TherapyJZ <noreply@therapyjz.com>',
+          // to: [isDev ? DEV_EMAIL : OWNER_EMAIL],
           to: ['contact@therapyjz.com'],
+
           subject: ownerContent.subject,
           text: ownerContent.text,
         })
 
         if (result.error) {
+          console.error('❌ Resend error:', result.error)
           throw new ActionError({
             code: 'BAD_REQUEST',
             message: result.error.message,
@@ -63,6 +66,7 @@ export const server = {
         console.log('✅ Clinic email sent:', result.data)
       } catch (err) {
         // fail hard if clinic email doesn't send
+        console.error('❌ Clinic email failed (full error):', err)
         throw new ActionError({
           code: 'INTERNAL_SERVER_ERROR',
           message: 'Clinic email failed',
