@@ -6,6 +6,8 @@ import { messageSchema, type TMessageForm } from '../lib/schemas/contact'
 import { toast } from 'sonner'
 
 export default function ContactForm() {
+  const isDev = import.meta.env.MODE === 'development'
+
   const {
     register,
     handleSubmit,
@@ -21,16 +23,17 @@ export default function ContactForm() {
 
       if (result.error) {
         console.error(result.error)
-        alert('Something went wrong: ' + result.error.message)
+        // alert('Something went wrong: ' + result.error.message)
         toast.error('Something went wrong – message not sent.')
       } else {
-        alert('Message sent! ✅')
-        toast.success('Message sent!')
+        // alert('Message sent! ✅')
+        toast.success('Your message has been sent!')
         reset()
       }
     } catch (err) {
       console.error(err)
-      alert('Unexpected error, please try again.')
+      // alert('Unexpected error, please try again.')
+      toast.error('An unexpected error occurred, please try again.')
     }
   }
 
@@ -54,7 +57,7 @@ export default function ContactForm() {
             placeholder="Enter your name here"
             className="form-input-2 w-full"
             id="first-name"
-            defaultValue="test-name"
+            defaultValue={isDev ? 'test-name' : ''}
           />
           <div className="form-error-div">
             {errors.firstName && (
@@ -74,7 +77,7 @@ export default function ContactForm() {
             placeholder="Enter your email address here"
             className="form-input-2 w-full"
             id="email"
-            defaultValue="martloaf.townley@gmail.com"
+            defaultValue={isDev ? 'martinrtownley@gmail.com' : ''}
           />
           <div className="form-error-div">
             {errors.email && (
@@ -93,7 +96,11 @@ export default function ContactForm() {
             placeholder="Enter your message here"
             className="form-textarea w-full h-32"
             id="message"
-            defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+            defaultValue={
+              isDev
+                ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+                : ''
+            }
           />
           <div className="form-error-div">
             {errors.message && (

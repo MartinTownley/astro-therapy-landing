@@ -9,6 +9,11 @@ import { userCopyEmail } from '../content/emails/userCopyEmail'
 
 const resend = new Resend(RESEND_API_KEY)
 
+type ResendEmailResult = {
+  data?: { id: string } | null
+  error?: { message: string } | null
+}
+
 export const server = {
   sendEmail: defineAction({
     accept: 'json',
@@ -31,7 +36,8 @@ export const server = {
         isDev ? 'development (TESTING)' : 'production',
       )
 
-      let result
+      let result: ResendEmailResult
+      let copyResult: ResendEmailResult | undefined
 
       // ------------------------
       // 1️⃣ Send clinic email (critical)
@@ -48,7 +54,7 @@ export const server = {
 
         result = await resend.emails.send({
           from: 'Therapy JZ <noreply@therapyjz.com>',
-          to: ['contact@therapyjz.com'],
+          to: [isDev ? DEV_EMAIL : OWNER_EMAIL],
 
           subject: ownerContent.subject,
           text: ownerContent.text,

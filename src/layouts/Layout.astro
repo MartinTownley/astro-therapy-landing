@@ -50,7 +50,12 @@ const dev = import.meta.env.DEV
     <!-- <Footer logoSrc={ukcpLogoTransBG} logoAlt="UKCP Logo" /> -->
 
     <!-- {dev && <DebugGrid cols={12} gap={6} />} -->
-    <Toaster client:load toastOptions={{ duration: 4000 }} />
+    <Toaster
+      client:load
+      toastOptions={{ duration: 5000 }}
+      position="bottom-center"
+      richColors
+    />
   </body>
 </html>
 
