@@ -47,7 +47,10 @@ const dev = import.meta.env.DEV
       <slot />
     </main>
 
-    <!-- <Footer logoSrc={ukcpLogoTransBG} logoAlt="UKCP Logo" /> -->
+    <div class="bg-theme-pink/50">
+      <hr class="border-t-1 border-gray-400 opacity-60 w-8/9 mx-auto" />
+    </div>
+    <Footer logoSrc={ukcpLogoTransBG} logoAlt="UKCP Logo" />
 
     <!-- {dev && <DebugGrid cols={12} gap={6} />} -->
     <Toaster

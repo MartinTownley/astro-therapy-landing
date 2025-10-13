@@ -1,19 +1,49 @@
 ---
 import Image from 'astro/components/Image.astro'
+import { MapPinIcon, EnvelopeIcon } from '@heroicons/react/16/solid'
 
 const { logoSrc, logoAlt = 'UKCP Registered' } = Astro.props
 const logoHeight = 24
 ---
 
 <!-- Footer component -->
-<footer class=`-mt-24 w-full z-10 py-0 px-4 sm:px-8`>
-  <div class="max-w-screen-xl mx-auto flex gap-4 justify-center">
-    <Image
-      src={logoSrc}
-      alt={logoAlt}
-      loading="lazy"
-      quality=""
-      class=`h-24 w-auto drop-shadow-xl`
-    />
+<footer class="py-6 bg-theme-pink/40">
+  <!-- container -->
+  <div class="flex justify-between items-center border-black border-0 md:px-6">
+    <!-- logo container -->
+    <div class="flex justify-center w-1/2 px-0 border-0 border-red-500">
+      <Image
+        src={logoSrc}
+        alt={logoAlt}
+        loading="lazy"
+        quality=""
+        class=`h-24 w-auto drop-shadow-xl`
+      />
+    </div>
+
+    <div class="hidden md:block w-px h-24 bg-white self-center mx-4"></div>
+
+    <!-- text container -->
+    <div
+      class="flex flex-col text-xs md:text-base text-theme-green-dark w-1/2 space-y-4 md:px-24"
+    >
+      <!-- Email -->
+      <div class="flex items-center gap-2">
+        <EnvelopeIcon className="h-4 w-4" />
+        <div class="flex">
+          <p>contact@therapyjz.com</p>
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="flex items-center gap-2">
+        <MapPinIcon className="h-4 w-4" />
+        <div class="flex flex-col">
+          <p>The Twelfth House</p>
+          <p>1 Chingford Road</p>
+          <p>London E17 4PW</p>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
