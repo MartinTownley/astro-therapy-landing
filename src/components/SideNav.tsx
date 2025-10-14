@@ -71,16 +71,16 @@ export default function SideNav() {
           </div>
 
           {/* Mobile Layout */}
-          <div className="flex md:hidden border border-black-500 rounded-sm">
+          <div className="flex md:hidden border-0 border-gray-500 rounded-sm">
             <button
               onClick={toggleMenu}
               aria-label="Toggle Menu"
               className="cursor-pointer"
             >
               {isMenuOpen ? (
-                <XMarkIcon className="h-6 w-6" />
+                <XMarkIcon className="h-8 w-8" />
               ) : (
-                <Bars3Icon className="h-6 w-6" />
+                <Bars3Icon className="h-8 w-8" />
               )}
             </button>
           </div>

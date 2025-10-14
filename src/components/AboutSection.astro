@@ -1,8 +1,6 @@
 ---
-import { Image } from 'astro:assets'
-// const { id, heading, paras, imgSrc } = Astro.props
+import { ArrowDownIcon } from '@heroicons/react/16/solid'
 import AboutMobile from './AboutMobile.astro'
-import AboutDesktop from './AboutDesktop.astro'
 import TextAndImage from './TextAndImage.astro'
 
 // destructure id, forward rest
@@ -10,7 +8,7 @@ const { id, imgSrc, background, imageLeft, heading, paras, bgSrc } = Astro.props
 const aboutText = { heading, paras }
 ---
 
-<section id={id}>
+<section id={id} class="relative scroll-mt-16">
   <!-- Mobile -->
   <div class="lg:hidden">
     <AboutMobile imgSrc={imgSrc} aboutText={aboutText} />
@@ -26,4 +24,12 @@ const aboutText = { heading, paras }
       paras={paras}
     />
   </div>
+  <a
+    href="#therapy"
+    class="block lg:hidden absolute bottom-6 right-6 z-10 cursor-pointer"
+  >
+    <ArrowDownIcon
+      className="h-12 w-12 text-white opacity-80 hover:opacity-100"
+    />
+  </a>
 </section>

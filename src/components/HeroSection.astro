@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import { ArrowDownIcon } from '@heroicons/react/16/solid'
 
 const {
   id,
@@ -60,11 +61,19 @@ const {
         <button
           class="px-4 py-2 bg-header text-white font-medium rounded border-b-4
           border-r-3
-           border-theme-pink-darker hover:bg-theme-green-light hover:border-theme-green active:translate-y-[2px] active:border-none transition duration-75 lg:text-2xl"
+           border-theme-pink-darker hover:bg-theme-green-light hover:border-theme-green active:translate-y-[2px] active:border-none transition duration-75 lg:text-2xl cursor-pointer"
         >
           {button}
         </button>
       </a>
     </div>
+    <a
+      href="#about"
+      class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer"
+    >
+      <ArrowDownIcon
+        className="h-12 md:h-16 w-12 md:w-16 text-white opacity-80 hover:opacity-100"
+      />
+    </a>
   </div>
 </main>

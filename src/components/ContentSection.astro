@@ -1,12 +1,13 @@
 ---
+import { ArrowDownIcon } from '@heroicons/react/16/solid'
 import ContentDesktop from './ContentDesktop.astro'
 import ContentMobile from './ContentMobile.astro'
 
 // forward all props (switchboard)
-const { id, ...rest } = Astro.props
+const { id, arrowDest, ...rest } = Astro.props
 ---
 
-<section id={id}>
+<section id={id} class="relative scroll-mt-16">
   <!-- Mobile -->
   <div class="lg:hidden">
     <ContentMobile {...rest} />
@@ -16,4 +17,13 @@ const { id, ...rest } = Astro.props
   <div class="hidden lg:block">
     <ContentDesktop {...rest} />
   </div>
+
+  <a
+    href={arrowDest}
+    class="block lg:hidden absolute bottom-6 right-6 z-10 cursor-pointer"
+  >
+    <ArrowDownIcon
+      className="h-12 w-12 text-white opacity-80 hover:opacity-100"
+    />
+  </a>
 </section>
