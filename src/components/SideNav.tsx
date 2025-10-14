@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import NavLinks from './NavLinks'
-import { Bars3Icon, Bars4Icon, XMarkIcon } from '@heroicons/react/16/solid'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid'
 
 export default function SideNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -72,7 +72,11 @@ export default function SideNav() {
 
           {/* Mobile Layout */}
           <div className="flex md:hidden border border-black-500 rounded-sm">
-            <button onClick={toggleMenu} aria-label="Toggle Menu">
+            <button
+              onClick={toggleMenu}
+              aria-label="Toggle Menu"
+              className="cursor-pointer"
+            >
               {isMenuOpen ? (
                 <XMarkIcon className="h-6 w-6" />
               ) : (

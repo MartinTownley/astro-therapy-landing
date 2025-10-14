@@ -1,10 +1,9 @@
 ---
 //layout.astro
 import '../styles/global.css'
-import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import ukcpLogoWhiteBG from '../assets/ukcp_master_logo.png'
-import ukcpLogoTransBG from '../assets/UKCP-black-trans.png'
+// import ukcpLogoTransBG from '../assets/UKCP-black-trans.png'
 import DebugGrid from '../components/DebugGrid.astro'
 import '@fontsource/poppins'
 import '@fontsource/poppins/100'
@@ -50,7 +49,7 @@ const dev = import.meta.env.DEV
     <div class="bg-theme-pink/50">
       <hr class="border-t-1 border-gray-400 opacity-60 w-8/9 mx-auto" />
     </div>
-    <Footer logoSrc={ukcpLogoTransBG} logoAlt="UKCP Logo" />
+    <Footer logoSrc={ukcpLogoWhiteBG} logoAlt="UKCP Logo" />
 
     <!-- {dev && <DebugGrid cols={12} gap={6} />} -->
     <Toaster
