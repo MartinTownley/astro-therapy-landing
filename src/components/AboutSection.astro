@@ -1,5 +1,4 @@
 ---
-import { ArrowDownIcon } from '@heroicons/react/16/solid'
 import AboutMobile from './AboutMobile.astro'
 import TextAndImage from './TextAndImage.astro'
 
@@ -8,7 +7,7 @@ const { id, imgSrc, background, imageLeft, heading, paras, bgSrc } = Astro.props
 const aboutText = { heading, paras }
 ---
 
-<section id={id} class="relative scroll-mt-16">
+<section id={id} class="relative">
   <!-- Mobile -->
   <div class="lg:hidden">
     <AboutMobile imgSrc={imgSrc} aboutText={aboutText} />

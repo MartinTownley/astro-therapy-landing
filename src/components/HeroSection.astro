@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets'
-import { ArrowDownIcon } from '@heroicons/react/16/solid'
 
 const {
   id,
@@ -22,6 +21,7 @@ const {
       src={imgSrcPortrait}
       alt="An abstract image."
       loading="eager"
+      layout="full-width"
       class="w-full h-full object-cover block lg:hidden blur-[1px]"
     />
 
@@ -30,6 +30,7 @@ const {
       src={imgSrcLandscape}
       alt="An abstract image."
       loading="eager"
+      layout="full-width"
       class="w-full h-full object-cover hidden lg:block"
     />
   </div>

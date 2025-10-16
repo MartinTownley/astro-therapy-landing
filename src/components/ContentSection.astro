@@ -1,5 +1,4 @@
 ---
-import { ArrowDownIcon } from '@heroicons/react/16/solid'
 import ContentDesktop from './ContentDesktop.astro'
 import ContentMobile from './ContentMobile.astro'
 
@@ -7,7 +6,7 @@ import ContentMobile from './ContentMobile.astro'
 const { id, arrowDest, ...rest } = Astro.props
 ---
 
-<section id={id} class="relative scroll-mt-16">
+<section id={id} class="relative">
   <!-- Mobile -->
   <div class="lg:hidden">
     <ContentMobile {...rest} />
