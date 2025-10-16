@@ -38,7 +38,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-[#f8f9f6] mx-auto w-full max-w-2xl rounded-4xl shadow-md py-12 px-4 md:px-12">
+    <div className="bg-[#f8f9f6] mx-auto w-full max-w-2xl rounded-3xl md:rounded-2xl shadow-md py-12 px-4 md:px-12">
       <h2 className="text-3xl text-center text-theme-green-light font-bold mb-6">
         Get in Touch
       </h2>
