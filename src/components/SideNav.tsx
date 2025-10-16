@@ -1,28 +1,50 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import NavLinks from './NavLinks'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid'
 
 export default function SideNav() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    console.log('isMenuOpen changed:', isMenuOpen)
-  }, [isMenuOpen])
+    let lastScrollY = window.scrollY
+
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false)
+      } else {
+        setIsVisible(true)
+      }
+
+      lastScrollY = currentScrollY
+    }
+
+    window.addEventListener('scroll', controlNavbar)
+
+    return () => window.removeEventListener('scroll', controlNavbar)
+  }, [])
+
+  useEffect(() => {
+    console.log('isMenuOpen changed:', isMobileMenuOpen)
+  }, [isMobileMenuOpen])
 
   // === Auto-close mobile menu when viewport >= md (768ppx) ===
 
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    const mq = window.matchMedia('(min-width: 768px')
+    const mq = window.matchMedia('(min-width: 768px)')
 
     const handleMqChange = (e: MediaQueryListEvent) => {
       // when matches === true, viewport is >= md; close the mobile menu
-      if (e.matches) setIsMenuOpen(false)
+      if (e.matches) setIsMobileMenuOpen(false)
     }
 
     // If component mounts on desktop, make sure menu is closed
-    if (mq.matches) setIsMenuOpen(false)
+    if (mq.matches) setIsMobileMenuOpen(false)
 
     // register listener (modern API, with fallback)
     if (mq.addEventListener) {
@@ -42,18 +64,19 @@ export default function SideNav() {
   }, [])
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
+    setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
   // === Handle dropdown link click (for closing menu) ===
 
   const handleLinkClick = () => {
-    setIsMenuOpen(false)
-    console.log('clicked')
+    setIsMobileMenuOpen(false)
   }
 
   return (
-    <aside className="fixed top-0 z-20 w-full bg-text-bg-1 border-b border-gray-500 py-4">
+    <nav
+      className={`fixed top-0 z-20 w-full bg-text-bg-1 border-b border-gray-500 py-4 transition-transform duration-400 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+    >
       <div className="container mx-auto grid grid-cols-12 items-center px-4">
         {/* Signature */}
         <div className="col-span-6 md:col-span-6 lg:col-start-2 md:col-start-1">
@@ -75,9 +98,10 @@ export default function SideNav() {
             <button
               onClick={toggleMenu}
               aria-label="Toggle Menu"
+              aria-expanded={isMobileMenuOpen}
               className="cursor-pointer"
             >
-              {isMenuOpen ? (
+              {isMobileMenuOpen ? (
                 <XMarkIcon className="h-8 w-8" />
               ) : (
                 <Bars3Icon className="h-8 w-8" />
@@ -90,7 +114,7 @@ export default function SideNav() {
       {/* Dropdown (conditionally render if menu open) */}
       <div
         className={`absolute top-full right-0 w-full bg-text-bg-1 shadow-md overflow-hidden transition-all duration-300 ease-in-out md:hidden rounded-b-lg flex justify-center text-center ${
-          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <NavLinks layout="vertical" handleLinkClick={handleLinkClick} />
@@ -100,6 +124,6 @@ export default function SideNav() {
       {/* <span className="ml-4 text-sm text-gray-600">
         {isMenuOpen ? 'OPEN' : 'CLOSED'}
       </span> */}
-    </aside>
+    </nav>
   )
 }
