@@ -12,11 +12,8 @@ export const heroText = {
 
 // intro text not in use
 export const introText = {
-  heading: 'A warm and supportive space to explore your thoughts and feelings',
-  para1:
-    'Starting therapy can feel overwhelming, but you don’t have to do it alone. Whether you’re facing a specific challenge or just feeling stuck, therapy offers a space to reflect, gain clarity, and move forward at your own pace.',
-  para2:
-    'I offer a warm and supportive space where you can feel heard, understood, and empowered',
+  heading: 'Affordable therapy in London.',
+  para: 'Starting therapy can feel like a big step, but you don’t have to do it alone. Whether you’re facing a specific challenge or just feeling stuck, therapy offers a space to reflect, gain clarity, and move forward at your own pace.',
 }
 
 export const aboutText = {

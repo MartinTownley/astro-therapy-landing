@@ -38,11 +38,13 @@
   --color-outline-colour: #d47f7f;
   --color-hero-text-red: #601818;
   --color-intro-bg: #dfd5cb;
+  --color-main-beige: #fdf6f0;
   --color-theme-green: #707a57;
   --color-theme-green-dark: #5c6445;
   --color-theme-green-darker: #474d36;
   --color-theme-green-light: #86936d;
   --color-theme-pink: #e8808d;
+  --color-theme-pink-bright: #e77883;
   --color-theme-pink-dark: #d86f7b;
   --color-theme-pink-darker: #c05e6a;
 
@@ -75,6 +77,7 @@
   --color-header: #d47f7f;
   --color-outline-colour: #d47f7f;
   --color-hero-text-red: #601818;
+  --color-main-beige: #fdf6f0;
   --color-intro-bg: #dfd5cb;
   --color-theme-green: #707a57;
   --color-theme-green-dark: #5c6445;
