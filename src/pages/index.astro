@@ -4,6 +4,7 @@ import HeroSection from '../components/HeroSection.astro'
 import {
   heroText,
   introText,
+  approachText,
   aboutText,
   therapyText,
   sessionsText,
@@ -29,6 +30,7 @@ import ContactSection from '../components/ContactSection.astro'
 import AboutSection from '../components/AboutSection.astro'
 import ContactForm from '../components/ContactForm'
 import IntroSection from '../components/IntroSection.astro'
+import ApproachSection from '../components/ApproachSection.astro'
 
 //-------
 const isDev = import.meta.env.DEV
@@ -53,6 +55,13 @@ const treesImg = isDev ? treesImgLo : treesImgHi
   />
 
   <!-- <IntroSection id="intro" background="bg-main-beige" {...introText} /> -->
+
+  <!-- <ApproachSection
+    id="approach"
+    bgImgSrc={mosaicImg}
+    profileImgSrc={profileImgCrop}
+    {...approachText}
+  /> -->
 
   <AboutSection
     id="about"

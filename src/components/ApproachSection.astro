@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets'
+import { approachText } from '../content/textContent'
+const { id, bgImgSrc, profileImgSrc, heading, para } = Astro.props
+---
+
+<section id={id} class=`relative px-40 py-24`>
+  <Image
+    src={bgImgSrc}
+    alt="A mosaic image."
+    layout="full-width"
+    class="absolute inset-0 w-full h-full object-cover z-0"
+  />
+  <div class="relative z-10 content-container flex flex-row items-center">
+    <div class="w-1/2">
+      <Image
+        src={profileImgSrc}
+        alt="Photo of Jade Zelkowicz."
+        loading="lazy"
+        layout="full-width"
+        width="350"
+      />
+    </div>
+    <div class="w-1/2 flex flex-col justify-center p-6 max-w-prose">
+      <h1 class="bg-main-beige">{heading}</h1>
+
+      {
+        approachText.paras.map((para) => (
+          <p class="text-lg bg-main-beige mb-6">{para}</p>
+        ))
+      }
+    </div>
+  </div>
+</section>
