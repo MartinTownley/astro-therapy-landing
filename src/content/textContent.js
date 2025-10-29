@@ -48,6 +48,8 @@ export const therapyText = {
     'I provide a confidential, inclusive, and non-judgmental space where you can feel heard, understood, and empowered.',
 
     'My approach is grounded in Relational Transactional Analysis, which places the client-therapist relationship at the heart of the therapeutic process. At the same time, I remain flexible and responsive to each person’s unique needs and experiences.',
+
+    'I’m currently offering therapy at a reduced rate (£40 per session) whilst I complete my clinical training.',
   ],
 }
 
@@ -56,12 +58,13 @@ export const sessionsText = {
   paras: [
     `I offer weekly 50-minute sessions, held at the same time and day each week. We can work together short or long term, depending on what feels right – this is something we can explore together.`,
 
-    'Each session is £50. I also offer a small number of reduced-fee spaces if affordability is a concern.',
+    'Each session is £40. I also offer a small number of reduced-fee spaces if affordability is a concern.',
 
-    'My practice is located at The Twelfth House, 1 Chingford Road, London E17 4PW. This is about a 10-minute walk from Walthamstow Central Station. If attending in person isn’t possible, we can arrange to meet online.',
+    'Sessions are held at The Twelfth House, 1 Chingford Road, London E17 4PW (about a 10-minute walk from Walthamstow Central Station).',
 
-    `Our first session is a chance for you to share what’s bringing you to therapy, ask any questions you may have, and get a feel for how it might be for us to work together.
-`,
+    'I offer a free 15-minute introductory call to answer any questions you might have.',
+
+    `In our first session, you’ll have space to share what’s bringing you to therapy and get a feel for whether working together feels right.`,
   ],
 }
 
