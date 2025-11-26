@@ -81,7 +81,7 @@ export default function SideNav() {
         {/* Signature */}
         <div className="col-span-6 md:col-span-6 lg:col-start-2 md:col-start-1">
           <a href="#">
-            <span className="font-signature text-theme-green-dark text-2xl [font-variant:small-caps] font-bold">
+            <span className="font-sans text-theme-green-dark text-2xl [font-variant:small-caps] font-bold">
               jade zelkowicz
             </span>
           </a>
