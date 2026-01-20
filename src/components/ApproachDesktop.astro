@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets'
+import { approachText } from '../content/textContent'
+const { id, bgImgSrc, profileImgSrc, heading, para } = Astro.props
+---
+
+<section id={id} class=`relative px-40 py-24`>
+  <Image
+    src={bgImgSrc}
+    alt="A mosaic image."
+    layout="full-width"
+    class="absolute inset-0 w-full h-full object-cover z-0 blur-[3px]"
+  />
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-white/40"></div>
+
+  <div class="relative z-10 content-container flex flex-row items-center">
+    <div
+      class="w-1/2 rounded-3xl overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
+    >
+      <Image
+        src={profileImgSrc}
+        alt="Photo of Jade Zelkowicz."
+        loading="lazy"
+        layout="full-width"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <div
+      class="w-1/2 flex flex-col justify-center shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
+    >
+      <!-- Heading & Paragraph Container -->
+      <div class="px-6">
+        <!-- Heading -->
+        <h2
+          class="inline-block bg-main-beige px-3 py-1 text-3xl font-semibold tracking-tight text-theme-green-dark relative z-20 -mb-2 pt-2"
+        >
+          {heading}
+        </h2>
+        <!-- Paragraphs -->
+        <div class="bg-main-beige pt-3 pb-6">
+          <div class="space-y-4">
+            {
+              approachText.paras.map((para: string) => (
+                <p class="px-3 text-xl leading-relaxed max-w-prose text-theme-green-dark">
+                  {para}
+                </p>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
