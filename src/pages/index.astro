@@ -27,7 +27,7 @@ import treesImgHi from '../assets/trees-img-hi.webp'
 import treesImgLo from '../assets/trees-img-lo.webp'
 import profileImgCrop from '../assets/profile-img-crop.webp'
 import ContactSection from '../components/ContactSection.astro'
-import AboutSection from '../components/AboutSection.astro'
+import AboutSection from '../components/about/AboutSection.astro'
 import ContactForm from '../components/ContactForm'
 import IntroSection from '../components/IntroSection.astro'
 import ApproachSection from '../components/ApproachSection.astro'
@@ -65,6 +65,7 @@ const treesImg = isDev ? treesImgLo : treesImgHi
     {...approachText}
   /> -->
 
+  <!-- Note: update children of this component to integrate new changes -->
   <AboutSection
     id="about"
     imgSrc={profileImgCrop}

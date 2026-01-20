@@ -1,6 +1,8 @@
 ---
+import XAboutMobile from './XAboutMobile.astro'
+import TextAndImage from '../TextAndImage.astro'
 import AboutMobile from './AboutMobile.astro'
-import TextAndImage from './TextAndImage.astro'
+import AboutDesktop from './AboutDesktop.astro'
 
 // destructure id, forward rest
 const { id, imgSrc, background, imageLeft, heading, paras, bgSrc } = Astro.props
@@ -10,7 +12,7 @@ const aboutText = { heading, paras }
 <section id={id} class="relative">
   <!-- Mobile -->
   <div class="lg:hidden">
-    <AboutMobile imgSrc={imgSrc} aboutText={aboutText} />
+    <XAboutMobile imgSrc={imgSrc} aboutText={aboutText} />
   </div>
 
   <!-- Desktop -->
@@ -23,12 +25,14 @@ const aboutText = { heading, paras }
       paras={paras}
     />
   </div>
-  <!-- <a
-    href="#therapy"
-    class="block lg:hidden absolute bottom-6 right-6 z-10 cursor-pointer"
-  >
-    <ArrowDownIcon
-      className="h-12 w-12 text-white opacity-80 hover:opacity-100"
-    />
-  </a> -->
+
+  <!-- Ready to be integrated later -->
+  <!-- <div class="lg:hidden">
+    <AboutMobile aboutText={aboutText} />
+  </div> -->
+
+  <!-- Desktop -->
+  <!-- <div class="hidden lg:block">
+    <AboutDesktop aboutText={aboutText} />
+  </div> -->
 </section>
