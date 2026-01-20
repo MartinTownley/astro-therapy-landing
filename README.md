@@ -1,48 +1,54 @@
-# Astro Starter Kit: Basics
+# Landing Page for Counselling and Therapy Service
 
-```sh
-npm create astro@latest -- --template basics
-```
+A simple, accessible and responsive landing page for a counselling and therapy practice.
+Built with **Astro 5**, **React**, and **Tailwind CSS**, the site helps prospective clients learn about available services, understand the therapist’s approach, and get in touch easily.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+🔗 Live Demo: https://astro-therapy-landing.vercel.app/
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+💻 GitHub Repo: https://github.com/MartinTownley/astro-therapy-landing
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+---
 
-## 🚀 Project Structure
+## Features
 
-Inside of your Astro project, you'll see the following folders and files:
+- ⚡ **Astro 5** for fast, content-focused performance
+- 🌀 **Hybrid Astro + React components** for interactivity where needed
+- 🌈 Visual design and responsiveness using **Tailwind CSS**
+- 📩 Client contact via **Resend** email API
+- 📝 Simple, accessible contact form built with **React Hook Form** + **Zod**
+- 🎨 Flexible iconography via **Heroicons** and **astro-icon**
+- 🔔 Toast notifications using **Sonner**
+- ☁️ Deployment-ready for **Vercel**
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+---
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Technologies Used
 
-## 🧞 Commands
+### **Framework & Language**
 
-All commands are run from the root of the project, from a terminal:
+- **Astro 5**
+- **React 19**
+- **TypeScript** (via Astro’s built-in support)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### **Styling & UI**
 
-## 👀 Want to learn more?
+- **Tailwind CSS 4**
+- **@tailwindcss/typography**
+- **Heroicons** & **astro-icon**
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### **Forms & Validation**
+
+- **React Hook Form** — lightweight form control
+- **@hookform/resolvers** — Zod integration
+- **Zod** — runtime form validation
+
+### **Email & API**
+
+- **Resend** — modern email delivery API for client messages
+
+### **Deployment**
+
+- **Vercel** — hosting and edge deployment
+- **@astrojs/vercel** — integration for SSR or static output
+
+---
