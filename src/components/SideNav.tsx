@@ -4,7 +4,8 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid'
 
 export default function SideNav() {
   const [isVisible, setIsVisible] = useState(true)
-
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -12,6 +13,10 @@ export default function SideNav() {
 
     const controlNavbar = () => {
       const currentScrollY = window.scrollY
+
+      setIsScrolled(currentScrollY > 80)
+
+      if (currentScrollY < 100) setActiveSection('')
 
       if (currentScrollY > lastScrollY && currentScrollY > 10) {
         setIsVisible(false)
@@ -22,14 +27,35 @@ export default function SideNav() {
       lastScrollY = currentScrollY
     }
 
+    setIsScrolled(window.scrollY > 80)
     window.addEventListener('scroll', controlNavbar)
 
     return () => window.removeEventListener('scroll', controlNavbar)
   }, [])
 
   useEffect(() => {
-    console.log('isMenuOpen changed:', isMobileMenuOpen)
-  }, [isMobileMenuOpen])
+    const sectionIds = ['about', 'approach', 'what-to-expect', 'contact']
+    const observers: IntersectionObserver[] = []
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id)
+      if (!element) return
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id)
+        },
+        { rootMargin: '-40% 0px -40% 0px', threshold: 0 },
+      )
+
+      observer.observe(element)
+      observers.push(observer)
+    })
+
+    return () => observers.forEach((o) => o.disconnect())
+  }, [])
+
+  useEffect(() => {}, [isMobileMenuOpen])
 
   // === Auto-close mobile menu when viewport >= md (768ppx) ===
 
@@ -75,13 +101,15 @@ export default function SideNav() {
 
   return (
     <nav
-      className={`fixed top-0 z-20 w-full bg-text-bg-1 border-b border-gray-500 py-4 transition-transform duration-400 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+      className={`fixed top-0 z-20 w-full py-4 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white/80 backdrop-blur-md' : 'bg-transparent'} ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="container mx-auto grid grid-cols-12 items-center px-4">
         {/* Signature */}
         <div className="col-span-6 md:col-span-6 lg:col-start-2 md:col-start-1">
           <a href="#">
-            <span className="font-sans text-theme-green-dark text-2xl [font-variant:small-caps] font-bold">
+            <span
+              className={`font-sans text-2xl font-semibold transition-colors duration-300 ${isScrolled ? 'text-theme-green-dark' : 'text-white'}`}
+            >
               jade zelkowicz
             </span>
           </a>
@@ -90,7 +118,11 @@ export default function SideNav() {
         <div className="col-span-6 md:col-span-6 lg:col-span-4 lg:col-start-9 flex justify-end items-center">
           {/*Desktop Layout */}
           <div className="hidden md:flex">
-            <NavLinks layout="horizontal" />
+            <NavLinks
+              layout="horizontal"
+              variant={isScrolled ? 'dark' : 'light'}
+              activeSection={activeSection}
+            />
           </div>
 
           {/* Mobile Layout */}
@@ -102,9 +134,13 @@ export default function SideNav() {
               className="cursor-pointer"
             >
               {isMobileMenuOpen ? (
-                <XMarkIcon className="h-8 w-8" />
+                <XMarkIcon
+                  className={`h-8 w-8 transition-colors duration-300 ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+                />
               ) : (
-                <Bars3Icon className="h-8 w-8" />
+                <Bars3Icon
+                  className={`h-8 w-8 transition-colors duration-300 ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+                />
               )}
             </button>
           </div>
