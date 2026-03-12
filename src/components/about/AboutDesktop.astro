@@ -1,18 +1,20 @@
 ---
-const { id, aboutText } = Astro.props
+const { id, text } = Astro.props
 ---
 
-<section id={id} class="bg-theme-green text-white py-20 px-10">
+<section id={id} class="bg-theme-green text-white py-20 px-20">
+  <div class="max-w-5xl mx-auto">
   <div class="columns-2 gap-16">
     <h2
       class="inline-block bg-white text-theme-green-dark text-3xl font-semibold px-6 py-2 mb-8 border-black border-b-2 border-r-2 [column-span:all]"
     >
-      {aboutText.heading}
+      {text.heading}
     </h2>
     {
-      aboutText.paras.map((p: string) => (
+      text.paras.map((p: string) => (
         <p class="mb-6 text-lg leading-relaxed">{p}</p>
       ))
     }
+  </div>
   </div>
 </section>

@@ -5,34 +5,32 @@ import AboutMobile from './AboutMobile.astro'
 import AboutDesktop from './AboutDesktop.astro'
 
 // destructure id, forward rest
-const { id, imgSrc, background, imageLeft, heading, paras, bgSrc } = Astro.props
-const aboutText = { heading, paras }
+const { id, imgSrc, background, imageLeft, text, bgSrc } = Astro.props
 ---
 
 <section id={id} class="relative">
   <!-- Mobile -->
-  <div class="lg:hidden">
-    <XAboutMobile imgSrc={imgSrc} aboutText={aboutText} />
-  </div>
-
-  <!-- Desktop -->
-  <div class="hidden lg:block">
-    <TextAndImage
-      bgSrc={bgSrc}
-      background={background}
-      imageLeft={true}
-      heading={heading}
-      paras={paras}
-    />
-  </div>
-
-  <!-- Ready to be integrated later -->
   <!-- <div class="lg:hidden">
-    <AboutMobile aboutText={aboutText} />
+    <XAboutMobile imgSrc={imgSrc} aboutText={aboutText} />
   </div> -->
 
   <!-- Desktop -->
   <!-- <div class="hidden lg:block">
-    <AboutDesktop aboutText={aboutText} />
+    <TextAndImage
+      bgSrc={bgSrc}
+      background={background}
+      imageLeft={true}
+      text={aboutText}
+    />
   </div> -->
+
+  <!-- Ready to be integrated later -->
+  <div class="lg:hidden">
+    <AboutMobile text={text} />
+  </div>
+
+  <!-- Desktop -->
+  <div class="hidden lg:block">
+    <AboutDesktop text={text} />
+  </div>
 </section>

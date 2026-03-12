@@ -6,6 +6,7 @@ import {
   introText,
   approachText,
   aboutText,
+  whatToExpectText,
   therapyText,
   sessionsText,
   contactText,
@@ -31,6 +32,7 @@ import AboutSection from '../components/about/AboutSection.astro'
 import ContactForm from '../components/ContactForm'
 import IntroSection from '../components/IntroSection.astro'
 import ApproachSection from '../components/ApproachSection.astro'
+import WhatToExpectSection from '../components/what-to-expect/WhatToExpectSection.astro'
 
 //-------
 const isDev = import.meta.env.DEV
@@ -55,27 +57,33 @@ const treesImg = isDev ? treesImgLo : treesImgHi
   />
 
   <!-- Ready to be integrated later -->
-  <!-- <IntroSection id="intro" background="bg-main-beige" {...introText} /> -->
+  <IntroSection id="intro" background="bg-main-beige" {...introText} />
 
   <!-- Ready to be integrated later -->
-  <!-- <ApproachSection
+  <ApproachSection
     id="approach"
     bgImgSrc={mosaicImg}
     profileImgSrc={profileImgCrop}
     {...approachText}
-  /> -->
+  />
 
   <!-- Note: update children of this component to integrate new changes -->
   <AboutSection
     id="about"
     imgSrc={profileImgCrop}
     bgSrc={mosaicImg}
-    {...aboutText}
+    text={aboutText}
     background="bg-text-bg-1"
   />
 
+  <WhatToExpectSection
+    id="what-to-expect"
+    text={whatToExpectText}
+    bgImgSrc={flowersImg}
+  />
+
   <!-- Therapy Section -->
-  <ContentSection
+  <!-- <ContentSection
     id="therapy"
     heading={therapyText.heading}
     paras={therapyText.paras}
@@ -87,10 +95,10 @@ const treesImg = isDev ? treesImgLo : treesImgHi
     imgAlt="An image of dried flowers."
     imageLeft={false}
     arrowDest="#sessions"
-  />
+  /> -->
 
   <!-- Sessions Section -->
-  <ContentSection
+  <!-- <ContentSection
     id="sessions"
     heading={sessionsText.heading}
     paras={sessionsText.paras}
@@ -101,7 +109,7 @@ const treesImg = isDev ? treesImgLo : treesImgHi
     triangleLeft={true}
     textColour="text-theme-green-dark"
     arrowDest="#contact"
-  />
+  /> -->
 
   <ContactSection
     id="contact"

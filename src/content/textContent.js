@@ -12,7 +12,7 @@ export const heroText = {
 
 // intro text not in use
 export const introText = {
-  heading: 'Affordable therapy in London.',
+  heading: { primary: 'Affordable therapy', secondary: 'in London' },
   paras: [
     'Starting therapy can feel like a big step, but you don’t have to do it alone. Whether you’re facing a specific challenge or just feeling stuck, therapy offers a space to reflect, gain clarity, and move forward at your own pace.',
 
@@ -39,6 +39,41 @@ export const aboutText = {
     'I am a registered member of both the United Kingdom Council for Psychotherapy (UKCP) and the United Kingdom Association for Transactional Analysis (UKATA) and follow their code of ethics. I attend regular supervision and engage in continual professional development.',
   ],
 }
+
+export const whatToExpectText = {
+  heading: 'What to Expect',
+  points: [
+    {
+      label: 'Sessions',
+      description: '50 minute sessions, usually at the same time each week',
+    },
+    {
+      label: 'Length of work',
+      description:
+        'Choose to work short or long term, depending on what feels right',
+    },
+    {
+      label: 'Fees',
+      description:
+        '£50 per session – I also offer a few reduced-fee spaces if needed',
+    },
+    {
+      label: 'Location',
+      description:
+        'Sessions are held at The Twelfth House, 1 Chingford Road, E17 4PW (about a 10-minute walk from Walthamstow Central)',
+    },
+    {
+      label: 'Online sessions',
+      description:
+        'Online sessions are available if meeting in person isn’t possible',
+    },
+  ],
+  paras: [
+    'Our first session is a chance to explore what brings you to therapy, and see how it feels to work together.',
+  ],
+}
+
+//======================
 
 export const therapyText = {
   heading: 'Therapy',
@@ -67,8 +102,6 @@ export const sessionsText = {
     `In our first session, you’ll have space to share what’s bringing you to therapy and get a feel for whether working together feels right.`,
   ],
 }
-
-export const whatToExpectText = {}
 
 export const contactText = {
   heading: 'Contact',

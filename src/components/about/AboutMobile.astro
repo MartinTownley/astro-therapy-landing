@@ -1,5 +1,5 @@
 ---
-const { id, aboutText } = Astro.props
+const { id, text } = Astro.props
 ---
 
 <section id={id} class="relative bg-text-bg-2/80">
@@ -10,12 +10,12 @@ const { id, aboutText } = Astro.props
       <h2
         class="text-2xl text-theme-green font-sans font-semibold bg-text-bg-1 block w-fit mx-auto px-4 border-gray-400 border-b-2 border-r-2"
       >
-        {aboutText.heading}
+        {text.heading}
       </h2>
 
       <div class="space-y-4">
         {
-          aboutText.paras.map((para: string) => (
+          text.paras.map((para: string) => (
             <p class="leading-relaxed text-lg text-black">{para}</p>
           ))
         }

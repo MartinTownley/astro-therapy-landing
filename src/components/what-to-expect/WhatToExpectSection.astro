@@ -1,0 +1,16 @@
+---
+import WhatToExpectDesktop from './WhatToExpectDesktop.astro'
+import WhatToExpectMobile from './WhatToExpectMobile.astro'
+
+const { id, text, bgImgSrc } = Astro.props
+---
+
+<section id={id} class="relative">
+  <!-- Mobile -->
+  <div class="lg:hidden">
+    <WhatToExpectMobile text={text} />
+  </div>
+
+  <!-- Desktop -->
+  <WhatToExpectDesktop text={text} bgImgSrc={bgImgSrc} />
+</section>

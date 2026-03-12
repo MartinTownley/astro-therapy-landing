@@ -1,0 +1,33 @@
+---
+const { text } = Astro.props
+---
+
+<section class="hidden lg:block bg-theme-green-dark text-white py-20 px-20">
+  <div class="max-w-5xl mx-auto">
+    <!-- Heading -->
+    <h2
+      class="inline-block bg-main-beige text-theme-green-dark text-3xl font-semibold px-6 py-2 mb-10 border-black border-b-2 border-r-2"
+    >
+      {text.heading}
+    </h2>
+
+    <!-- Intro paragraph -->
+    <p class="text-xl leading-relaxed mb-10 max-w-2xl opacity-90">
+      {text.paras[0]}
+    </p>
+
+    <!-- Points grid -->
+    <div class="grid grid-cols-2 gap-6">
+      {
+        text.points.map((point: { label: string; description: string }) => (
+          <div class="border-l-2 border-white/30 pl-5 py-1">
+            <h3 class="text-xs font-semibold tracking-widest uppercase text-theme-pink mb-2">
+              {point.label}
+            </h3>
+            <p class="text-lg leading-relaxed opacity-90">{point.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

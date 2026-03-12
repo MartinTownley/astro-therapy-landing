@@ -1,0 +1,38 @@
+---
+const { id, text } = Astro.props
+---
+
+<section id={id} class="relative bg-text-bg-1">
+  <div
+    class="flex flex-col px-6 content-center max-w-prose mx-auto items-center py-12 relative z-10"
+  >
+    <!-- Content -->
+    <div class="space-y-6">
+      <!-- Heading -->
+      <h2
+        class="text-2xl text-theme-pink-darker font-sans font-semibold bg-text-bg-1 block w-fit mx-auto px-4 border-gray-400 border-b-2 border-r-2"
+      >
+        {text.heading}
+      </h2>
+
+      {
+        text.paras.map((para: string) => (
+          <p class="leading-relaxed text-[16.5px] text-black/90">{para}</p>
+        ))
+      }
+      <!-- Points -->
+      <div class="space-y-6">
+        {
+          text.points.map((point: { label: string; description: string }) => (
+            <div class="space-y-2">
+              <h3 class="text-base font-medium tracking-wide text-theme-pink-dark uppercase">
+                {point.label}
+              </h3>
+              <p class="text-lg">{point.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

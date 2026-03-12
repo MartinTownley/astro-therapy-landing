@@ -4,7 +4,7 @@ import { approachText } from '../content/textContent'
 const { id, bgImgSrc, profileImgSrc, heading, para } = Astro.props
 ---
 
-<section id={id} class=`relative px-40 py-24`>
+<section id={id} class="relative px-40 py-24">
   <Image
     src={bgImgSrc}
     alt="A mosaic image."
@@ -15,9 +15,9 @@ const { id, bgImgSrc, profileImgSrc, heading, para } = Astro.props
   <!-- Overlay -->
   <div class="absolute inset-0 bg-white/40"></div>
 
-  <div class="relative z-10 content-container flex flex-row items-center">
+  <div class="relative z-10 max-w-5xl mx-auto flex flex-row items-center">
     <div
-      class="w-1/2 rounded-3xl overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
+      class="w-1/2 aspect-square rounded-3xl overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
     >
       <Image
         src={profileImgSrc}
@@ -35,7 +35,7 @@ const { id, bgImgSrc, profileImgSrc, heading, para } = Astro.props
       <div class="px-6">
         <!-- Heading -->
         <h2
-          class="inline-block bg-main-beige px-3 py-1 text-3xl font-semibold tracking-tight text-theme-green-dark relative z-20 -mb-2 pt-2"
+          class="block w-fit bg-main-beige px-3 py-1 text-3xl font-semibold tracking-tight text-theme-green-dark"
         >
           {heading}
         </h2>

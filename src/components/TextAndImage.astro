@@ -2,8 +2,7 @@
 import { Image } from 'astro:assets'
 const {
   id,
-  heading,
-  paras,
+  text,
   bgSrc,
   background = '',
   imageLeft = true,
@@ -43,7 +42,7 @@ headingAlign === 'left' ? 'self-start text-left' : 'self-end text-right'
       <h2
         class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl font-semibold text-white text-center z-10 border-b-8 border-white pb-6 backdrop-blur-md px-2 py-2 rounded-md"
       >
-        {heading}
+        {text.heading}
       </h2>
     </div>
 
@@ -54,12 +53,12 @@ headingAlign === 'left' ? 'self-start text-left' : 'self-end text-right'
       <h2
         class={`lg:hidden text-2xl block w-fit mx-auto px-4 font-signature font-semibold mb-4`}
       >
-        {heading}
+        {text.heading}
       </h2>
 
       <div class=`space-y-0 `>
         {
-          paras.map((para: string) => (
+          text.paras.map((para: string) => (
             <p class="text-lg lg:text-xl mt-0 py-3 leading-relaxed text-left">
               {para}
             </p>
