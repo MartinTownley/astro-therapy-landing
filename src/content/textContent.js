@@ -16,7 +16,7 @@ export const introText = {
   paras: [
     'Starting therapy can feel like a big step, but you don’t have to do it alone. Whether you’re facing a specific challenge or just feeling stuck, therapy offers a space to reflect, gain clarity, and move forward at your own pace.',
 
-    'I’m currently offering therapy at a reduced rate (£40 per session) whilst I complete my clinical training.',
+    'I’m currently offering therapy at a reduced rate (£45 per session) whilst I complete my clinical training.',
   ],
 }
 
@@ -55,7 +55,7 @@ export const whatToExpectText = {
     {
       label: 'Fees',
       description:
-        '£50 per session – I also offer a few reduced-fee spaces if needed',
+        '£45 per session – I also offer a few reduced-fee spaces if needed',
     },
     {
       label: 'Location',
