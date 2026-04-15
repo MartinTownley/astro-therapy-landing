@@ -10,21 +10,24 @@ const { id, text } = Astro.props
     <div class="space-y-6 w-full">
       <!-- Heading -->
       <h2
-        class="text-2xl font-semibold bg-main-beige text-theme-green-dark block w-fit mx-auto px-4 py-1 border-black border-b-2 border-r-2"
+        class="fade-up text-2xl font-semibold bg-main-beige text-theme-green-dark block w-fit mx-auto px-4 py-1 border-black border-b-2 border-r-2"
       >
         {text.heading}
       </h2>
 
       {
         text.paras.map((para: string) => (
-          <p class="leading-relaxed text-lg opacity-90">{para}</p>
+          <p class="fade-up leading-relaxed text-lg opacity-90" style="transition-delay: 100ms">{para}</p>
         ))
       }
       <!-- Points -->
       <div class="space-y-6">
         {
-          text.points.map((point: { label: string; description: string }) => (
-            <div class="py-1">
+          text.points.map((point: { label: string; description: string }, i: number) => (
+            <div
+              class="fade-up py-1"
+              style={`transition-delay: ${(i + 2) * 100}ms`}
+            >
               <h3 class="text-xs font-semibold tracking-widest uppercase text-theme-pink mb-2">
                 {point.label}
               </h3>

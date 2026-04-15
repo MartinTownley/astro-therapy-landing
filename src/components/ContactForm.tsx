@@ -39,12 +39,12 @@ export default function ContactForm() {
 
   return (
     <div className="mx-auto w-full max-w-lg px-8 py-12 bg-black/20 backdrop-blur-sm">
-      <h2 className="text-3xl text-center text-white font-bold mb-8 [text-shadow:0_2px_8px_rgba(0,0,0,0.4)]">
+      <h2 className="fade-up text-3xl text-center text-white font-bold mb-8 [text-shadow:0_2px_8px_rgba(0,0,0,0.4)]">
         Get in Touch
       </h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Name */}
-        <div className="form-input-and-label">
+        <div className="fade-up form-input-and-label" style={{ transitionDelay: '100ms' }}>
           <label className="form-label text-white/80" htmlFor="first-name">
             Name <span className="text-red-300">*</span>
           </label>
@@ -64,7 +64,7 @@ export default function ContactForm() {
         </div>
 
         {/* Email */}
-        <div className="form-input-and-label">
+        <div className="fade-up form-input-and-label" style={{ transitionDelay: '200ms' }}>
           <label className="form-label text-white/80" htmlFor="email">
             Email Address <span className="text-red-300">*</span>
           </label>
@@ -84,7 +84,7 @@ export default function ContactForm() {
         </div>
 
         {/* Message */}
-        <div className="form-input-and-label">
+        <div className="fade-up form-input-and-label" style={{ transitionDelay: '300ms' }}>
           <label className="form-label text-white/80" htmlFor="message">
             Message <span className="text-red-300">*</span>
           </label>
@@ -107,7 +107,7 @@ export default function ContactForm() {
         </div>
 
         {/* Send Copy */}
-        <div className="flex items-center gap-2 mb-6">
+        <div className="fade-up flex items-center gap-2 mb-6" style={{ transitionDelay: '400ms' }}>
           <label
             htmlFor="send-copy"
             className="flex items-center gap-2 text-white/80 text-base"
@@ -123,11 +123,11 @@ export default function ContactForm() {
         </div>
 
         {/* Submit */}
-        <div className="flex">
+        <div className="fade-up flex" style={{ transitionDelay: '500ms' }}>
           <button
             disabled={isSubmitting}
             type="submit"
-            className="mx-auto bg-theme-pink-bright text-white font-semibold disabled:bg-gray-500 py-2 px-4 rounded"
+            className="mx-auto bg-theme-pink-bright text-white font-semibold disabled:bg-gray-500 py-2 px-4 rounded border border-white"
           >
             {isSubmitting ? 'Sending...' : 'Submit'}
           </button>

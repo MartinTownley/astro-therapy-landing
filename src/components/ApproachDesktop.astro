@@ -7,7 +7,7 @@ const { id, profileImgSrc, heading } = Astro.props
 <section id={id} class="bg-theme-green px-10 py-16 lg:px-40 lg:py-24">
   <div class="max-w-5xl mx-auto flex flex-row items-center">
     <div
-      class="w-1/2 aspect-square rounded-3xl overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
+      class="fade-up w-1/2 aspect-square rounded-3xl overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
     >
       <Image
         src={profileImgSrc}
@@ -23,15 +23,18 @@ const { id, profileImgSrc, heading } = Astro.props
       <div class="px-6">
         <!-- Heading -->
         <h2
-          class="block w-fit bg-main-beige px-3 py-1 text-3xl font-semibold tracking-tight text-theme-green-dark border-b-2 border-r-2 border-black mb-3"
+          class="fade-up block w-fit bg-main-beige px-3 py-1 text-3xl font-semibold tracking-tight text-theme-green-dark border-b-2 border-r-2 border-black mb-3"
         >
           {heading}
         </h2>
         <!-- Paragraphs -->
         <div class="space-y-4">
           {
-            approachText.paras.map((para: string) => (
-              <p class="text-xl leading-relaxed max-w-prose text-white">
+            approachText.paras.map((para: string, i: number) => (
+              <p
+                class="fade-up text-xl leading-relaxed max-w-prose text-white"
+                style={`transition-delay: ${(i + 1) * 100}ms`}
+              >
                 {para}
               </p>
             ))

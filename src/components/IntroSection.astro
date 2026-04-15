@@ -10,7 +10,7 @@ const { id, background } = Astro.props
 >
   <div class="max-w-prose">
     <h1
-      class="text-3xl text-center md:text-4xl font-semibold mb-6 text-theme-green-dark"
+      class="fade-up text-3xl text-center md:text-4xl font-semibold mb-6 text-theme-green-dark"
     >
       <span class="text-theme-green-dark">
         {introText.heading.primary}
@@ -19,17 +19,20 @@ const { id, background } = Astro.props
         {introText.heading.secondary}
       </span>
     </h1>
-    <hr class="mb-6 text-theme-pink/40" />
+    <hr class="fade-up mb-6 text-theme-pink/40" style="transition-delay: 100ms" />
 
     {
-      introText.paras.map((para) => (
-        <p class="text-lg md:text-2xl leading-relaxed text-gray-700 mb-4">
+      introText.paras.map((para, i) => (
+        <p
+          class="fade-up text-lg md:text-2xl leading-relaxed text-gray-700 mb-4"
+          style={`transition-delay: ${(i + 2) * 100}ms`}
+        >
           {para}
         </p>
       ))
     }
   </div>
-  <div class="flex justify-center mt-4">
+  <div class="fade-up flex justify-center mt-4" style="transition-delay: 400ms">
     <a href="#approach" class="cursor-pointer">
       <ChevronDownIcon
         className="h-24 text-theme-green-light opacity-40 hover:opacity-60 transition-opacity"
