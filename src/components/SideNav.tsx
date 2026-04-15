@@ -149,7 +149,7 @@ export default function SideNav() {
 
       {/* Dropdown (conditionally render if menu open) */}
       <div
-        className={`absolute top-full right-0 w-full bg-text-bg-1 shadow-md overflow-hidden transition-all duration-300 ease-in-out md:hidden rounded-b-lg flex justify-center text-center ${
+        className={`absolute top-full right-0 w-full bg-white/80 backdrop-blur-md shadow-md overflow-hidden transition-all duration-300 ease-in-out md:hidden rounded-b-lg flex justify-center text-center ${
           isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
