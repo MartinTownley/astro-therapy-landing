@@ -2,33 +2,33 @@
 const { id, text } = Astro.props
 ---
 
-<section id={id} class="relative bg-text-bg-1">
+<section id={id} class="bg-theme-green-dark text-white">
   <div
-    class="flex flex-col px-6 content-center max-w-prose mx-auto items-center py-12 relative z-10"
+    class="flex flex-col px-6 content-center max-w-prose mx-auto items-center py-12"
   >
     <!-- Content -->
-    <div class="space-y-6">
+    <div class="space-y-6 w-full">
       <!-- Heading -->
       <h2
-        class="text-2xl text-theme-pink-darker font-sans font-semibold bg-text-bg-1 block w-fit mx-auto px-4 border-gray-400 border-b-2 border-r-2"
+        class="text-2xl font-semibold bg-main-beige text-theme-green-dark block w-fit mx-auto px-4 py-1 border-black border-b-2 border-r-2"
       >
         {text.heading}
       </h2>
 
       {
         text.paras.map((para: string) => (
-          <p class="leading-relaxed text-[16.5px] text-black/90">{para}</p>
+          <p class="leading-relaxed text-lg opacity-90">{para}</p>
         ))
       }
       <!-- Points -->
       <div class="space-y-6">
         {
           text.points.map((point: { label: string; description: string }) => (
-            <div class="space-y-2">
-              <h3 class="text-base font-medium tracking-wide text-theme-pink-dark uppercase">
+            <div class="py-1">
+              <h3 class="text-xs font-semibold tracking-widest uppercase text-theme-pink mb-2">
                 {point.label}
               </h3>
-              <p class="text-lg">{point.description}</p>
+              <p class="text-lg leading-relaxed opacity-90">{point.description}</p>
             </div>
           ))
         }

@@ -3,38 +3,33 @@ import { Image } from 'astro:assets'
 const { id, approachText, profileImgSrc } = Astro.props
 ---
 
-<section id={id} class="relative bg-text-bg-2/80">
-  <!-- Content (photo + heading + text) -->
+<section id={id} class="bg-theme-green">
+  <!-- Profile image - full bleed -->
+  <div class="w-full">
+    <Image
+      src={profileImgSrc}
+      alt="Photo of Jade Zelkowicz."
+      loading="eager"
+      layout="full-width"
+      class="w-full object-cover max-h-96"
+    />
+  </div>
+
+  <!-- Green panel rising over image -->
   <div
-    class="flex flex-col px-6 content-center max-w-prose mx-auto items-center py-12 space-y-6 relative z-10"
+    class="relative z-10 -mt-12 bg-theme-green rounded-t-3xl px-6 pt-8 pb-12 space-y-4"
   >
-    <div class="object-cover rounded-xl overflow-hidden shadow-lg">
-      <Image
-        src={profileImgSrc}
-        alt="Photo of Jade Zelkowicz."
-        loading="eager"
-        layout="full-width"
-        width="350"
-        class=""
-      />
-    </div>
-
+    <h2
+      class="text-2xl font-semibold bg-main-beige text-theme-green-dark block w-fit mx-auto px-4 py-1 border-b-2 border-r-2 border-black"
+    >
+      {approachText.heading}
+    </h2>
     <div class="space-y-4">
-      <h2
-        class="text-2xl text-theme-green font-sans font-semibold bg-text-bg-1 block w-fit mx-auto px-4 border-b-2 border-r-1"
-      >
-        {approachText.heading}
-      </h2>
-
-      <div class="space-y-4">
-        {
-          approachText.paras.map((para: string) => (
-            <p class="leading-relaxed text-lg text-white">{para}</p>
-          ))
-        }
-      </div>
+      {
+        approachText.paras.map((para: string) => (
+          <p class="leading-relaxed text-lg text-white">{para}</p>
+        ))
+      }
     </div>
   </div>
-  <!-- Colored block rising up behind -->
-  <div class="absolute top-64 bottom-0 w-full bg-theme-green-light -z-0"></div>
 </section>
