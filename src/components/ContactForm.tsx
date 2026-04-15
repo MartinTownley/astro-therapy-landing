@@ -38,63 +38,60 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-[#f8f9f6] mx-auto w-full max-w-2xl rounded-3xl md:rounded-2xl shadow-md py-12 px-4 md:px-12">
-      <h2 className="text-3xl text-center text-theme-green-light font-bold mb-6">
+    <div className="mx-auto w-full max-w-lg px-8 py-12 bg-black/20 backdrop-blur-sm">
+      <h2 className="text-3xl text-center text-white font-bold mb-8 [text-shadow:0_2px_8px_rgba(0,0,0,0.4)]">
         Get in Touch
       </h2>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        // className="space-y-6 md:space-y-10"
-      >
+      <form onSubmit={handleSubmit(onSubmit)}>
         {/* Name */}
         <div className="form-input-and-label">
-          <label className="form-label" htmlFor="first-name">
-            Name <span className="text-red-500">*</span>
+          <label className="form-label text-white/80" htmlFor="first-name">
+            Name <span className="text-red-300">*</span>
           </label>
           <input
             {...register('firstName', { required: 'First name is required' })}
             type="text"
             placeholder="Enter your name here"
-            className="form-input-2 w-full"
+            className="form-input-2 w-full text-white border-white/50 placeholder:text-white/40"
             id="first-name"
             defaultValue={isDev ? 'test-name' : ''}
           />
           <div className="form-error-div">
             {errors.firstName && (
-              <p className="form-error-content">{`${errors.firstName.message}`}</p>
+              <p className="form-error-content text-red-300">{`${errors.firstName.message}`}</p>
             )}
           </div>
         </div>
 
         {/* Email */}
         <div className="form-input-and-label">
-          <label className="form-label" htmlFor="email">
-            Email Address <span className="text-red-500">*</span>
+          <label className="form-label text-white/80" htmlFor="email">
+            Email Address <span className="text-red-300">*</span>
           </label>
           <input
             {...register('email', { required: 'Email is required' })}
             type="email"
             placeholder="Enter your email address here"
-            className="form-input-2 w-full"
+            className="form-input-2 w-full text-white border-white/50 placeholder:text-white/40"
             id="email"
             defaultValue={isDev ? 'martinrtownley@gmail.com' : ''}
           />
           <div className="form-error-div">
             {errors.email && (
-              <p className="form-error-content">{`${errors.email.message}`}</p>
+              <p className="form-error-content text-red-300">{`${errors.email.message}`}</p>
             )}
           </div>
         </div>
 
         {/* Message */}
         <div className="form-input-and-label">
-          <label className="form-label" htmlFor="message">
-            Message <span className="text-red-500">*</span>
+          <label className="form-label text-white/80" htmlFor="message">
+            Message <span className="text-red-300">*</span>
           </label>
           <textarea
             {...register('message', { required: 'Message is required' })}
             placeholder="Enter your message here"
-            className="form-textarea w-full h-32"
+            className="form-input-2 w-full h-32 resize-none text-white border-white/50 placeholder:text-white/40"
             id="message"
             defaultValue={
               isDev
@@ -104,7 +101,7 @@ export default function ContactForm() {
           />
           <div className="form-error-div">
             {errors.message && (
-              <p className="form-error-content">{`${errors.message.message}`}</p>
+              <p className="form-error-content text-red-300">{`${errors.message.message}`}</p>
             )}
           </div>
         </div>
@@ -113,13 +110,13 @@ export default function ContactForm() {
         <div className="flex items-center gap-2 mb-6">
           <label
             htmlFor="send-copy"
-            className="flex items-center gap-2 text-gray-700 text-sm"
+            className="flex items-center gap-2 text-white/80 text-base"
           >
             <input
               id="send-copy"
               type="checkbox"
               {...register('sendCopy')}
-              className=" h-4 w-4 text-theme-green"
+              className="h-4 w-4 accent-theme-pink-bright "
             />
             Email me a copy of this message
           </label>
@@ -130,7 +127,7 @@ export default function ContactForm() {
           <button
             disabled={isSubmitting}
             type="submit"
-            className="mx-auto bg-theme-green-light text-white font-semibold disabled:bg-gray-500 py-2 px-4 rounded"
+            className="mx-auto bg-theme-pink-bright text-white font-semibold disabled:bg-gray-500 py-2 px-4 rounded"
           >
             {isSubmitting ? 'Sending...' : 'Submit'}
           </button>
