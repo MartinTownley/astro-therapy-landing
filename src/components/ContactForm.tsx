@@ -38,7 +38,10 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-lg px-8 py-12 bg-black/20 backdrop-blur-sm">
+    <div
+      className="mx-auto w-full max-w-lg px-8 py-12 bg-black/20 border-1 border-white"
+      style={{ backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)' }}
+    >
       {/* <h2 className="fade-up text-3xl text-center text-white font-bold mb-8 [text-shadow:0_2px_8px_rgba(0,0,0,0.4)]">
         Get in Touch
       </h2> */}
