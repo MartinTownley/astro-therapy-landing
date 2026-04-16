@@ -14,7 +14,7 @@ const {
 
 <main class="relative min-h-screen bg-text-bg-1">
   <!-- Background Image -->
-  <div class="absolute inset-0 z-0">
+  <div class="absolute inset-0 z-0 overflow-hidden">
     <!-- Mobile (portrait) -->
     <Image
       src={imgSrcPortrait}
@@ -30,7 +30,7 @@ const {
       alt="An abstract image."
       loading="eager"
       layout="full-width"
-      class="w-full h-full object-cover hidden lg:block blur-[1px]"
+      class="w-full h-full object-cover hidden lg:block blur-[1px] hero-bg-image"
     />
   </div>
 
@@ -45,17 +45,20 @@ const {
     <div
       class="col-span-12 md:col-span-8 lg:col-span-10 lg:col-start-2 md:col-start-1 space-y-8 md:translate-y-20 text-center md:text-left flex flex-col items-center md:items-start text-text-bg-1 [text-shadow:0_4px_8px_rgba(0,0,0,0.7)]"
     >
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+      <h1
+        class="hero-animate text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
+        style="animation-delay: 0ms"
+      >
         {heading}
       </h1>
-      <div class="">
+      <div class="hero-animate" style="animation-delay: 200ms">
         <p
           class="text-lg sm:text-xl lg:text-2xl font-light leading-relaxed max-w-xs sm:max-w-md lg:max-w-lg"
         >
           {subheading}
         </p>
       </div>
-      <a href="#contact">
+      <a href="#contact" class="hero-animate" style="animation-delay: 400ms">
         <button
           class="relative text-white font-medium text-lg sm:text-xl lg:text-2xl cursor-pointer after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
         >
@@ -64,12 +67,42 @@ const {
       </a>
     </div>
     <!-- <a
-      href="#about"
-      class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 cursor-pointer"
-    >
-      <ArrowDownIcon
-        className="h-12 md:h-16 w-12 md:w-16 text-white opacity-80 hover:opacity-100"
-      />
-    </a> -->
+href="#about"
+class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 cursor-pointer"
+>
+<ArrowDownIcon
+className="h-12 md:h-16 w-12 md:w-16 text-white opacity-80 hover:opacity-100"
+/>
+</a> -->
   </div>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      // Find hero background image element
+      const image = document.querySelector('.hero-bg-image') as HTMLElement
+
+      // named scroll handler - needs a name so we can remove it later
+      const onScroll = () => {
+        // Schedule DOM update for the next animation frame
+        requestAnimationFrame(() => {
+          if (!image) return
+          // parallax effect
+          image.style.transform = `translateY(${window.scrollY * 0.25}px)`
+        })
+      }
+
+      const hero = document.querySelector('main') as HTMLElement
+
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          // hero is visible - start listening
+          window.addEventListener('scroll', onScroll)
+        } else {
+          // hero has left the viewport - stop listening
+          window.removeEventListener('scroll', onScroll)
+        }
+      })
+
+      observer.observe(hero)
+    }
+  </script>
 </main>
