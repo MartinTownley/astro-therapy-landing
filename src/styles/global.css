@@ -120,7 +120,20 @@
 }
 
 .hero-animate {
-  animation: heroFadeUp 3s ease forwards;
+  animation: heroFadeUp 1s ease forwards;
+}
+
+.fade-scale {
+  opacity: 0;
+  transform: scale(0.93);
+  transition:
+    opacity 2s ease,
+    transform 2s ease;
+}
+
+.fade-scale.visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .fade-up {

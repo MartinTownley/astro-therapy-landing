@@ -57,12 +57,14 @@ const dev = import.meta.env.DEV
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const heroImages = document.querySelectorAll('.hero-bg-image')
         const introImages = document.querySelectorAll('.intro-bg-image')
+        const contactImages = document.querySelectorAll('.contact-bg-image')
 
         window.addEventListener('scroll', () => {
           requestAnimationFrame(() => {
             // Buffer must be >= viewportHeight * multiplier to prevent background creep
             const HERO_PARALLAX = 0.25
             const INTRO_PARALLAX = 0.15
+            const CONTACT_PARALLAX = 0.15
 
             heroImages.forEach((img) => {
               ;(img as HTMLElement).style.transform =
@@ -71,6 +73,16 @@ const dev = import.meta.env.DEV
             introImages.forEach((img) => {
               ;(img as HTMLElement).style.transform =
                 `translateY(${window.scrollY * INTRO_PARALLAX}px)`
+            })
+            // Viewport-relative parallax — avoids large scrollY offset on bottom sections
+            contactImages.forEach((img) => {
+              const section = (img as HTMLElement).closest('section')
+              if (!section) return
+              const rect = section.getBoundingClientRect()
+              const offset =
+                (rect.top + rect.height / 2 - window.innerHeight / 2) *
+                CONTACT_PARALLAX
+              ;(img as HTMLElement).style.transform = `translateY(${offset}px)`
             })
           })
         })
@@ -91,7 +103,7 @@ const dev = import.meta.env.DEV
       )
 
       document
-        .querySelectorAll('.fade-up')
+        .querySelectorAll('.fade-up, .fade-scale')
         .forEach((el) => observer.observe(el))
     </script>
 
