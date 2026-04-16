@@ -1,13 +1,12 @@
 ---
 import Picture from 'astro/components/Picture.astro'
-const { id, imageSrcPortrait, imageSrcLandscape, imageAlt = '' } = Astro.props
+import { contactText } from '../content/textContent'
+import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+const { id, imageSrcPortrait, imageSrcLandscape } = Astro.props
 ---
 
-<section
-  id={id}
-  class="relative min-h-screen snap-start flex items-center justify-center bg-theme-pink/60 overflow-hidden"
->
-  <!-- Background image -->
+<section id={id} class="relative overflow-hidden py-20 lg:py-28">
+  <!-- Background images -->
   <div class="absolute inset-0 z-0 overflow-hidden">
     <Picture
       src={imageSrcPortrait}
@@ -25,11 +24,54 @@ const { id, imageSrcPortrait, imageSrcLandscape, imageAlt = '' } = Astro.props
       layout="full-width"
       class="contact-bg-image absolute -top-32 w-full h-[calc(100%+16rem)] object-cover hidden lg:block"
     />
-    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute inset-0 bg-black/35"></div>
   </div>
 
-  <!-- Foreground content -->
-  <div class="relative z-10 w-full mx-auto px-0 md:max-w-lg lg:max-w-2xl">
-    <slot />
+  <div class="relative z-10 max-w-7xl mx-auto px-8 lg:px-12">
+    <!-- Mobile-only heading, centred above form -->
+    <h2
+      class="fade-up lg:hidden text-center text-4xl font-light tracking-wide text-white mb-8 [text-shadow:0_2px_12px_rgba(0,0,0,0.7)]"
+    >
+      {contactText.heading}
+    </h2>
+
+    <!-- Two-column grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <!-- Left: heading + details (desktop only) -->
+      <div class="hidden lg:block text-white space-y-8 [text-shadow:0_2px_12px_rgba(0,0,0,0.7)]">
+        <h2 class="fade-up text-4xl lg:text-5xl font-light tracking-wide">
+          {contactText.heading}
+        </h2>
+        <div class="space-y-4">
+          <div class="fade-up flex items-center gap-3" style="transition-delay: 100ms">
+            <EnvelopeIcon className="h-5 w-5 text-theme-pink flex-shrink-0" />
+            <p class="text-lg">{contactText.email.value}</p>
+          </div>
+          <div class="fade-up flex items-center gap-3" style="transition-delay: 200ms">
+            <PhoneIcon className="h-5 w-5 text-theme-pink flex-shrink-0" />
+            <p class="text-lg">{contactText.phone.value}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div>
+        <slot />
+      </div>
+    </div>
+
+    <!-- Mobile-only contact details, centred below form -->
+    <div
+      class="lg:hidden mt-8 text-white space-y-4 [text-shadow:0_2px_12px_rgba(0,0,0,0.7)]"
+    >
+      <div class="fade-up flex items-center justify-center gap-3">
+        <EnvelopeIcon className="h-5 w-5 text-theme-pink flex-shrink-0" />
+        <p class="text-lg">{contactText.email.value}</p>
+      </div>
+      <div class="fade-up flex items-center justify-center gap-3" style="transition-delay: 100ms">
+        <PhoneIcon className="h-5 w-5 text-theme-pink flex-shrink-0" />
+        <p class="text-lg">{contactText.phone.value}</p>
+      </div>
+    </div>
   </div>
 </section>
