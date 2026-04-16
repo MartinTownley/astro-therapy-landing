@@ -60,11 +60,17 @@ const dev = import.meta.env.DEV
 
         window.addEventListener('scroll', () => {
           requestAnimationFrame(() => {
+            // Buffer must be >= viewportHeight * multiplier to prevent background creep
+            const HERO_PARALLAX = 0.25
+            const INTRO_PARALLAX = 0.15
+
             heroImages.forEach((img) => {
-              ;(img as HTMLElement).style.transform = `translateY(${window.scrollY * 0.25}px)`
+              ;(img as HTMLElement).style.transform =
+                `translateY(${window.scrollY * HERO_PARALLAX}px)`
             })
             introImages.forEach((img) => {
-              ;(img as HTMLElement).style.transform = `translateY(${window.scrollY * 0.15}px)`
+              ;(img as HTMLElement).style.transform =
+                `translateY(${window.scrollY * INTRO_PARALLAX}px)`
             })
           })
         })
