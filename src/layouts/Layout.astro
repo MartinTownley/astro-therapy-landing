@@ -55,14 +55,14 @@ const dev = import.meta.env.DEV
     <script>
       // Parallax
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const heroImage = document.querySelector('.hero-bg-image') as HTMLElement
+        const heroImages = document.querySelectorAll('.hero-bg-image')
         const introImages = document.querySelectorAll('.intro-bg-image')
 
         window.addEventListener('scroll', () => {
           requestAnimationFrame(() => {
-            if (heroImage) {
-              heroImage.style.transform = `translateY(${window.scrollY * 0.25}px)`
-            }
+            heroImages.forEach((img) => {
+              ;(img as HTMLElement).style.transform = `translateY(${window.scrollY * 0.25}px)`
+            })
             introImages.forEach((img) => {
               ;(img as HTMLElement).style.transform = `translateY(${window.scrollY * 0.15}px)`
             })
@@ -84,7 +84,9 @@ const dev = import.meta.env.DEV
         { threshold: 0.1 },
       )
 
-      document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el))
+      document
+        .querySelectorAll('.fade-up')
+        .forEach((el) => observer.observe(el))
     </script>
 
     <Toaster

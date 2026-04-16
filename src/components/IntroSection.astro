@@ -15,14 +15,14 @@ const { id, bgImgSrcLandscape, bgImgSrcPortrait } = Astro.props
     alt=""
     loading="lazy"
     layout="full-width"
-    class="intro-bg-image absolute inset-0 w-full h-full object-cover block lg:hidden scale-200"
+    class="intro-bg-image absolute -top-20 w-full h-full object-cover block lg:hidden scale-200"
   />
   <Image
     src={bgImgSrcLandscape}
     alt=""
     loading="lazy"
     layout="full-width"
-    class="intro-bg-image absolute inset-0 w-full h-full object-cover hidden lg:block scale-110"
+    class="intro-bg-image absolute -top-20 w-full h-full object-cover hidden lg:block scale-200"
   />
   <!-- Beige overlay -->
   <div class="absolute inset-0 bg-main-beige/85 backdrop-blur-xs"></div>
