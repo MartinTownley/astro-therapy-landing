@@ -53,6 +53,25 @@ const dev = import.meta.env.DEV
 
     <!-- {dev && <DebugGrid cols={12} gap={6} />} -->
     <script>
+      // Parallax
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const heroImage = document.querySelector('.hero-bg-image') as HTMLElement
+        const introImages = document.querySelectorAll('.intro-bg-image')
+
+        window.addEventListener('scroll', () => {
+          requestAnimationFrame(() => {
+            if (heroImage) {
+              heroImage.style.transform = `translateY(${window.scrollY * 0.25}px)`
+            }
+            introImages.forEach((img) => {
+              ;(img as HTMLElement).style.transform = `translateY(${window.scrollY * 0.15}px)`
+            })
+          })
+        })
+      }
+    </script>
+
+    <script>
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {

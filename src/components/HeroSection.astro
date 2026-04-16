@@ -75,34 +75,4 @@ className="h-12 md:h-16 w-12 md:w-16 text-white opacity-80 hover:opacity-100"
 />
 </a> -->
   </div>
-  <script>
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      // Find hero background image element
-      const image = document.querySelector('.hero-bg-image') as HTMLElement
-
-      // named scroll handler - needs a name so we can remove it later
-      const onScroll = () => {
-        // Schedule DOM update for the next animation frame
-        requestAnimationFrame(() => {
-          if (!image) return
-          // parallax effect
-          image.style.transform = `translateY(${window.scrollY * 0.25}px)`
-        })
-      }
-
-      const hero = document.querySelector('main') as HTMLElement
-
-      const observer = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) {
-          // hero is visible - start listening
-          window.addEventListener('scroll', onScroll)
-        } else {
-          // hero has left the viewport - stop listening
-          window.removeEventListener('scroll', onScroll)
-        }
-      })
-
-      observer.observe(hero)
-    }
-  </script>
 </main>

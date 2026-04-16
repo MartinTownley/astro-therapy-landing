@@ -1,14 +1,33 @@
 ---
 import { introText } from '../content/textContent'
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
-const { id, background } = Astro.props
+import { Image } from 'astro:assets'
+const { id, bgImgSrcLandscape, bgImgSrcPortrait } = Astro.props
 ---
 
 <section
   id={id}
-  class=`flex flex-col items-center pt-16 md:pt-24 px-4 ${background}`
+  class="relative flex flex-col items-center pt-16 md:pt-24 px-4 overflow-hidden"
 >
-  <div class="max-w-prose">
+  <!-- Background images -->
+  <Image
+    src={bgImgSrcPortrait}
+    alt=""
+    loading="lazy"
+    layout="full-width"
+    class="intro-bg-image absolute inset-0 w-full h-full object-cover block lg:hidden scale-200"
+  />
+  <Image
+    src={bgImgSrcLandscape}
+    alt=""
+    loading="lazy"
+    layout="full-width"
+    class="intro-bg-image absolute inset-0 w-full h-full object-cover hidden lg:block scale-110"
+  />
+  <!-- Beige overlay -->
+  <div class="absolute inset-0 bg-main-beige/85 backdrop-blur-xs"></div>
+
+  <div class="relative z-10 max-w-prose">
     <h1
       class="fade-up text-3xl text-center md:text-4xl font-semibold mb-6 text-theme-green-dark"
     >
@@ -19,7 +38,10 @@ const { id, background } = Astro.props
         {introText.heading.secondary}
       </span>
     </h1>
-    <hr class="fade-up mb-6 text-theme-pink/40" style="transition-delay: 100ms" />
+    <hr
+      class="fade-up mb-6 text-theme-pink/40"
+      style="transition-delay: 100ms"
+    />
 
     {
       introText.paras.map((para, i) => (
@@ -32,7 +54,10 @@ const { id, background } = Astro.props
       ))
     }
   </div>
-  <div class="fade-up flex justify-center mt-4" style="transition-delay: 400ms">
+  <div
+    class="fade-up relative z-10 flex justify-center mt-4"
+    style="transition-delay: 400ms"
+  >
     <a href="#approach" class="cursor-pointer">
       <ChevronDownIcon
         className="h-24 text-theme-green-light opacity-40 hover:opacity-60 transition-opacity"
