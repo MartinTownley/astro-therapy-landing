@@ -60,7 +60,7 @@ const {
       </div>
       <a href="#contact" class="hero-animate" style="animation-delay: 400ms">
         <button
-          class="relative text-white font-medium text-lg sm:text-xl lg:text-2xl cursor-pointer after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+          class="hero-cta relative text-white font-medium text-lg sm:text-xl lg:text-2xl cursor-pointer rounded-xl border-2 border-white/60 px-6 py-2 bg-black/20 lg:rounded-none lg:border-0 lg:px-0 lg:py-0 lg:bg-transparent after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
         >
           {button}
         </button>
@@ -76,3 +76,15 @@ className="h-12 md:h-16 w-12 md:w-16 text-white opacity-80 hover:opacity-100"
 </a> -->
   </div>
 </main>
+
+<style>
+  @media (max-width: 1023px) {
+    .hero-cta {
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+    }
+    .hero-cta::after {
+      display: none;
+    }
+  }
+</style>

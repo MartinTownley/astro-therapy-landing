@@ -15,25 +15,29 @@ const { id, text } = Astro.props
         {text.heading}
       </h2>
 
-      {
+      <!-- {
         text.paras.map((para: string) => (
           <p class="fade-up leading-relaxed text-lg opacity-90" style="transition-delay: 100ms">{para}</p>
         ))
-      }
+      } -->
       <!-- Points -->
       <div class="space-y-6">
         {
-          text.points.map((point: { label: string; description: string }, i: number) => (
-            <div
-              class="fade-up py-1"
-              style={`transition-delay: ${(i + 2) * 100}ms`}
-            >
-              <h3 class="text-xs font-semibold tracking-widest uppercase text-theme-pink mb-2">
-                {point.label}
-              </h3>
-              <p class="text-lg leading-relaxed opacity-90">{point.description}</p>
-            </div>
-          ))
+          text.points.map(
+            (point: { label: string; description: string }, i: number) => (
+              <div
+                class="fade-up py-1"
+                style={`transition-delay: ${(i + 2) * 100}ms`}
+              >
+                <h3 class="text-xs font-semibold tracking-widest uppercase text-theme-pink mb-2">
+                  {point.label}
+                </h3>
+                <p class="text-lg leading-relaxed opacity-90">
+                  {point.description}
+                </p>
+              </div>
+            ),
+          )
         }
       </div>
     </div>

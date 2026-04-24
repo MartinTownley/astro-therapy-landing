@@ -57,20 +57,26 @@ export const whatToExpectText = {
       description:
         '£45 per session – I also offer a few reduced-fee spaces if needed',
     },
+
+    {
+      label: 'Online sessions',
+      description:
+        'Online sessions are available if meeting in person isn’t possible',
+    },
     {
       label: 'Location',
       description:
         'Sessions are held at The Twelfth House, 1 Chingford Road, E17 4PW (about a 10-minute walk from Walthamstow Central)',
     },
     {
-      label: 'Online sessions',
+      label: 'Beginning',
       description:
-        'Online sessions are available if meeting in person isn’t possible',
+        'Our first session is a chance to explore what brings you to therapy, and see how it feels to work together.',
     },
   ],
-  paras: [
-    'Our first session is a chance to explore what brings you to therapy, and see how it feels to work together.',
-  ],
+  // paras: [
+  //   'Our first session is a chance to explore what brings you to therapy, and see how it feels to work together.',
+  // ],
 }
 
 //======================
